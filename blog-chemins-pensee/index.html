@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Les Chemins de la Pensée — Philosophie, géopolitique, histoire et technologie</title>
+<meta name="description" content="Les Chemins de la Pensée : des articles de philosophie, de géopolitique, d'histoire et de technologie, pour comprendre le monde.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="article.css">
+<style>
+  /* Accueil — les couleurs et polices viennent de article.css */
+  body { font-size: 18px; line-height: 1.6; }
+  img { height: 100%; object-fit: cover; }
+  a { text-decoration: none; }
+  .cache { display: none !important; }
+
+  /* En-tête */
+  header { padding: 22px 5vw; }
+  nav { display: flex; gap: 26px; font-size: 16px; color: var(--doux); }
+  nav a:hover { color: var(--texte); }
+  nav a.actif { color: var(--ambre); }
+  .bouton { border: 1px solid var(--ambre); color: var(--ambre); padding: 8px 20px; font-size: 15px; font-weight: 600; transition: background .2s, color .2s; }
+  .bouton:hover { background: var(--ambre); color: var(--fond); }
+
+  .surtitre { font-size: 13px; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: var(--ambre); }
+
+  /* Titre de rubrique (quand on filtre) */
+  .titre-rubrique { padding: 56px 5vw 0; }
+  .titre-rubrique h1 { font-family: var(--titre); font-weight: 400; font-size: clamp(44px, 8vw, 96px); line-height: 1; margin-top: 10px; }
+  .titre-rubrique h1 i { color: var(--ambre); }
+
+  /* À la une */
+  .une { display: grid; grid-template-columns: 1.15fr 1fr; border-bottom: 1px solid var(--ligne); }
+  .une-texte { padding: 70px 5vw; display: flex; flex-direction: column; justify-content: center; gap: 18px; }
+  .une h2 { font-family: var(--titre); font-weight: 400; font-size: clamp(34px, 4.4vw, 58px); line-height: 1.08; letter-spacing: -0.5px; }
+  .une h2 i { color: var(--ambre); }
+  .une p { color: var(--doux); max-width: 46ch; font-size: 19px; }
+  .une .infos { font-size: 15px; }
+  .btn { align-self: flex-start; border: 1px solid var(--ambre); color: var(--ambre); padding: 11px 24px; font-size: 16px; font-weight: 600; transition: background .2s, color .2s; }
+  .btn:hover { background: var(--ambre); color: var(--fond); }
+  .une-image { min-height: 460px; background: var(--fond-2); border-left: 1px solid var(--ligne); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 40px; }
+  .une-image .dates { font-family: var(--titre); color: var(--ambre); font-size: clamp(52px, 7vw, 104px); line-height: 1; }
+  .une-image .lieux { font-size: 15px; letter-spacing: .22em; text-transform: uppercase; color: var(--doux); margin-top: 18px; }
+
+  /* Liste numérotée */
+  .liste { max-width: 1100px; margin: 0 auto; padding: 30px 5vw 40px; counter-reset: num; }
+  .liste > .surtitre { display: block; color: var(--discret); padding: 26px 0 10px; }
+  .ligne { display: grid; grid-template-columns: 70px 1fr 150px; gap: 20px; padding: 28px 0; border-top: 1px solid var(--ligne); align-items: start; counter-increment: num; }
+  .ligne::before { content: counter(num, decimal-leading-zero); font-family: var(--titre); font-size: 34px; line-height: 1; color: var(--ambre); }
+  .ligne h3 { font-family: var(--titre); font-weight: 400; font-size: clamp(22px, 2.4vw, 28px); line-height: 1.25; }
+  .ligne h3 a:hover { color: var(--ambre); }
+  .ligne p { color: var(--doux); margin-top: 8px; font-size: 17px; }
+  .ligne .r { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--discret); text-align: right; padding-top: 6px; }
+  .bientot { border: 1px dashed var(--ligne); padding: 34px 30px; margin-top: 10px; }
+  .bientot p { font-family: var(--titre); font-style: italic; font-size: 24px; margin-top: 10px; }
+  .bientot span:last-child { display: block; color: var(--doux); margin-top: 8px; }
+
+  /* Devise */
+  .devise { display: block; text-align: center; font-family: var(--titre); font-weight: 400; font-size: clamp(30px, 5.5vw, 68px); line-height: 1.15; padding: 70px 5vw 80px; border-top: 1px solid var(--ligne); }
+  .devise i { color: var(--ambre); }
+  .devise:hover i { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 8px; }
+
+  /* Téléphone */
+  @media (max-width: 860px) {
+    nav { order: 3; width: 100%; gap: 20px; overflow-x: auto; white-space: nowrap; font-size: 15px; padding: 4px 0 2px; }
+    .une { grid-template-columns: 1fr; }
+    .une-image { min-height: 240px; order: -1; border-left: 0; border-bottom: 1px solid var(--ligne); }
+    .une-texte { padding: 40px 5vw 48px; }
+    .ligne { grid-template-columns: 46px 1fr; gap: 14px; }
+    .ligne::before { font-size: 26px; grid-column: 1; grid-row: 1 / span 2; }
+    .ligne > div { grid-column: 2; grid-row: 2; }
+    .ligne .r { grid-column: 2; grid-row: 1; text-align: left; padding: 0; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="#tous">Les Chemins de la <i>Pensée</i></a>
+  <nav aria-label="Menu principal">
+    <a href="#tous">Accueil</a>
+    <a href="#philosophie">Philosophie</a>
+    <a href="#geopolitique">Géopolitique</a>
+    <a href="#histoire">Histoire</a>
+    <a href="#technologie">Technologie</a>
+    <a href="debattre.html">Débattre</a>
+  </nav>
+  <a class="bouton" href="https://www.facebook.com/muller.david.52" target="_blank" rel="noopener" aria-label="Me suivre sur Facebook (nouvel onglet)">Me suivre</a>
+</header>
+
+<main>
+  <div class="titre-rubrique cache">
+    <span class="surtitre">Rubrique</span>
+    <h1><i></i></h1>
+  </div>
+
+  <!-- À la une : l'article le plus récent -->
+  <article class="une" data-rubrique="histoire">
+    <div class="une-texte">
+      <span class="surtitre">À la une · Histoire</span>
+      <h2><a href="braunau-berlin.html">De Braunau à Berlin : la montée et <i>la chute</i> du Troisième Reich</a></h2>
+      <p>Comment un homme sans avenir a pris l'Allemagne, puis l'a menée à sa chute en douze ans.</p>
+      <span class="infos">17 novembre 2026 · 6 min de lecture</span>
+      <a class="btn" href="braunau-berlin.html">Lire l'article →</a>
+    </div>
+    <a class="une-image" href="braunau-berlin.html" tabindex="-1" aria-hidden="true">
+      <span class="dates">1889 → 1945</span>
+      <span class="lieux">De Braunau à Berlin</span>
+    </a>
+  </article>
+
+  <section class="liste" aria-label="Derniers articles">
+    <span class="surtitre">Derniers articles</span>
+
+    <article class="ligne" data-rubrique="philosophie">
+      <div>
+        <h3><a href="hobbes-leviathan.html">Le Léviathan est-il de retour ? Ce que Hobbes nous dit de la France d'aujourd'hui</a></h3>
+        <p>Moins de liberté, plus de sécurité : le vieux contrat de Hobbes revient. Mais un État fort, fort pour qui, et contre qui ?</p>
+      </div>
+      <span class="r">Philosophie · 8 min</span>
+    </article>
+
+    <article class="ligne" data-rubrique="geopolitique">
+      <div>
+        <h3><a href="sahara-occidental.html">Sahara occidental : cinquante ans d'attente</a></h3>
+        <p>Un demi-siècle après le départ de l'Espagne, le sort du territoire n'est toujours pas réglé.</p>
+      </div>
+      <span class="r">Géopolitique · 6 min</span>
+    </article>
+
+    <article class="ligne" data-rubrique="histoire">
+      <div>
+        <h3><a href="17-octobre-1961.html">17 octobre 1961 : la nuit du massacre à Paris</a></h3>
+        <p>Une manifestation pacifique, une répression sanglante, puis des décennies de silence.</p>
+      </div>
+      <span class="r">Histoire · 5 min</span>
+    </article>
+
+    <div class="bientot" data-rubrique="technologie">
+      <span class="surtitre">Technologie · Nouvelle rubrique</span>
+      <p>Premier article bientôt…</p>
+      <span>Intelligence artificielle, réseaux, numérique : comprendre les machines qui changent nos vies.</span>
+    </div>
+  </section>
+
+  <a class="devise" href="debattre.html">Penser — <i>Comprendre</i> — Débattre</a>
+</main>
+
+<footer>
+  <span>© 2026 Les Chemins de la Pensée</span>
+  <span>Philosophie · Géopolitique · Histoire · Technologie</span>
+</footer>
+
+<script>
+  // Filtre par rubrique (#philosophie, #histoire…) — reste sur la même page
+  const titres = { philosophie: 'Philosophie', geopolitique: 'Géopolitique', histoire: 'Histoire', technologie: 'Technologie' };
+  function afficherRubrique() {
+    let r = location.hash.slice(1);
+    if (!titres[r]) r = 'tous';
+    const bloc = document.querySelector('.titre-rubrique');
+    bloc.classList.toggle('cache', r === 'tous');
+    if (r !== 'tous') bloc.querySelector('i').textContent = titres[r];
+    document.querySelector('.liste > .surtitre').classList.toggle('cache', r !== 'tous');
+    document.querySelectorAll('[data-rubrique]').forEach(el => {
+      el.classList.toggle('cache', r !== 'tous' && el.dataset.rubrique !== r);
+    });
+    document.querySelectorAll('nav a').forEach(a => a.classList.toggle('actif', a.getAttribute('href') === '#' + r));
+  }
+  addEventListener('hashchange', afficherRubrique);
+  afficherRubrique();
+</script>
+</body>
+</html>

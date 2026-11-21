@@ -1,0 +1,217 @@
+/* =========================================================
+   Le Comptoir Valmont — feuille de style
+   1. Couleurs et polices   2. Base   3. En-tête   4. Accueil
+   5. Sections   6. Maison   7. Cave   8. Viandes
+   9. Occasions   10. Commande   11. Avis   12. Infos et pied
+   13. Animations   14. Téléphone
+   ========================================================= */
+
+/* 1. Couleurs et polices — changer ici pour tout le site */
+:root {
+  --bordeaux: #5A1520;
+  --bordeaux-fonce: #3B0D14;
+  --creme: #F5EDE1;
+  --creme-fonce: #EADFCF;
+  --cuivre: #B8743F;
+  --cuivre-clair: #D4975F;
+  --encre: #2A1A17;
+  --gris: #6E5E57;
+  --blanc: #FFFFFF;
+  --erreur: #B3261E;
+  --titre: "Playfair Display", Georgia, serif;
+  --texte: "Jost", "Segoe UI", Arial, sans-serif;
+  --ombre: 0 10px 30px rgba(59, 13, 20, .10);
+}
+
+/* 2. Base */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+body { margin: 0; font-family: var(--texte); font-size: 17px; line-height: 1.65; color: var(--encre); background: var(--creme); }
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+h1, h2, h3 { font-family: var(--titre); font-weight: 500; line-height: 1.15; margin: 0; text-wrap: balance; }
+h2 { font-size: clamp(2rem, 4vw, 2.8rem); color: var(--bordeaux); }
+h3 { font-size: 1.4rem; color: var(--bordeaux); }
+p { margin: 0; }
+.petit { font-size: .88rem; color: var(--gris); }
+.surtitre { font-size: .8rem; letter-spacing: .2em; text-transform: uppercase; color: var(--cuivre); font-weight: 500; }
+:focus-visible { outline: 3px solid var(--cuivre); outline-offset: 3px; }
+
+.btn {
+  display: inline-block; padding: 14px 28px; border: 1px solid var(--cuivre); background: transparent;
+  color: inherit; font-family: var(--texte); font-size: .82rem; letter-spacing: .16em; text-transform: uppercase;
+  text-decoration: none; cursor: pointer; transition: background .25s, color .25s, transform .25s;
+}
+.btn:hover { background: var(--cuivre); color: var(--bordeaux-fonce); }
+.btn-plein { background: var(--cuivre); color: var(--bordeaux-fonce); font-weight: 500; }
+.btn-plein:hover { background: var(--cuivre-clair); transform: translateY(-2px); }
+.btn-large { width: 100%; padding: 17px; }
+
+/* 3. En-tête */
+.header {
+  position: fixed; inset: 0 0 auto; z-index: 50; display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 48px; color: var(--creme); transition: background .3s, padding .3s, box-shadow .3s;
+}
+.header.scrolle { background: var(--bordeaux-fonce); padding-block: 12px; box-shadow: 0 4px 20px rgba(0,0,0,.25); }
+.logo { font-family: var(--titre); font-size: 1.5rem; text-decoration: none; }
+.logo em { color: var(--cuivre); }
+.nav { display: flex; align-items: center; gap: 30px; }
+.nav a { font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; text-decoration: none; opacity: .9; }
+.nav a:hover { color: var(--cuivre-clair); }
+.nav-cta { border: 1px solid var(--cuivre); padding: 9px 18px; }
+.burger { display: none; background: none; border: 0; cursor: pointer; padding: 8px; }
+.burger span { display: block; width: 26px; height: 2px; background: var(--creme); margin: 6px 0; transition: transform .3s, opacity .3s; }
+.burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+/* 4. Accueil */
+.hero {
+  min-height: 92vh; display: flex; align-items: center; padding: 120px 48px 80px; color: var(--creme);
+  background:
+    linear-gradient(90deg, rgba(59,13,20,.94) 0%, rgba(59,13,20,.75) 50%, rgba(59,13,20,.3) 100%),
+    url("https://images.unsplash.com/photo-1603048297172-c92544798d5a?auto=format&fit=crop&w=1800&q=80") center / cover,
+    var(--bordeaux);
+}
+.hero-contenu { max-width: 600px; display: flex; flex-direction: column; gap: 24px; }
+.badge { align-self: flex-start; border: 1px solid var(--cuivre); color: var(--cuivre-clair); padding: 8px 18px; border-radius: 40px; font-size: .78rem; letter-spacing: .16em; text-transform: uppercase; }
+.hero h1 { font-size: clamp(2.6rem, 6vw, 4.6rem); }
+.hero h1 em { color: var(--cuivre-clair); }
+.hero p { font-size: 1.15rem; font-weight: 300; max-width: 52ch; }
+.boutons { display: flex; gap: 14px; flex-wrap: wrap; }
+
+.bande { display: grid; grid-template-columns: repeat(3, 1fr); background: var(--bordeaux-fonce); color: var(--creme); }
+.bande div { padding: 30px 48px; border-right: 1px solid rgba(184,116,63,.3); font-weight: 300; }
+.bande div:last-child { border-right: 0; }
+.bande strong { display: block; font-family: var(--titre); font-weight: 500; font-size: 1.6rem; color: var(--cuivre-clair); }
+
+/* 5. Sections */
+.section { padding: 100px 48px; max-width: 1240px; margin: 0 auto; }
+.section-titre { max-width: 680px; margin: 0 auto 50px; text-align: center; display: flex; flex-direction: column; gap: 14px; }
+.section-titre p:last-child:not(.surtitre) { color: var(--gris); }
+
+/* 6. Maison */
+.maison { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.maison-image { background: var(--bordeaux); aspect-ratio: 4 / 5; overflow: hidden; }
+.maison-image img { width: 100%; height: 100%; object-fit: cover; }
+.maison-texte { display: flex; flex-direction: column; gap: 20px; }
+.halal-bloc { display: flex; gap: 20px; align-items: flex-start; background: var(--blanc); padding: 24px; border-left: 3px solid var(--cuivre); box-shadow: var(--ombre); }
+.halal-sceau { flex: none; width: 70px; height: 70px; border-radius: 50%; display: grid; place-items: center; background: var(--bordeaux); color: var(--cuivre-clair); font-size: 1.3rem; border: 2px solid var(--cuivre); }
+.halal-bloc h3 { font-size: 1.2rem; margin-bottom: 6px; }
+
+/* 7. Cave */
+.cave { background: var(--bordeaux-fonce); color: var(--creme); max-width: none; }
+.cave h2, .cave h3 { color: var(--creme); }
+.cave .section-titre p:last-child { color: var(--creme-fonce); }
+.onglets { display: flex; justify-content: center; gap: 10px; margin-bottom: 30px; flex-wrap: wrap; }
+.onglet { background: transparent; color: var(--creme); border: 1px solid rgba(184,116,63,.5); padding: 12px 26px; font-family: var(--texte); font-size: .95rem; cursor: pointer; transition: background .25s; }
+.onglet.actif, .onglet:hover { background: var(--cuivre); color: var(--bordeaux-fonce); }
+.maturation-carte { max-width: 640px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; gap: 14px; padding: 36px; border: 1px solid rgba(184,116,63,.35); }
+.jauge { height: 6px; background: rgba(245,237,225,.15); }
+.jauge span { display: block; height: 100%; width: 50%; background: var(--cuivre); transition: width .6s ease; }
+.mat-prix { color: var(--cuivre-clair); font-family: var(--titre); font-size: 1.3rem; }
+
+/* 8. Viandes */
+.filtres { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 40px; }
+.filtre { background: transparent; border: 1px solid var(--creme-fonce); padding: 10px 22px; font-family: var(--texte); font-size: .9rem; cursor: pointer; color: var(--encre); transition: all .25s; }
+.filtre.actif, .filtre:hover { background: var(--bordeaux); color: var(--creme); border-color: var(--bordeaux); }
+.grille-produits { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 26px; }
+.produit { background: var(--blanc); box-shadow: var(--ombre); display: flex; flex-direction: column; transition: transform .3s; }
+.produit:hover { transform: translateY(-4px); }
+.produit-image { aspect-ratio: 4 / 3; background: linear-gradient(135deg, var(--bordeaux), var(--bordeaux-fonce)); overflow: hidden; }
+.produit-image img { width: 100%; height: 100%; object-fit: cover; }
+.produit-corps { padding: 22px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.produit-type { font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: var(--cuivre); }
+.produit-corps h3 { font-size: 1.25rem; }
+.produit-corps p { color: var(--gris); font-size: .95rem; flex: 1; }
+.produit-pied { display: flex; justify-content: space-between; align-items: center; margin-top: 8px; }
+.produit-prix { font-family: var(--titre); font-size: 1.3rem; color: var(--bordeaux); }
+.produit-pied button { background: none; border: 1px solid var(--cuivre); color: var(--bordeaux); padding: 8px 14px; font-family: var(--texte); font-size: .8rem; cursor: pointer; }
+.produit-pied button:hover { background: var(--cuivre); }
+.produit.cache { display: none; }
+
+/* 9. Occasions */
+.occasions { background: var(--creme-fonce); max-width: none; }
+.occasions-grille { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+.occasion { background: var(--blanc); padding: 40px; border-top: 4px solid var(--bordeaux); display: flex; flex-direction: column; gap: 16px; }
+.occasion ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; }
+.occasion .btn { align-self: flex-start; margin-top: auto; }
+
+/* 10. Commande */
+.commande-grille { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+.commande-choix, .commande-form { background: var(--blanc); padding: 36px; box-shadow: var(--ombre); display: flex; flex-direction: column; gap: 18px; }
+.ligne-ajout { display: grid; grid-template-columns: 1fr 120px; gap: 8px 12px; align-items: end; }
+.ligne-ajout label { font-size: .85rem; color: var(--gris); }
+.ligne-ajout label[for="choix-produit"] { grid-column: 1; grid-row: 1; }
+.ligne-ajout label[for="choix-poids"] { grid-column: 2; grid-row: 1; }
+.ligne-ajout #ajouter { grid-column: 1 / -1; }
+select, input, textarea { width: 100%; font: inherit; font-size: 1rem; padding: 12px 14px; border: 1px solid var(--creme-fonce); background: var(--creme); color: var(--encre); border-radius: 0; }
+select:focus, input:focus, textarea:focus { border-color: var(--cuivre); outline: none; box-shadow: 0 0 0 3px rgba(184,116,63,.25); }
+.panier { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--creme-fonce); }
+.panier li { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--creme-fonce); }
+.panier-vide { color: var(--gris); font-style: italic; }
+.panier button { background: none; border: 0; color: var(--erreur); cursor: pointer; font-size: .85rem; text-decoration: underline; }
+.total { font-size: 1.15rem; display: flex; justify-content: space-between; }
+.total strong { font-family: var(--titre); color: var(--bordeaux); font-size: 1.5rem; }
+.champ { display: flex; flex-direction: column; gap: 6px; }
+.champ label { font-size: .9rem; color: var(--gris); }
+.champ-duo { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.champ input.invalide { border-color: var(--erreur); }
+.erreur { color: var(--erreur); font-size: .85rem; min-height: 1em; }
+.confirmation { background: #EAF4EA; border-left: 3px solid #2E7D32; padding: 16px; color: #1B4D1E; }
+
+/* 11. Avis */
+.avis-grille { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+.avis blockquote { margin: 0; background: var(--blanc); padding: 30px; display: flex; flex-direction: column; gap: 16px; border-bottom: 3px solid var(--cuivre); }
+.avis blockquote p { font-family: var(--titre); font-style: italic; font-size: 1.1rem; }
+.avis cite { font-style: normal; color: var(--gris); font-size: .9rem; }
+
+/* 12. Infos et pied de page */
+.infos { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+.infos h2 { margin-bottom: 20px; }
+.horaires { width: 100%; border-collapse: collapse; }
+.horaires th, .horaires td { text-align: left; padding: 12px 0; border-bottom: 1px solid var(--creme-fonce); font-weight: 400; }
+.horaires th { color: var(--bordeaux); font-weight: 500; }
+.ouvert { margin-top: 16px; font-weight: 500; }
+.ouvert.oui { color: #2E7D32; }
+.ouvert.non { color: var(--erreur); }
+.adresse { font-family: var(--titre); font-size: 1.5rem; margin-bottom: 14px; color: var(--bordeaux); }
+.infos p { margin-bottom: 8px; }
+.footer { background: var(--bordeaux-fonce); color: var(--creme-fonce); text-align: center; padding: 50px 24px; display: flex; flex-direction: column; gap: 8px; }
+.footer .logo { font-size: 1.8rem; color: var(--creme); }
+.footer .petit { color: rgba(234,223,207,.6); }
+
+/* 13. Animations d'apparition (visibles par défaut, le JS ajoute l'effet) */
+.js .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+.js .reveal.visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js .reveal { opacity: 1; transform: none; transition: none; }
+  * { transition: none !important; }
+}
+
+/* 14. Téléphone et tablette */
+@media (max-width: 900px) {
+  .burger { display: block; }
+  .nav {
+    position: fixed; inset: 0 0 auto auto; top: 0; height: 100vh; width: min(80vw, 320px); flex-direction: column; align-items: flex-start;
+    gap: 26px; padding: 100px 32px; background: var(--bordeaux-fonce); transform: translateX(100%); transition: transform .35s ease;
+  }
+  .nav.ouvert { transform: none; }
+  .burger { position: relative; z-index: 60; }
+  .maison, .commande-grille, .occasions-grille, .infos { grid-template-columns: 1fr; }
+  .avis-grille { grid-template-columns: 1fr; }
+  .maison { gap: 36px; }
+}
+@media (max-width: 640px) {
+  body { font-size: 16px; }
+  .header { padding: 16px 20px; }
+  .hero { padding: 110px 20px 60px; min-height: auto; }
+  .bande { grid-template-columns: 1fr; }
+  .bande div { padding: 20px; border-right: 0; border-bottom: 1px solid rgba(184,116,63,.3); }
+  .section { padding: 70px 20px; }
+  .commande-choix, .commande-form, .occasion { padding: 24px; }
+  .champ-duo { grid-template-columns: 1fr; }
+  .ligne-ajout { grid-template-columns: 1fr; }
+  .ligne-ajout label[for="choix-poids"] { grid-column: 1; grid-row: auto; }
+}

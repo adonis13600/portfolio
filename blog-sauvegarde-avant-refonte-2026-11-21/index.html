@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Les Chemins de la Pensée — Philosophie et géopolitique</title>
+<meta name="description" content="Les Chemins de la Pensée : des articles de philosophie, de géopolitique et de culture générale, pour comprendre le monde.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --fond: #FAFAF7;
+    --fond-une: #EFEBE3;
+    --encre: #111111;
+    --gris: #555555;
+    --ligne: #DDD8CE;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--fond); color: var(--encre); font-family: 'Inter', sans-serif; font-size: 18px; line-height: 1.6; }
+  img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  a { color: inherit; text-decoration: none; }
+  .geant { font-family: 'Anton', sans-serif; text-transform: uppercase; line-height: 0.95; font-weight: 400; }
+
+  /* Bandeau qui défile */
+  .bandeau { background: var(--encre); color: var(--fond); font-size: 13px; letter-spacing: 1px; overflow: hidden; white-space: nowrap; padding: 8px 0; }
+  .bandeau div { display: inline-block; animation: defile 30s linear infinite; }
+  @keyframes defile { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce) { .bandeau div { animation: none; } }
+
+  /* En-tête */
+  header { display: flex; justify-content: space-between; align-items: center; padding: 20px 5vw; gap: 16px; }
+  .logo { font-family: 'Anton', sans-serif; font-size: 26px; }
+  nav { display: flex; gap: 28px; font-size: 16px; color: var(--gris); }
+  nav a:hover, nav a.actif { color: var(--encre); }
+  nav a.actif { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 6px; }
+  .cache { display: none !important; }
+  .bouton { border: 1.5px solid var(--encre); border-radius: 40px; padding: 8px 20px; font-size: 15px; font-weight: 500; transition: background .2s, color .2s; }
+  .bouton:hover { background: var(--encre); color: var(--fond); }
+
+  /* Grand titre */
+  .titre-page { font-size: clamp(56px, 13vw, 190px); padding: 10px 5vw 40px; }
+
+  /* Article à la une */
+  .une { display: grid; grid-template-columns: 1fr 1fr; background: var(--fond-une); }
+  .une-texte { padding: 60px 5vw; display: flex; flex-direction: column; justify-content: center; }
+  .une-image { height: 560px; overflow: hidden; }
+  .une-image img { object-position: center 20%; transition: transform .6s; }
+  .une:hover .une-image img { transform: scale(1.03); }
+  .une h2 { font-size: clamp(28px, 3vw, 42px); line-height: 1.15; font-weight: 600; margin: 10px 0 16px; }
+  .une p { color: #333; max-width: 46ch; }
+  h2 a:hover, h3 a:hover { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+
+  .meta { font-size: 14px; color: var(--gris); }
+  .lire { display: inline-block; align-self: flex-start; margin-top: 20px; font-weight: 500; border-bottom: 1.5px solid var(--encre); padding-bottom: 2px; }
+
+  /* Grille d'articles */
+  .grille { display: grid; grid-template-columns: 1fr 1fr; gap: 70px 4vw; padding: 80px 5vw; }
+  .carte h3 { font-size: 24px; line-height: 1.25; font-weight: 600; margin: 8px 0 18px; }
+  .carte-image { height: 380px; overflow: hidden; background: var(--fond-une); }
+  .carte-image img { transition: transform .6s; }
+  .carte:hover .carte-image img { transform: scale(1.04); }
+  .carte p { color: #333; margin-top: 16px; }
+  .carte-lettres { background: var(--encre); color: var(--fond); font-family: 'Anton', sans-serif; text-transform: uppercase; display: flex !important; flex-direction: column; justify-content: center; align-items: center; text-align: center; line-height: 0.95; transition: background .3s; }
+  .carte-lettres .dates { font-size: clamp(48px, 6vw, 88px); }
+  .carte-lettres .lieux { font-size: 18px; letter-spacing: 2px; margin-top: 14px; opacity: .8; }
+  .carte:hover .carte-lettres { background: #2a2a2a; }
+
+  /* Phrase géante de fin */
+  .devise { font-size: clamp(44px, 8vw, 120px); padding: 20px 5vw 60px; }
+
+  footer { border-top: 1px solid var(--ligne); padding: 40px 5vw; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; font-size: 15px; color: var(--gris); }
+
+  /* Téléphone */
+  @media (max-width: 760px) {
+    header { flex-wrap: wrap; }
+    nav { order: 3; width: 100%; gap: 18px; overflow-x: auto; white-space: nowrap; font-size: 15px; padding-top: 4px; }
+    .une, .grille { grid-template-columns: 1fr; }
+    .une-image { height: 380px; order: -1; }
+    .une-texte { padding: 36px 5vw; }
+    .grille { gap: 56px; padding: 56px 5vw; }
+    .carte-image { height: 280px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="bandeau" aria-hidden="true"><div>
+  PHILOSOPHIE &nbsp;✦&nbsp; GÉOPOLITIQUE &nbsp;✦&nbsp; HISTOIRE &nbsp;✦&nbsp; CULTURE GÉNÉRALE &nbsp;✦&nbsp; COMPRENDRE LE MONDE &nbsp;✦&nbsp; PHILOSOPHIE &nbsp;✦&nbsp; GÉOPOLITIQUE &nbsp;✦&nbsp; HISTOIRE &nbsp;✦&nbsp; CULTURE GÉNÉRALE &nbsp;✦&nbsp; COMPRENDRE LE MONDE &nbsp;✦&nbsp;
+  PHILOSOPHIE &nbsp;✦&nbsp; GÉOPOLITIQUE &nbsp;✦&nbsp; HISTOIRE &nbsp;✦&nbsp; CULTURE GÉNÉRALE &nbsp;✦&nbsp; COMPRENDRE LE MONDE &nbsp;✦&nbsp; PHILOSOPHIE &nbsp;✦&nbsp; GÉOPOLITIQUE &nbsp;✦&nbsp; HISTOIRE &nbsp;✦&nbsp; CULTURE GÉNÉRALE &nbsp;✦&nbsp; COMPRENDRE LE MONDE &nbsp;✦&nbsp;
+</div></div>
+
+<header>
+  <a class="logo" href="#">Les Chemins de la Pensée</a>
+  <nav aria-label="Menu principal">
+    <a href="#tous">Tous les articles</a>
+    <a href="#philosophie">Philosophie</a>
+    <a href="#geopolitique">Géopolitique</a>
+    <a href="#histoire">Histoire</a>
+    <a href="debattre.html">Débattre</a>
+    <a href="#apropos">À propos</a>
+  </nav>
+  <a class="bouton" href="https://www.facebook.com/muller.david.52" target="_blank" rel="noopener" aria-label="Me suivre sur Facebook (nouvel onglet)">Me suivre</a>
+</header>
+
+<main>
+  <h1 class="geant titre-page">Nouveaux articles</h1>
+
+  <article class="une" data-rubrique="philosophie">
+    <div class="une-texte">
+      <span class="meta">Philosophie · 29 octobre 2026</span>
+      <h2><a href="hobbes-leviathan.html">Le Léviathan est-il de retour ? Ce que Hobbes nous dit de la France d'aujourd'hui</a></h2>
+      <p>Moins de liberté, plus de sécurité : le vieux contrat de Hobbes revient. Mais un État fort, fort pour qui, et contre qui ?</p>
+      <a class="lire" href="hobbes-leviathan.html">Lire l'article →</a>
+    </div>
+    <div class="une-image">
+      <img src="images/leviathan.jpg" alt="Le frontispice du Léviathan de Hobbes : un géant couronné, formé de milliers de personnes, domine un paysage.">
+    </div>
+  </article>
+
+  <section class="grille" id="articles" aria-label="Autres articles">
+    <article class="carte" data-rubrique="histoire">
+      <span class="meta">Histoire · 17 novembre 2026</span>
+      <h3><a href="braunau-berlin.html">De Braunau à Berlin : la montée et la chute du Troisième Reich</a></h3>
+      <a class="carte-image carte-lettres" href="braunau-berlin.html" tabindex="-1" aria-hidden="true"><span class="dates">1889 → 1945</span><span class="lieux">De Braunau à Berlin</span></a>
+      <p>Comment un homme sans avenir a pris l'Allemagne, puis l'a menée à sa chute en douze ans.</p>
+      <a class="lire" href="braunau-berlin.html">Lire l'article →</a>
+    </article>
+
+    <article class="carte" data-rubrique="geopolitique">
+      <span class="meta">Géopolitique · 17 octobre 2026</span>
+      <h3><a href="sahara-occidental.html">Sahara occidental : cinquante ans d'attente</a></h3>
+      <a class="carte-image" href="sahara-occidental.html" tabindex="-1" style="display:block"><img src="images/sahara-camp.jpg" alt="Le camp de réfugiés sahraouis d'El Aaiún, dans le désert près de Tindouf."></a>
+      <p>Un demi-siècle après le départ de l'Espagne, le sort du territoire n'est toujours pas réglé.</p>
+      <a class="lire" href="sahara-occidental.html">Lire l'article →</a>
+    </article>
+
+    <article class="carte" data-rubrique="histoire">
+      <span class="meta">Histoire · 17 octobre 2026</span>
+      <h3><a href="17-octobre-1961.html">17 octobre 1961 : la nuit du massacre à Paris</a></h3>
+      <a class="carte-image" href="17-octobre-1961.html" tabindex="-1" style="display:block"><img src="images/plaque-17-octobre.jpg" alt="La plaque du pont Saint-Michel en mémoire des Algériens tués le 17 octobre 1961."></a>
+      <p>Une manifestation pacifique, une répression sanglante, puis des décennies de silence.</p>
+      <a class="lire" href="17-octobre-1961.html">Lire l'article →</a>
+    </article>
+
+    <article class="carte" data-rubrique="philosophie">
+      <span class="meta">Philosophie · Bientôt</span>
+      <h3>Prochain article en préparation</h3>
+      <div class="carte-image"><img src="images/penseur.jpg" alt="La statue du Penseur de Rodin, assise sur un socle, dans un jardin."></div>
+      <p>Un nouveau chemin de pensée arrive bientôt.</p>
+    </article>
+  </section>
+
+  <a class="geant devise" href="debattre.html" style="display:block">Penser — Comprendre — Débattre</a>
+</main>
+
+<footer id="apropos">
+  <span>© 2026 Les Chemins de la Pensée</span>
+  <span>Philosophie · Géopolitique · Histoire · Culture générale</span>
+</footer>
+
+<script>
+  const titres = { tous: 'Nouveaux articles', philosophie: 'Philosophie', geopolitique: 'Géopolitique', histoire: 'Histoire' };
+  function afficherRubrique() {
+    let r = location.hash.slice(1);
+    if (!titres[r]) r = 'tous';
+    document.querySelector('.titre-page').textContent = titres[r];
+    document.querySelectorAll('[data-rubrique]').forEach(el => {
+      el.classList.toggle('cache', r !== 'tous' && el.dataset.rubrique !== r);
+    });
+    document.querySelectorAll('nav a').forEach(a => a.classList.toggle('actif', a.getAttribute('href') === '#' + r));
+  }
+  addEventListener('hashchange', afficherRubrique);
+  afficherRubrique();
+</script>
+</body>
+</html>

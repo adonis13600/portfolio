@@ -1,0 +1,180 @@
+/* =========================================================
+   Spectrum06 — feuille de style
+   1. Couleurs et police   2. Base et boutons   3. Bandeau et en-tête
+   4. Accueil   5. Activités   6. Confiance   7. Valeurs
+   8. Réservation   9. Pied de page   10. Animations   11. Téléphone
+   ========================================================= */
+
+/* 1. Couleurs et police — changer ici pour tout le site */
+:root {
+  --vert: #4E8A2E;          /* vert de l'association */
+  --vert-fonce: #2F5A1A;
+  --vert-pale: #EEF5E6;
+  --orange: #F28C28;        /* énergie des enfants */
+  --orange-fonce: #C96A0F;
+  --blanc: #FFFFFF;
+  --fond: #FCFCF8;
+  --encre: #22301A;
+  --gris: #5D6858;
+  --bord: #DDE5D3;
+  --erreur: #B3261E;
+  --police: "Nunito", "Segoe UI", Arial, sans-serif;
+  --rayon: 18px;
+  --ombre: 0 12px 30px rgba(47, 90, 26, .10);
+}
+
+/* 2. Base et boutons */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+body { margin: 0; font-family: var(--police); font-size: 18px; line-height: 1.65; color: var(--encre); background: var(--fond); }
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+h1, h2, h3 { line-height: 1.2; margin: 0; text-wrap: balance; }
+h2 { font-size: clamp(1.9rem, 4vw, 2.6rem); font-weight: 800; color: var(--vert-fonce); }
+h3 { font-size: 1.3rem; font-weight: 800; }
+p { margin: 0; }
+:focus-visible { outline: 3px solid var(--orange); outline-offset: 3px; }
+.etiquette { display: inline-block; font-weight: 800; font-size: .85rem; letter-spacing: .08em; text-transform: uppercase; color: var(--orange-fonce); }
+.etiquette-claire { color: #FFD3A3; }
+
+.btn {
+  display: inline-block; padding: 15px 28px; border-radius: 50px; border: 0; font-family: var(--police);
+  font-size: 1rem; font-weight: 800; text-decoration: none; cursor: pointer; transition: transform .2s, box-shadow .2s, background .2s;
+}
+.btn:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(0,0,0,.12); }
+.btn-vert { background: var(--vert); color: var(--blanc); }
+.btn-vert:hover { background: var(--vert-fonce); }
+.btn-orange { background: var(--orange); color: #2B1700; }
+.btn-orange:hover { background: #F59E45; }
+.btn-large { width: 100%; padding: 17px; font-size: 1.05rem; }
+
+/* 3. Bandeau contact et en-tête */
+.bandeau-contact { background: var(--vert-fonce); color: var(--blanc); display: flex; justify-content: flex-end; gap: 28px; padding: 8px 40px; font-size: .9rem; font-weight: 600; }
+.bandeau-contact a { text-decoration: none; }
+.bandeau-contact a:hover { text-decoration: underline; }
+.header { position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; padding: 14px 40px; background: var(--blanc); box-shadow: 0 2px 12px rgba(47,90,26,.08); }
+.logo { display: flex; align-items: center; gap: 10px; font-size: 1.5rem; font-weight: 800; color: var(--vert-fonce); text-decoration: none; }
+.logo strong { color: var(--orange); }
+.logo-rond { width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; background: var(--vert); color: var(--blanc); font-size: 1.3rem; }
+.nav { display: flex; align-items: center; gap: 26px; }
+.nav a { font-weight: 700; text-decoration: none; color: var(--encre); }
+.nav a:hover { color: var(--vert); }
+.nav .nav-cta { background: var(--orange); color: #2B1700; padding: 10px 22px; border-radius: 50px; }
+.nav .nav-cta:hover { background: #F59E45; color: #2B1700; }
+.burger { display: none; background: none; border: 0; cursor: pointer; padding: 8px; }
+.burger span { display: block; width: 26px; height: 3px; border-radius: 3px; background: var(--vert-fonce); margin: 5px 0; transition: transform .3s, opacity .3s; }
+.burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+/* 4. Accueil */
+.hero { max-width: 1200px; margin: 0 auto; padding: 70px 40px 90px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: center; }
+.hero-texte { display: flex; flex-direction: column; gap: 22px; }
+.hero h1 { font-size: clamp(2.2rem, 4.6vw, 3.4rem); font-weight: 800; color: var(--vert-fonce); }
+.hero h1 span { color: var(--vert); background: linear-gradient(transparent 62%, #FFD9AE 62%); }
+.hero-sous { font-size: 1.2rem; color: var(--gris); max-width: 46ch; }
+.boutons { display: flex; flex-wrap: wrap; gap: 14px; }
+.hero-image { position: relative; }
+.hero-image img { width: 100%; aspect-ratio: 5 / 4; object-fit: cover; border-radius: 32px; background: var(--vert-pale); box-shadow: var(--ombre); }
+.hero-pastille { position: absolute; left: -20px; bottom: -20px; background: var(--orange); color: #2B1700; padding: 16px 22px; border-radius: var(--rayon); font-weight: 600; line-height: 1.3; box-shadow: var(--ombre); }
+.hero-pastille strong { font-size: 1.2rem; font-weight: 800; }
+
+/* Sections */
+.section { max-width: 1200px; margin: 0 auto; padding: 90px 40px; }
+.section-titre { text-align: center; max-width: 640px; margin: 0 auto 48px; display: flex; flex-direction: column; gap: 10px; align-items: center; }
+
+/* 5. Activités */
+.cartes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.carte { background: var(--blanc); border-radius: var(--rayon); overflow: hidden; box-shadow: var(--ombre); display: flex; flex-direction: column; transition: transform .25s; }
+.carte:hover { transform: translateY(-5px); }
+.carte-image { background: var(--vert-pale); overflow: hidden; }
+.carte-image img { width: 100%; aspect-ratio: 16 / 10; height: auto; object-fit: cover; }
+.carte-corps { position: relative; padding: 34px 26px 26px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+.carte-icone { position: absolute; top: -28px; left: 24px; width: 56px; height: 56px; border-radius: 50%; background: var(--orange); color: #2B1700; display: grid; place-items: center; border: 4px solid var(--blanc); }
+.carte-icone svg { width: 26px; height: 26px; }
+.carte h3 { color: var(--vert-fonce); }
+.carte p { color: var(--gris); flex: 1; }
+.infos-carte { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.infos-carte li { background: var(--vert-pale); color: var(--vert-fonce); font-weight: 700; font-size: .85rem; padding: 4px 12px; border-radius: 50px; }
+.lien { font-weight: 800; color: var(--vert); text-decoration: none; font-size: 1.05rem; }
+.lien:hover { color: var(--orange-fonce); }
+
+/* 6. Confiance */
+.confiance { background: var(--vert); color: var(--blanc); }
+.confiance-interieur { max-width: 1200px; margin: 0 auto; padding: 90px 40px; display: grid; grid-template-columns: 1fr 1.2fr; gap: 56px; align-items: center; }
+.confiance h2 { color: var(--blanc); margin: 10px 0 16px; }
+.confiance-intro { font-size: 1.1rem; opacity: .95; }
+.atouts { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.atouts li { background: rgba(255,255,255,.12); border: 2px solid rgba(255,255,255,.25); border-radius: var(--rayon); padding: 22px; }
+.atouts strong { display: block; font-size: 1.15rem; color: #FFD3A3; margin-bottom: 4px; }
+
+/* 7. Valeurs */
+.valeurs { display: grid; grid-template-columns: 1fr 1.1fr; gap: 56px; align-items: center; }
+.valeurs-image img { border-radius: 32px; aspect-ratio: 1; object-fit: cover; width: 100%; background: var(--vert-pale); }
+.valeurs h2 { margin: 10px 0 26px; }
+.valeurs-liste { display: flex; flex-direction: column; gap: 18px; }
+.valeurs-liste div { border-left: 5px solid var(--orange); padding: 4px 0 4px 18px; }
+.valeurs-liste h3 { color: var(--vert-fonce); }
+.valeurs-liste p { color: var(--gris); }
+
+/* 8. Réservation */
+.reserver { background: var(--vert-fonce); color: var(--blanc); }
+.reserver-interieur { max-width: 1200px; margin: 0 auto; padding: 90px 40px; display: grid; grid-template-columns: 1fr 1.1fr; gap: 56px; align-items: start; }
+.reserver h2 { color: var(--blanc); margin: 10px 0 16px; }
+.reserver-interieur > div > p { font-size: 1.1rem; opacity: .95; }
+.reserver-tel { margin-top: 24px !important; }
+.reserver-tel a { font-size: 1.6rem; font-weight: 800; color: #FFD3A3; text-decoration: none; }
+.formulaire { background: var(--blanc); color: var(--encre); padding: 34px; border-radius: 24px; display: flex; flex-direction: column; gap: 16px; }
+.champ { display: flex; flex-direction: column; gap: 6px; }
+.champ label { font-weight: 700; font-size: .95rem; }
+.champ-duo { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+input, select { width: 100%; font: inherit; font-size: 1rem; padding: 12px 14px; border: 2px solid var(--bord); border-radius: 12px; background: var(--fond); color: var(--encre); }
+input:focus, select:focus { outline: none; border-color: var(--vert); box-shadow: 0 0 0 3px rgba(78,138,46,.2); }
+input.invalide { border-color: var(--erreur); }
+.erreur { color: var(--erreur); font-size: .88rem; font-weight: 600; min-height: 1em; }
+.confirmation { background: var(--vert-pale); border-left: 5px solid var(--vert); padding: 16px; border-radius: 10px; font-weight: 600; color: var(--vert-fonce); }
+
+/* 9. Pied de page et bouton haut */
+.footer { background: #1C3510; color: #DCE8D2; padding: 60px 40px 24px; }
+.footer-grille { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; }
+.footer h3 { color: var(--blanc); font-size: 1.1rem; margin-bottom: 12px; }
+.footer p { margin-bottom: 6px; }
+.footer a { text-decoration: none; }
+.footer a:hover { color: #FFD3A3; text-decoration: underline; }
+.logo-pied { color: var(--blanc); margin-bottom: 12px !important; }
+.footer-bas { max-width: 1200px; margin: 40px auto 0 !important; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.15); font-size: .88rem; opacity: .75; }
+.haut { position: fixed; right: 22px; bottom: 22px; width: 50px; height: 50px; border-radius: 50%; background: var(--orange); color: #2B1700; display: grid; place-items: center; font-size: 1.4rem; font-weight: 800; text-decoration: none; box-shadow: var(--ombre); opacity: 0; pointer-events: none; transition: opacity .3s; z-index: 40; }
+.haut.visible { opacity: 1; pointer-events: auto; }
+
+/* 10. Animations (le contenu reste visible si le JavaScript ne marche pas) */
+.js .reveal { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
+.js .reveal.visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js .reveal { opacity: 1; transform: none; }
+  * { transition: none !important; }
+}
+
+/* 11. Tablette et téléphone */
+@media (max-width: 960px) {
+  .burger { display: block; }
+  .nav { position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0; background: var(--blanc); box-shadow: 0 12px 20px rgba(47,90,26,.12); display: none; }
+  .nav.ouvert { display: flex; }
+  .nav a { padding: 16px 24px; border-top: 1px solid var(--bord); }
+  .nav .nav-cta { margin: 14px 24px 18px; text-align: center; }
+  .hero, .confiance-interieur, .valeurs, .reserver-interieur { grid-template-columns: 1fr; }
+  .cartes { grid-template-columns: 1fr; max-width: 560px; margin: 0 auto; }
+  .footer-grille { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  body { font-size: 17px; }
+  .bandeau-contact { justify-content: center; flex-wrap: wrap; gap: 6px 18px; padding: 8px 16px; }
+  .header { padding: 12px 16px; }
+  .hero, .section, .confiance-interieur, .reserver-interieur { padding-left: 16px; padding-right: 16px; }
+  .hero { padding-top: 40px; }
+  .hero-pastille { left: 12px; bottom: -16px; }
+  .atouts, .champ-duo { grid-template-columns: 1fr; }
+  .formulaire { padding: 22px; }
+  .footer { padding: 50px 16px 24px; }
+  .btn { width: 100%; text-align: center; }
+}

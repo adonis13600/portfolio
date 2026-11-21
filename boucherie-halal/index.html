@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Le Comptoir Valmont — Boucherie halal d'exception à Lyon</title>
+  <meta name="description" content="Boucherie halal haut de gamme à Lyon : bœuf maturé en cave, agneau de lait, volailles fermières. Commande en ligne et retrait en boutique.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== EN-TÊTE ===== -->
+  <header class="header" id="header">
+    <a href="#accueil" class="logo">Le Comptoir <em>Valmont</em></a>
+    <nav class="nav" id="nav" aria-label="Menu principal">
+      <a href="#maison">La maison</a>
+      <a href="#maturation">Maturation</a>
+      <a href="#viandes">Nos viandes</a>
+      <a href="#occasions">Occasions</a>
+      <a href="#infos">Horaires</a>
+      <a href="#commande" class="nav-cta">Commander</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+    <!-- ===== ACCUEIL ===== -->
+    <section class="hero" id="accueil">
+      <div class="hero-contenu">
+        <span class="badge">✓ Certifié halal · Lyon 6<sup>e</sup></span>
+        <h1>La viande d'exception, <em>dans le respect du halal.</em></h1>
+        <p>Bœuf maturé en cave, agneau de lait et volailles fermières, sélectionnés et découpés chaque matin par nos artisans bouchers.</p>
+        <div class="boutons">
+          <a href="#commande" class="btn btn-plein">Commander</a>
+          <a href="#maturation" class="btn">Découvrir la cave</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== POINTS FORTS ===== -->
+    <div class="bande">
+      <div><strong>30 à 60 jours</strong>de maturation en cave</div>
+      <div><strong>100 % halal</strong>abattage certifié, traçabilité complète</div>
+      <div><strong>Retrait en 2 h</strong>commandez en ligne, retirez en boutique</div>
+    </div>
+
+    <!-- ===== LA MAISON ===== -->
+    <section class="section maison" id="maison">
+      <div class="maison-image reveal">
+        <img src="https://images.unsplash.com/photo-1608877907149-a206d75ba011?auto=format&fit=crop&w=900&q=80" alt="Bœuf tranché et pommes de terre rôties" loading="lazy">
+      </div>
+      <div class="maison-texte reveal">
+        <p class="surtitre">Depuis 1998</p>
+        <h2>Trois générations de bouchers, une seule exigence</h2>
+        <p>Au Comptoir Valmont, chaque bête est choisie chez des éleveurs que nous connaissons, en Aubrac, dans les Pyrénées et en Bresse. Nos bouchers travaillent les carcasses entières en boutique : rien n'arrive prédécoupé.</p>
+        <div class="halal-bloc">
+          <span class="halal-sceau" aria-hidden="true">حلال</span>
+          <div>
+            <h3>Notre engagement halal</h3>
+            <p>Abattage rituel contrôlé par un organisme de certification indépendant. Chaque pièce est tracée de l'élevage à la vitrine, et le certificat est affiché en boutique.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CAVE DE MATURATION ===== -->
+    <section class="section cave" id="maturation">
+      <div class="section-titre reveal">
+        <p class="surtitre">La cave</p>
+        <h2>Le temps, notre ingrédient secret</h2>
+        <p>Nos pièces de bœuf reposent en cave à 2 °C et 80 % d'humidité. Plus la maturation est longue, plus la viande devient tendre et le goût profond.</p>
+      </div>
+      <div class="onglets reveal" role="tablist" aria-label="Durées de maturation">
+        <button class="onglet actif" role="tab" aria-selected="true" data-jours="30">30 jours</button>
+        <button class="onglet" role="tab" aria-selected="false" data-jours="45">45 jours</button>
+        <button class="onglet" role="tab" aria-selected="false" data-jours="60">60 jours</button>
+      </div>
+      <div class="maturation-carte reveal" id="maturation-carte" aria-live="polite">
+        <div class="jauge"><span id="jauge-niveau"></span></div>
+        <h3 id="mat-titre">30 jours — Tendre et franc</h3>
+        <p id="mat-texte">La viande gagne en tendreté tout en gardant un goût de bœuf net. Parfait pour une première découverte.</p>
+        <p class="mat-prix" id="mat-prix">Côte de bœuf : 52 € / kg</p>
+      </div>
+    </section>
+
+    <!-- ===== NOS VIANDES ===== -->
+    <section class="section viandes" id="viandes">
+      <div class="section-titre reveal">
+        <p class="surtitre">La vitrine</p>
+        <h2>Nos viandes</h2>
+        <p>Prix au kilo, découpe à la demande. Tout est 100 % halal.</p>
+      </div>
+      <div class="filtres reveal" role="group" aria-label="Filtrer par type de viande">
+        <button class="filtre actif" data-filtre="tout">Tout</button>
+        <button class="filtre" data-filtre="boeuf">Bœuf</button>
+        <button class="filtre" data-filtre="veau">Veau</button>
+        <button class="filtre" data-filtre="agneau">Agneau</button>
+        <button class="filtre" data-filtre="volaille">Volaille</button>
+        <button class="filtre" data-filtre="specialite">Spécialités</button>
+      </div>
+      <div class="grille-produits" id="grille-produits">
+        <!-- Les cartes sont créées par js/script.js à partir de la liste PRODUITS -->
+      </div>
+    </section>
+
+    <!-- ===== GRANDES OCCASIONS ===== -->
+    <section class="section occasions" id="occasions">
+      <div class="section-titre reveal">
+        <p class="surtitre">Les grandes occasions</p>
+        <h2>Pensez à réserver</h2>
+      </div>
+      <div class="occasions-grille">
+        <article class="occasion reveal">
+          <h3>Agneau de l'Aïd</h3>
+          <p>Réservez votre agneau entier ou en demi. Abattage le jour de la fête, découpe selon vos souhaits et retrait sur créneau.</p>
+          <ul>
+            <li>Agneau entier (18 à 22 kg) — <strong>14 € / kg</strong></li>
+            <li>Demi-agneau — <strong>15 € / kg</strong></li>
+            <li>Acompte de 50 € à la réservation</li>
+          </ul>
+          <a href="#commande" class="btn btn-plein" data-occasion="Agneau de l'Aïd">Réserver</a>
+        </article>
+        <article class="occasion reveal">
+          <h3>Colis Ramadan</h3>
+          <p>Pour les soirées de ftour : un colis prêt à cuisiner, livré chaque semaine du mois sacré ou à retirer en boutique.</p>
+          <ul>
+            <li>Viande hachée, épaule d'agneau, poulet fermier</li>
+            <li>Merguez maison et viande pour la chorba</li>
+            <li>Pour 4 personnes — <strong>79 € le colis</strong></li>
+          </ul>
+          <a href="#commande" class="btn btn-plein" data-occasion="Colis Ramadan">Commander le colis</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== COMMANDE ===== -->
+    <section class="section commande" id="commande">
+      <div class="section-titre reveal">
+        <p class="surtitre">Click &amp; collect</p>
+        <h2>Commander et retirer en boutique</h2>
+        <p>Choisissez vos pièces, nous les préparons. Paiement au retrait.</p>
+      </div>
+
+      <div class="commande-grille">
+        <div class="commande-choix reveal">
+          <h3>1. Vos pièces</h3>
+          <div class="ligne-ajout">
+            <label for="choix-produit">Viande</label>
+            <select id="choix-produit"></select>
+            <label for="choix-poids">Poids</label>
+            <select id="choix-poids">
+              <option value="250">250 g</option>
+              <option value="500" selected>500 g</option>
+              <option value="750">750 g</option>
+              <option value="1000">1 kg</option>
+              <option value="1500">1,5 kg</option>
+              <option value="2000">2 kg</option>
+            </select>
+            <button type="button" class="btn btn-plein" id="ajouter">Ajouter</button>
+          </div>
+          <ul class="panier" id="panier" aria-live="polite">
+            <li class="panier-vide">Votre panier est vide.</li>
+          </ul>
+          <p class="total">Total estimé : <strong id="total">0,00 €</strong></p>
+          <p class="petit">Le prix final dépend du poids exact pesé en boutique.</p>
+        </div>
+
+        <form class="commande-form reveal" id="form-commande" novalidate>
+          <h3>2. Vos coordonnées</h3>
+          <div class="champ">
+            <label for="nom">Nom et prénom</label>
+            <input type="text" id="nom" name="nom" autocomplete="name" required>
+            <span class="erreur" id="erreur-nom"></span>
+          </div>
+          <div class="champ">
+            <label for="tel">Téléphone</label>
+            <input type="tel" id="tel" name="tel" autocomplete="tel" placeholder="06 12 34 56 78" required>
+            <span class="erreur" id="erreur-tel"></span>
+          </div>
+          <div class="champ-duo">
+            <div class="champ">
+              <label for="date">Jour de retrait</label>
+              <input type="date" id="date" name="date" required>
+              <span class="erreur" id="erreur-date"></span>
+            </div>
+            <div class="champ">
+              <label for="creneau">Créneau</label>
+              <select id="creneau" name="creneau">
+                <option>9 h – 11 h</option>
+                <option>11 h – 13 h</option>
+                <option>15 h – 17 h</option>
+                <option>17 h – 19 h 30</option>
+              </select>
+            </div>
+          </div>
+          <div class="champ">
+            <label for="message">Demande particulière (découpe, épaisseur…)</label>
+            <textarea id="message" name="message" rows="3"></textarea>
+          </div>
+          <span class="erreur" id="erreur-panier"></span>
+          <button type="submit" class="btn btn-plein btn-large">Valider ma commande</button>
+          <p class="confirmation" id="confirmation" hidden></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ===== AVIS ===== -->
+    <section class="section avis">
+      <div class="section-titre reveal">
+        <p class="surtitre">Ils nous font confiance</p>
+        <h2>Avis de nos clients</h2>
+      </div>
+      <div class="avis-grille">
+        <blockquote class="reveal"><p>« La côte de bœuf maturée 45 jours, c'est une autre planète. Et enfin une boucherie halal où l'on explique tout. »</p><cite>Karim B. — ★★★★★</cite></blockquote>
+        <blockquote class="reveal"><p>« Réservation de l'agneau pour l'Aïd parfaite : découpe exactement comme demandé, aucune attente. »</p><cite>Nadia et Samir — ★★★★★</cite></blockquote>
+        <blockquote class="reveal"><p>« Accueil chaleureux, conseils de cuisson précieux. Le colis Ramadan nous a simplifié le mois. »</p><cite>Leïla M. — ★★★★★</cite></blockquote>
+      </div>
+    </section>
+
+    <!-- ===== HORAIRES & ADRESSE ===== -->
+    <section class="section infos" id="infos">
+      <div class="reveal">
+        <h2>Horaires</h2>
+        <table class="horaires">
+          <tbody>
+            <tr><th>Lundi</th><td>Fermé</td></tr>
+            <tr><th>Mardi – Vendredi</th><td>8 h 30 – 13 h · 15 h – 19 h 30</td></tr>
+            <tr><th>Samedi</th><td>8 h – 19 h 30</td></tr>
+            <tr><th>Dimanche</th><td>8 h 30 – 13 h</td></tr>
+          </tbody>
+        </table>
+        <p class="ouvert" id="ouvert"></p>
+      </div>
+      <div class="reveal">
+        <h2>Nous trouver</h2>
+        <p class="adresse">24 rue Vendôme<br>69006 Lyon</p>
+        <p>Téléphone : <strong>04 78 00 00 00</strong></p>
+        <p class="petit">Métro A, arrêt Foch · Parking Vendôme à 2 minutes.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="logo">Le Comptoir <em>Valmont</em></p>
+    <p>Boucherie halal d'exception · Lyon</p>
+    <p class="petit">Site fictif réalisé pour un portfolio.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

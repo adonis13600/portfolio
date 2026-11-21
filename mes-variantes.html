@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mes variantes par secteur — brouillon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@0;1&family=Source+Sans+3:wght@300;400;500&family=Fraunces:ital,wght@0,500;1,500&family=Nunito+Sans:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Montserrat:wght@300;500&family=EB+Garamond:ital,wght@0,500;1,500&family=Lato:wght@300;400&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&family=Playfair+Display:ital,wght@0,500;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; background: #ECE6DC; font-family: system-ui, sans-serif; color: #222; }
+  header.page { text-align: center; padding: 22px 16px 6px; }
+  header.page h1 { font-family: Georgia, serif; font-weight: 400; font-size: 28px; margin: 0 0 6px; }
+  header.page p { margin: 0 auto; max-width: 720px; color: #555; }
+  .grille { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 18px; max-width: 1150px; margin: 18px auto 30px; padding: 0 16px; }
+  .carte { border-radius: 10px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,.14); background: var(--clair); font-family: var(--texte); }
+  .num { display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: #222; color: #fff; font: 600 17px system-ui; }
+  .num b { width: 30px; height: 30px; line-height: 30px; text-align: center; border-radius: 50%; background: #fff; color: #222; }
+  .hero { background: linear-gradient(120deg, var(--sombre), color-mix(in srgb, var(--sombre) 75%, #000)); color: var(--clair); padding: 26px 22px; }
+  .sur { font-size: 11px; letter-spacing: .24em; text-transform: uppercase; color: var(--metal); font-weight: 500; margin-bottom: 10px; }
+  .titre { font-family: var(--titre); font-size: 30px; line-height: 1.12; margin-bottom: 18px; font-weight: 500; }
+  .titre em { color: var(--metal); }
+  .btn { display: inline-block; padding: 11px 20px; border: 1px solid var(--metal); font-size: 11px; letter-spacing: .18em; text-transform: uppercase; margin: 0 6px 6px 0; }
+  .btn.plein { background: var(--metal); color: var(--sombre); font-weight: 500; }
+  .bas { padding: 16px 22px 20px; color: var(--encre); }
+  .bas .t2 { font-family: var(--titre); font-size: 20px; color: var(--sombre); margin-bottom: 6px; }
+  .bas p { margin: 0 0 12px; font-size: 14px; line-height: 1.6; font-weight: 300; }
+  .pastilles { display: flex; gap: 6px; }
+  .pastilles span { flex: 1; height: 44px; border-radius: 4px; font: 10px system-ui; display: flex; align-items: flex-end; padding: 3px 5px; box-shadow: inset 0 0 0 1px rgba(0,0,0,.12); }
+  .ambiance { font: italic 13px system-ui; color: #666; margin-top: 10px; }
+</style>
+</head>
+<body>
+<header class="page">
+  <h1>Ta signature, déclinée par secteur</h1>
+  <p>La recette ne change pas d'une carte à l'autre (titre avec un mot en italique, surtitre, boutons fins, fond crème). Seules les couleurs et les polices changent.</p>
+</header>
+<div class="grille">
+
+  <div class="carte" style="--clair:#F7F2E8;--sombre:#1F2A44;--metal:#B8955E;--encre:#2B2B2B;--titre:'Libre Baskerville',serif;--texte:'Source Sans 3',sans-serif">
+    <div class="num"><b>1</b>Blog — culture générale</div>
+    <div class="hero"><div class="sur">Philosophie</div><div class="titre">Le Léviathan est-il <em>de retour</em> ?</div><span class="btn plein">Lire l'article</span><span class="btn">Me suivre</span></div>
+    <div class="bas"><div class="t2">Penser, comprendre, débattre</div><p>Un texte confortable à lire longtemps, même sur téléphone.</p>
+      <div class="pastilles"><span style="background:#F7F2E8">papier</span><span style="background:#1F2A44;color:#fff">bleu nuit</span><span style="background:#B8955E">laiton</span></div>
+      <div class="ambiance">Ambiance : bibliothèque, revue de fond.</div></div>
+  </div>
+
+  <div class="carte" style="--clair:#FBF4EA;--sombre:#23453A;--metal:#D08A5C;--encre:#2E2A26;--titre:'Fraunces',serif;--texte:'Nunito Sans',sans-serif">
+    <div class="num"><b>2</b>Association caritative</div>
+    <div class="hero"><div class="sur">Ensemble</div><div class="titre">Chaque enfant <em>a sa place</em></div><span class="btn plein">Faire un don</span><span class="btn">Nos ateliers</span></div>
+    <div class="bas"><div class="t2">Rejoignez l'aventure</div><p>Le ton est chaleureux et rassurant, et on ose prendre la parole.</p>
+      <div class="pastilles"><span style="background:#FBF4EA">crème chaude</span><span style="background:#23453A;color:#fff">vert forêt</span><span style="background:#D08A5C">terre cuite</span></div>
+      <div class="ambiance">Ambiance : maison de quartier accueillante.</div></div>
+  </div>
+
+  <div class="carte" style="--clair:#F8F5EF;--sombre:#0F0F10;--metal:#C8A96A;--encre:#4A4A4F;--titre:'Cormorant Garamond',serif;--texte:'Montserrat',sans-serif">
+    <div class="num"><b>3</b>Grande hôtellerie (Élysia)</div>
+    <div class="hero"><div class="sur">Hôtel &amp; spa</div><div class="titre" style="font-size:34px;font-weight:400">L'art de vivre, <em>sublimé</em></div><span class="btn plein">Réserver</span><span class="btn">Nos suites</span></div>
+    <div class="bas"><div class="t2">Un séjour d'exception</div><p>Une ambiance luxueuse, du silence et des détails dorés.</p>
+      <div class="pastilles"><span style="background:#F8F5EF">ivoire</span><span style="background:#0F0F10;color:#fff">noir</span><span style="background:#C8A96A">or</span></div>
+      <div class="ambiance">Ambiance : palace, soirée feutrée.</div></div>
+  </div>
+
+  <div class="carte" style="--clair:#F6F3EC;--sombre:#14213D;--metal:#B89B5E;--encre:#2A2D34;--titre:'EB Garamond',serif;--texte:'Lato',sans-serif">
+    <div class="num"><b>4</b>Cabinet d'avocats</div>
+    <div class="hero"><div class="sur">Droit des affaires</div><div class="titre" style="font-size:33px">Défendre vos intérêts, <em>avec rigueur</em></div><span class="btn plein">Prendre rendez-vous</span><span class="btn">Le cabinet</span></div>
+    <div class="bas"><div class="t2">Nos domaines d'expertise</div><p>Un style sobre et sérieux, qui inspire confiance dès le premier regard.</p>
+      <div class="pastilles"><span style="background:#F6F3EC">ivoire</span><span style="background:#14213D;color:#fff">marine</span><span style="background:#B89B5E">or pâle</span></div>
+      <div class="ambiance">Ambiance : bureau boisé, dossier relié.</div></div>
+  </div>
+
+  <div class="carte" style="--clair:#F6F4EF;--sombre:#1E4D57;--metal:#CDB08A;--encre:#26323A;--titre:'DM Serif Display',serif;--texte:'DM Sans',sans-serif">
+    <div class="num"><b>5</b>Santé — dentiste et cabinet médical</div>
+    <div class="hero"><div class="sur">Cabinet dentaire</div><div class="titre" style="font-weight:400">Des soins doux, <em>sans stress</em></div><span class="btn plein">Prendre rendez-vous</span><span class="btn">Nos soins</span></div>
+    <div class="bas"><div class="t2">Une équipe à votre écoute</div><p>Un style calme et propre, qui rassure sans donner une impression froide d'hôpital.</p>
+      <div class="pastilles"><span style="background:#F6F4EF">blanc cassé</span><span style="background:#1E4D57;color:#fff">bleu-vert</span><span style="background:#CDB08A">champagne</span></div>
+      <div class="ambiance">Ambiance : cabinet lumineux et serein.</div></div>
+  </div>
+
+  <div class="carte" style="--clair:#F5EDE1;--sombre:#5A1520;--metal:#D4975F;--encre:#2A1A17;--titre:'Playfair Display',serif;--texte:'Jost',sans-serif">
+    <div class="num"><b>6</b>Boucherie (Valmont)</div>
+    <div class="hero"><div class="sur">Boucherie halal</div><div class="titre">La viande d'exception, <em>avec passion</em></div><span class="btn plein">Commander</span><span class="btn">Nos viandes</span></div>
+    <div class="bas"><div class="t2">Trois générations de bouchers</div><p>Une ambiance gourmande, artisanale et haut de gamme.</p>
+      <div class="pastilles"><span style="background:#F5EDE1">crème</span><span style="background:#5A1520;color:#fff">bordeaux</span><span style="background:#B8743F">cuivre</span></div>
+      <div class="ambiance">Ambiance : comptoir en bois, cave de maturation.</div></div>
+  </div>
+
+  <div class="carte" style="--clair:#F8EFE0;--sombre:#4A2C1D;--metal:#D9A24A;--encre:#33231A;--titre:'Fraunces',serif;--texte:'Jost',sans-serif">
+    <div class="num"><b>7</b>Boulangerie</div>
+    <div class="hero"><div class="sur">Boulangerie artisanale</div><div class="titre">Le pain d'hier, <em>cuit ce matin</em></div><span class="btn plein">Commander</span><span class="btn">Nos pains</span></div>
+    <div class="bas"><div class="t2">Au fournil depuis 5 h</div><p>Une ambiance chaude et dorée qui sent le pain chaud.</p>
+      <div class="pastilles"><span style="background:#F8EFE0">farine</span><span style="background:#4A2C1D;color:#fff">brun croûte</span><span style="background:#D9A24A">blé doré</span></div>
+      <div class="ambiance">Ambiance : fournil au petit matin.</div></div>
+  </div>
+
+</div>
+</body>
+</html>

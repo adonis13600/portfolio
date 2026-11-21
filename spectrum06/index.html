@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spectrum06 — Éducation, culture et loisirs pour les enfants des Alpes-Maritimes</title>
+  <meta name="description" content="Association Spectrum06 : cours de russe, théâtre de marionnettes et ateliers créatifs pour les enfants, en petits groupes, dans les Alpes-Maritimes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== BANDEAU CONTACT ===== -->
+  <div class="bandeau-contact">
+    <a href="tel:+33665572585">📞 06 65 57 25 85</a>
+    <a href="mailto:contact@spectrum06.com">✉️ contact@spectrum06.com</a>
+  </div>
+
+  <!-- ===== EN-TÊTE ===== -->
+  <header class="header" id="header">
+    <a href="#accueil" class="logo" aria-label="Spectrum06, retour à l'accueil">
+      <span class="logo-rond" aria-hidden="true">S</span>
+      <span>Spectrum<strong>06</strong></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Menu principal">
+      <a href="#activites">Activités</a>
+      <a href="#confiance">Notre équipe</a>
+      <a href="#valeurs">Nos valeurs</a>
+      <a href="#contact">Contact</a>
+      <a href="#reserver" class="nav-cta">Réserver</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+    <!-- ===== ACCUEIL ===== -->
+    <section class="hero" id="accueil">
+      <div class="hero-texte">
+        <p class="etiquette">Association à but non lucratif</p>
+        <h1>Éducation, culture et loisirs pour les enfants des <span>Alpes-Maritimes</span></h1>
+        <p class="hero-sous">Langues, théâtre et ateliers créatifs, en petits groupes, dans une ambiance bienveillante.</p>
+        <div class="boutons">
+          <a href="#activites" class="btn btn-vert">Voir les activités</a>
+          <a href="#reserver" class="btn btn-orange">Réserver pour 2026-2027</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1607453998774-d533f65dac99?auto=format&fit=crop&w=900&q=80" alt="Trois enfants qui rient ensemble">
+        <span class="hero-pastille">Mini-groupes<br><strong>6 à 8 enfants</strong></span>
+      </div>
+    </section>
+
+    <!-- ===== ACTIVITÉS ===== -->
+    <section class="section" id="activites">
+      <div class="section-titre reveal">
+        <p class="etiquette">Nos activités</p>
+        <h2>Trois façons d'apprendre en s'amusant</h2>
+      </div>
+      <div class="cartes">
+        <article class="carte reveal">
+          <div class="carte-image"><img src="https://images.unsplash.com/photo-1544776193-352d25ca82cd?auto=format&fit=crop&w=700&q=75" alt="Deux enfants penchés sur un cahier" loading="lazy"></div>
+          <div class="carte-corps">
+            <span class="carte-icone" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 5h16v10H8l-4 4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            </span>
+            <h3>Cours de russe</h3>
+            <p>Méthodes éprouvées et supports pensés pour les enfants. Langue maternelle ou découverte : chacun progresse à son rythme, vers le bilinguisme.</p>
+            <ul class="infos-carte"><li>Dès 4 ans</li><li>1 h par semaine</li></ul>
+            <a href="#reserver" class="lien" data-activite="Cours de russe">Réserver un cours →</a>
+          </div>
+        </article>
+        <article class="carte reveal">
+          <div class="carte-image"><img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=700&q=75" alt="Une petite fille au visage maquillé, souriante" loading="lazy"></div>
+          <div class="carte-corps">
+            <span class="carte-icone" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 14v7M8 21h8M5 3l3 3M19 3l-3 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </span>
+            <h3>Théâtre de marionnettes</h3>
+            <p>Les enfants inventent des histoires, fabriquent leurs personnages et jouent leurs propres spectacles devant les familles.</p>
+            <ul class="infos-carte"><li>6 à 9 ans</li><li>Spectacle en fin d'année</li></ul>
+            <a href="marionnettes/index.html" class="lien">Découvrir l'atelier →</a>
+            <a href="#reserver" class="lien" data-activite="Théâtre de marionnettes">Réserver une place →</a>
+          </div>
+        </article>
+        <article class="carte reveal">
+          <div class="carte-image"><img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?auto=format&fit=crop&w=700&q=75" alt="Feutres, peinture et dessins d'enfant sur une table" loading="lazy"></div>
+          <div class="carte-corps">
+            <span class="carte-icone" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18c1.5 0 2-1 2-2s-1-1.5-1-2.5S14 15 15 15h2a4 4 0 0 0 4-4c0-4.4-4-8-9-8z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="7.5" cy="11" r="1.3" fill="currentColor"/><circle cx="11" cy="7.5" r="1.3" fill="currentColor"/><circle cx="15.5" cy="8.5" r="1.3" fill="currentColor"/></svg>
+            </span>
+            <h3>Ateliers créatifs</h3>
+            <p>Arts plastiques, projets numériques, échanges interculturels et bien-être, y compris avec les animaux. Un nouveau thème chaque mois.</p>
+            <ul class="infos-carte"><li>Tous âges</li><li>Mercredis et vacances</li></ul>
+            <a href="#reserver" class="lien" data-activite="Ateliers créatifs">Réserver un atelier →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== CONFIANCE ===== -->
+    <section class="confiance" id="confiance">
+      <div class="confiance-interieur">
+        <div class="reveal">
+          <p class="etiquette etiquette-claire">Pourquoi nous faire confiance</p>
+          <h2>Des enfants bien accompagnés</h2>
+          <p class="confiance-intro">Chez Spectrum06, chaque enfant est connu par son prénom. Nos intervenants prennent le temps d'écouter, d'encourager et de suivre ses progrès avec les parents.</p>
+        </div>
+        <ul class="atouts">
+          <li class="reveal"><strong>Formateur natif</strong>Le russe enseigné par un locuteur de langue maternelle.</li>
+          <li class="reveal"><strong>Master en psychologie</strong>Une pédagogie adaptée au développement de l'enfant.</li>
+          <li class="reveal"><strong>Mini-groupes</strong>6 à 8 enfants au maximum, pour que chacun participe.</li>
+          <li class="reveal"><strong>Lien avec les familles</strong>Un point régulier avec les parents, et des spectacles ouverts à tous.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== VALEURS ===== -->
+    <section class="section valeurs" id="valeurs">
+      <div class="valeurs-image reveal">
+        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=900&q=75" alt="Un groupe d'enfants souriants qui font des signes à l'appareil photo" loading="lazy">
+      </div>
+      <div class="reveal">
+        <p class="etiquette">Nos valeurs</p>
+        <h2>Grandir ensemble, avec nos différences</h2>
+        <div class="valeurs-liste">
+          <div><h3>Diversité</h3><p>Des enfants de toutes origines et de toutes langues, qui apprennent les uns des autres.</p></div>
+          <div><h3>Inclusion</h3><p>Une place pour chacun, quel que soit son rythme ou ses besoins.</p></div>
+          <div><h3>Épanouissement</h3><p>Prendre confiance, s'exprimer, créer : le plaisir d'abord.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== RÉSERVER ===== -->
+    <section class="reserver" id="reserver">
+      <div class="reserver-interieur">
+        <div class="reveal">
+          <p class="etiquette etiquette-claire">Saison 2026-2027</p>
+          <h2>Réservez la place de votre enfant</h2>
+          <p>Les groupes sont petits et se remplissent vite. Remplissez ce formulaire : nous vous rappelons sous 48 heures pour confirmer l'inscription.</p>
+          <p class="reserver-tel">Vous préférez téléphoner ?<br><a href="tel:+33665572585">06 65 57 25 85</a></p>
+        </div>
+        <form class="formulaire reveal" id="form-reservation" novalidate>
+          <div class="champ">
+            <label for="activite">Activité souhaitée</label>
+            <select id="activite" name="activite">
+              <option>Cours de russe</option>
+              <option>Théâtre de marionnettes</option>
+              <option>Ateliers créatifs</option>
+              <option>Je ne sais pas encore, conseillez-moi</option>
+            </select>
+          </div>
+          <div class="champ-duo">
+            <div class="champ">
+              <label for="prenom-enfant">Prénom de l'enfant</label>
+              <input type="text" id="prenom-enfant" name="prenomEnfant" required>
+              <span class="erreur" id="erreur-prenom-enfant"></span>
+            </div>
+            <div class="champ">
+              <label for="age">Âge</label>
+              <select id="age" name="age">
+                <option>4 ans</option><option>5 ans</option><option selected>6 ans</option><option>7 ans</option>
+                <option>8 ans</option><option>9 ans</option><option>10 ans</option><option>11 ans</option><option>12 ans et plus</option>
+              </select>
+            </div>
+          </div>
+          <div class="champ">
+            <label for="parent">Nom du parent</label>
+            <input type="text" id="parent" name="parent" autocomplete="name" required>
+            <span class="erreur" id="erreur-parent"></span>
+          </div>
+          <div class="champ-duo">
+            <div class="champ">
+              <label for="tel">Téléphone</label>
+              <input type="tel" id="tel" name="tel" autocomplete="tel" placeholder="06 12 34 56 78" required>
+              <span class="erreur" id="erreur-tel"></span>
+            </div>
+            <div class="champ">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" autocomplete="email" required>
+              <span class="erreur" id="erreur-email"></span>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-orange btn-large">Envoyer ma demande</button>
+          <p class="confirmation" id="confirmation" hidden></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== CONTACT / PIED DE PAGE ===== -->
+  <footer class="footer" id="contact">
+    <div class="footer-grille">
+      <div>
+        <p class="logo logo-pied"><span class="logo-rond" aria-hidden="true">S</span><span>Spectrum<strong>06</strong></span></p>
+        <p>Association pour l'éducation, la culture et les loisirs des enfants, dans les Alpes-Maritimes.</p>
+      </div>
+      <div>
+        <h3>Nous contacter</h3>
+        <p><a href="tel:+33665572585">06 65 57 25 85</a></p>
+        <p><a href="mailto:contact@spectrum06.com">contact@spectrum06.com</a></p>
+      </div>
+      <div>
+        <h3>Liens utiles</h3>
+        <p><a href="#activites">Nos activités</a></p>
+        <p><a href="#reserver">Réserver</a></p>
+        <p><a href="https://www.spectrum06.com" target="_blank" rel="noopener">Site actuel de l'association</a></p>
+      </div>
+    </div>
+    <p class="footer-bas">© 2026 Spectrum06 · Association loi 1901 · Proposition de nouveau site</p>
+  </footer>
+
+  <a href="#accueil" class="haut" id="haut" aria-label="Remonter en haut de la page">↑</a>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

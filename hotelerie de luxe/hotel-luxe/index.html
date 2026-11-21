@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maison Élysia — Hôtel & Spa de Luxe</title>
+  <meta name="description" content="Maison Élysia, hôtel 5 étoiles : suites d'exception, spa, gastronomie étoilée et service sur mesure.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Préchargement -->
+  <div class="preloader" id="preloader">
+    <div class="preloader__logo">
+      <span class="preloader__monogram">E</span>
+      <span class="preloader__line"></span>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#accueil" class="nav__logo">
+        <span class="nav__logo-mark">E</span>
+        <span class="nav__logo-text">Maison <em>Élysia</em></span>
+      </a>
+
+      <ul class="nav__menu" id="navMenu">
+        <li><a href="#accueil" class="nav__link active">Accueil</a></li>
+        <li><a href="#hotel" class="nav__link">L'Hôtel</a></li>
+        <li><a href="#suites" class="nav__link">Suites</a></li>
+        <li><a href="#experiences" class="nav__link">Expériences</a></li>
+        <li><a href="#gastronomie" class="nav__link">Gastronomie</a></li>
+        <li><a href="#galerie" class="nav__link">Galerie</a></li>
+        <li><a href="#contact" class="nav__link">Contact</a></li>
+        <li class="nav__cta-mobile"><a href="#reservation" class="btn btn--gold">Réserver</a></li>
+      </ul>
+
+      <a href="#reservation" class="btn btn--outline nav__cta">Réserver</a>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="accueil">
+    <div class="hero__slides">
+      <div class="hero__slide active" style="background-image:url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=2000&q=80')"></div>
+      <div class="hero__slide" style="background-image:url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=2000&q=80')"></div>
+      <div class="hero__slide" style="background-image:url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=2000&q=80')"></div>
+    </div>
+    <div class="hero__overlay"></div>
+
+    <div class="hero__content container">
+      <p class="hero__eyebrow">
+        <span class="stars">★★★★★</span> Palace &amp; Spa — Côte d'Azur
+      </p>
+      <h1 class="hero__title">
+        L'art de vivre,<br><em>sublimé.</em>
+      </h1>
+      <p class="hero__text">
+        Une adresse confidentielle où l'élégance intemporelle rencontre
+        un service d'exception, face à la Méditerranée.
+      </p>
+      <div class="hero__actions">
+        <a href="#reservation" class="btn btn--gold">Réserver un séjour</a>
+        <a href="#suites" class="btn btn--ghost">Découvrir nos suites</a>
+      </div>
+    </div>
+
+    <div class="hero__dots" id="heroDots">
+      <button class="active" aria-label="Diapositive 1"></button>
+      <button aria-label="Diapositive 2"></button>
+      <button aria-label="Diapositive 3"></button>
+    </div>
+
+    <a href="#hotel" class="hero__scroll" aria-label="Défiler vers le bas">
+      <span>Défiler</span>
+      <i></i>
+    </a>
+  </section>
+
+  <!-- Barre de réservation rapide -->
+  <div class="quick-book container reveal">
+    <form class="quick-book__form" id="quickBook">
+      <div class="quick-book__field">
+        <label for="qbArrival">Arrivée</label>
+        <input type="date" id="qbArrival" required>
+      </div>
+      <div class="quick-book__field">
+        <label for="qbDeparture">Départ</label>
+        <input type="date" id="qbDeparture" required>
+      </div>
+      <div class="quick-book__field">
+        <label for="qbGuests">Voyageurs</label>
+        <select id="qbGuests">
+          <option value="1">1 adulte</option>
+          <option value="2" selected>2 adultes</option>
+          <option value="3">3 adultes</option>
+          <option value="4">4 adultes</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn--gold">Vérifier les disponibilités</button>
+    </form>
+  </div>
+
+  <!-- L'hôtel -->
+  <section class="section about" id="hotel">
+    <div class="container about__grid">
+      <div class="about__images reveal">
+        <div class="about__img about__img--main">
+          <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=900&q=80" alt="Lobby de l'hôtel Maison Élysia" loading="lazy">
+        </div>
+        <div class="about__img about__img--small">
+          <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=600&q=80" alt="Détail d'une suite" loading="lazy">
+        </div>
+        <div class="about__badge">
+          <span class="about__badge-num">1924</span>
+          <span class="about__badge-text">Depuis</span>
+        </div>
+      </div>
+
+      <div class="about__content reveal">
+        <p class="section__eyebrow">Bienvenue</p>
+        <h2 class="section__title">Un siècle d'hospitalité<br><em>à la française</em></h2>
+        <p>
+          Nichée entre pins parasols et eaux turquoise, Maison Élysia perpétue
+          depuis près d'un siècle la tradition des grands palaces. Chaque détail
+          a été pensé pour offrir à nos hôtes une parenthèse hors du temps.
+        </p>
+        <p>
+          Nos 48 suites, notre spa signature et notre table étoilée composent
+          une expérience où le luxe se fait discret, attentif et profondément personnel.
+        </p>
+
+        <div class="stats">
+          <div class="stat">
+            <span class="stat__num" data-count="48">0</span>
+            <span class="stat__label">Suites &amp; chambres</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num" data-count="2">0</span>
+            <span class="stat__label">Étoiles Michelin</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num" data-count="1200">0</span>
+            <span class="stat__label">m² de spa</span>
+          </div>
+        </div>
+
+        <div class="signature">
+          <span class="signature__name">Isabelle de Montclair</span>
+          <span class="signature__role">Directrice générale</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Suites -->
+  <section class="section suites" id="suites">
+    <div class="container">
+      <header class="section__header reveal">
+        <p class="section__eyebrow">Hébergement</p>
+        <h2 class="section__title">Nos suites <em>d'exception</em></h2>
+        <p class="section__subtitle">Des espaces raffinés, baignés de lumière, où chaque nuit devient un souvenir.</p>
+      </header>
+
+      <div class="suites__filters reveal" id="suiteFilters">
+        <button class="filter active" data-filter="all">Toutes</button>
+        <button class="filter" data-filter="classic">Chambres</button>
+        <button class="filter" data-filter="suite">Suites</button>
+        <button class="filter" data-filter="prestige">Prestige</button>
+      </div>
+
+      <div class="suites__grid">
+        <article class="room reveal" data-category="classic">
+          <div class="room__media">
+            <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=900&q=80" alt="Chambre Deluxe" loading="lazy">
+            <span class="room__tag">Chambre</span>
+          </div>
+          <div class="room__body">
+            <h3 class="room__title">Chambre Deluxe Jardin</h3>
+            <ul class="room__features">
+              <li>35 m²</li><li>Lit King</li><li>Vue jardin</li>
+            </ul>
+            <p>Une atmosphère apaisante ouverte sur nos jardins méditerranéens.</p>
+            <div class="room__footer">
+              <p class="room__price">À partir de <strong>490 €</strong><span>/ nuit</span></p>
+              <a href="#reservation" class="room__link" data-room="deluxe">Réserver →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="room reveal" data-category="suite">
+          <div class="room__media">
+            <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=900&q=80" alt="Suite Junior Mer" loading="lazy">
+            <span class="room__tag">Suite</span>
+          </div>
+          <div class="room__body">
+            <h3 class="room__title">Suite Junior Horizon</h3>
+            <ul class="room__features">
+              <li>55 m²</li><li>Balcon</li><li>Vue mer</li>
+            </ul>
+            <p>Un salon lumineux et un balcon privé face à la grande bleue.</p>
+            <div class="room__footer">
+              <p class="room__price">À partir de <strong>790 €</strong><span>/ nuit</span></p>
+              <a href="#reservation" class="room__link" data-room="junior">Réserver →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="room reveal" data-category="prestige">
+          <div class="room__media">
+            <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=900&q=80" alt="Suite Présidentielle" loading="lazy">
+            <span class="room__tag room__tag--gold">Prestige</span>
+          </div>
+          <div class="room__body">
+            <h3 class="room__title">Suite Présidentielle Élysia</h3>
+            <ul class="room__features">
+              <li>180 m²</li><li>Terrasse &amp; piscine</li><li>Majordome</li>
+            </ul>
+            <p>Le summum du raffinement : terrasse panoramique et piscine privée.</p>
+            <div class="room__footer">
+              <p class="room__price">À partir de <strong>3 900 €</strong><span>/ nuit</span></p>
+              <a href="#reservation" class="room__link" data-room="presidential">Réserver →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="room reveal" data-category="suite">
+          <div class="room__media">
+            <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=900&q=80" alt="Suite Riviera" loading="lazy">
+            <span class="room__tag">Suite</span>
+          </div>
+          <div class="room__body">
+            <h3 class="room__title">Suite Riviera</h3>
+            <ul class="room__features">
+              <li>85 m²</li><li>2 pièces</li><li>Vue mer</li>
+            </ul>
+            <p>Salon séparé, dressing et salle de bains en marbre de Carrare.</p>
+            <div class="room__footer">
+              <p class="room__price">À partir de <strong>1 290 €</strong><span>/ nuit</span></p>
+              <a href="#reservation" class="room__link" data-room="riviera">Réserver →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="room reveal" data-category="classic">
+          <div class="room__media">
+            <img src="https://images.unsplash.com/photo-1595576508898-0ad5c879a061?auto=format&fit=crop&w=900&q=80" alt="Chambre Prestige" loading="lazy">
+            <span class="room__tag">Chambre</span>
+          </div>
+          <div class="room__body">
+            <h3 class="room__title">Chambre Prestige Mer</h3>
+            <ul class="room__features">
+              <li>42 m²</li><li>Lit King</li><li>Vue mer</li>
+            </ul>
+            <p>L'élégance classique sublimée par une vue imprenable sur la baie.</p>
+            <div class="room__footer">
+              <p class="room__price">À partir de <strong>620 €</strong><span>/ nuit</span></p>
+              <a href="#reservation" class="room__link" data-room="prestige">Réserver →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="room reveal" data-category="prestige">
+          <div class="room__media">
+            <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=80" alt="Villa Penthouse" loading="lazy">
+            <span class="room__tag room__tag--gold">Prestige</span>
+          </div>
+          <div class="room__body">
+            <h3 class="room__title">Penthouse Azur</h3>
+            <ul class="room__features">
+              <li>140 m²</li><li>Rooftop</li><li>Jacuzzi</li>
+            </ul>
+            <p>Le dernier étage tout entier, avec jacuzzi sur le toit-terrasse.</p>
+            <div class="room__footer">
+              <p class="room__price">À partir de <strong>2 600 €</strong><span>/ nuit</span></p>
+              <a href="#reservation" class="room__link" data-room="penthouse">Réserver →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Expériences -->
+  <section class="section experiences" id="experiences">
+    <div class="container">
+      <header class="section__header reveal">
+        <p class="section__eyebrow">Services</p>
+        <h2 class="section__title">Expériences <em>signature</em></h2>
+        <p class="section__subtitle">Tout ce qu'un séjour d'exception mérite, orchestré par nos équipes.</p>
+      </header>
+
+      <div class="experiences__grid">
+        <div class="service reveal">
+          <div class="service__icon">
+            <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 6c6 8 10 14 10 20a10 10 0 0 1-20 0c0-6 4-12 10-20z"/><path d="M8 42h32"/></svg>
+          </div>
+          <h3>Spa &amp; Bien-être</h3>
+          <p>1 200 m² dédiés à la sérénité : hammam, piscine intérieure et soins signature.</p>
+        </div>
+        <div class="service reveal">
+          <div class="service__icon">
+            <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M4 32c5 0 5-3 10-3s5 3 10 3 5-3 10-3 5 3 10 3"/><path d="M4 40c5 0 5-3 10-3s5 3 10 3 5-3 10-3 5 3 10 3"/><circle cx="24" cy="16" r="7"/></svg>
+          </div>
+          <h3>Plage privée</h3>
+          <p>Transats, service de cabine et sports nautiques sur notre ponton privatif.</p>
+        </div>
+        <div class="service reveal">
+          <div class="service__icon">
+            <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 30h36l-4 8H10z"/><path d="M12 30l4-12h16l4 12"/><circle cx="16" cy="40" r="2"/><circle cx="32" cy="40" r="2"/></svg>
+          </div>
+          <h3>Chauffeur privé</h3>
+          <p>Transferts en limousine depuis l'aéroport et escapades sur la Riviera.</p>
+        </div>
+        <div class="service reveal">
+          <div class="service__icon">
+            <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="14" r="7"/><path d="M10 42c0-8 6-14 14-14s14 6 14 14"/><path d="M20 28l4 6 4-6"/></svg>
+          </div>
+          <h3>Majordome 24h/24</h3>
+          <p>Un majordome dédié anticipe chacun de vos désirs, jour et nuit.</p>
+        </div>
+        <div class="service reveal">
+          <div class="service__icon">
+            <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M14 6v14a6 6 0 0 0 12 0V6"/><path d="M20 6v36"/><path d="M34 6c-3 0-5 5-5 12h5v24"/></svg>
+          </div>
+          <h3>Room service</h3>
+          <p>La carte de notre chef servie en suite, à toute heure du jour et de la nuit.</p>
+        </div>
+        <div class="service reveal">
+          <div class="service__icon">
+            <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 4l5 11 12 1-9 8 3 12-11-6-11 6 3-12-9-8 12-1z"/></svg>
+          </div>
+          <h3>Conciergerie Clefs d'Or</h3>
+          <p>Réservations, événements privés et accès exclusifs aux meilleures adresses.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gastronomie -->
+  <section class="gastronomy" id="gastronomie">
+    <div class="gastronomy__bg" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=2000&q=80')"></div>
+    <div class="gastronomy__overlay"></div>
+    <div class="container gastronomy__inner">
+      <div class="gastronomy__card reveal">
+        <p class="section__eyebrow">Gastronomie</p>
+        <h2 class="section__title">Le <em>Céleste</em></h2>
+        <p class="gastronomy__stars">✦ ✦ &nbsp; Deux étoiles au Guide Michelin</p>
+        <p>
+          Sous la direction du chef Antoine Verdier, Le Céleste célèbre les produits
+          de la Méditerranée dans une cuisine d'une précision rare, accompagnée d'une
+          cave de plus de 3 000 références.
+        </p>
+        <ul class="gastronomy__list">
+          <li><span>Le Céleste</span><span>Gastronomique · Dîner</span></li>
+          <li><span>La Terrasse</span><span>Méditerranéen · Déjeuner</span></li>
+          <li><span>Le Bar 1924</span><span>Cocktails · Jusqu'à 2h</span></li>
+        </ul>
+        <a href="#contact" class="btn btn--gold">Réserver une table</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galerie -->
+  <section class="section gallery" id="galerie">
+    <div class="container">
+      <header class="section__header reveal">
+        <p class="section__eyebrow">Galerie</p>
+        <h2 class="section__title">Instants <em>choisis</em></h2>
+      </header>
+
+      <div class="gallery__grid">
+        <figure class="gallery__item gallery__item--tall reveal">
+          <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=900&q=80" alt="Piscine à débordement" loading="lazy">
+        </figure>
+        <figure class="gallery__item reveal">
+          <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=900&q=80" alt="Soin au spa" loading="lazy">
+        </figure>
+        <figure class="gallery__item reveal">
+          <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=900&q=80" alt="Façade de l'hôtel" loading="lazy">
+        </figure>
+        <figure class="gallery__item gallery__item--wide reveal">
+          <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80" alt="Terrasse face à la mer" loading="lazy">
+        </figure>
+        <figure class="gallery__item reveal">
+          <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=900&q=80" alt="Table du restaurant" loading="lazy">
+        </figure>
+        <figure class="gallery__item reveal">
+          <img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=900&q=80" alt="Salle de bain en marbre" loading="lazy">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Témoignages -->
+  <section class="section testimonials">
+    <div class="container">
+      <header class="section__header reveal">
+        <p class="section__eyebrow">Témoignages</p>
+        <h2 class="section__title">Ils nous ont <em>fait confiance</em></h2>
+      </header>
+
+      <div class="testimonials__slider reveal" id="testimonials">
+        <div class="testimonials__track">
+          <blockquote class="testimonial active">
+            <p>« Un service d'une délicatesse rare. Chaque membre de l'équipe connaissait nos prénoms dès notre arrivée. Un séjour inoubliable. »</p>
+            <footer><strong>Charlotte &amp; Henri</strong><span>Paris — Suite Riviera</span></footer>
+          </blockquote>
+          <blockquote class="testimonial">
+            <p>« Le dîner au Céleste restera l'un des plus beaux moments gastronomiques de notre vie. La vue depuis la terrasse est à couper le souffle. »</p>
+            <footer><strong>James Whitmore</strong><span>Londres — Penthouse Azur</span></footer>
+          </blockquote>
+          <blockquote class="testimonial">
+            <p>« Le spa est un véritable sanctuaire. Nous sommes repartis ressourcés, avec une seule envie : revenir au plus vite. »</p>
+            <footer><strong>Sofia Albertini</strong><span>Milan — Suite Junior Horizon</span></footer>
+          </blockquote>
+        </div>
+        <div class="testimonials__nav">
+          <button class="testimonials__btn" id="prevTesti" aria-label="Témoignage précédent">←</button>
+          <span class="testimonials__count" id="testiCount">01 / 03</span>
+          <button class="testimonials__btn" id="nextTesti" aria-label="Témoignage suivant">→</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Réservation -->
+  <section class="section booking" id="reservation">
+    <div class="container booking__grid">
+      <div class="booking__intro reveal">
+        <p class="section__eyebrow">Réservation</p>
+        <h2 class="section__title">Préparez votre <em>séjour</em></h2>
+        <p>Réservez directement auprès de nous et profitez d'avantages exclusifs :</p>
+        <ul class="booking__perks">
+          <li>Petit-déjeuner offert pour deux</li>
+          <li>Surclassement selon disponibilité</li>
+          <li>Arrivée anticipée &amp; départ tardif</li>
+          <li>Annulation gratuite jusqu'à 72 h avant</li>
+        </ul>
+      </div>
+
+      <form class="booking__form reveal" id="bookingForm" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Nom complet</label>
+            <input type="text" id="name" name="name" placeholder="Jean Dupont" required>
+            <small class="error"></small>
+          </div>
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="jean@exemple.com" required>
+            <small class="error"></small>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="arrival">Arrivée</label>
+            <input type="date" id="arrival" name="arrival" required>
+            <small class="error"></small>
+          </div>
+          <div class="form-group">
+            <label for="departure">Départ</label>
+            <input type="date" id="departure" name="departure" required>
+            <small class="error"></small>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="room">Hébergement</label>
+            <select id="room" name="room">
+              <option value="deluxe" data-price="490">Chambre Deluxe Jardin — 490 €</option>
+              <option value="prestige" data-price="620">Chambre Prestige Mer — 620 €</option>
+              <option value="junior" data-price="790">Suite Junior Horizon — 790 €</option>
+              <option value="riviera" data-price="1290">Suite Riviera — 1 290 €</option>
+              <option value="penthouse" data-price="2600">Penthouse Azur — 2 600 €</option>
+              <option value="presidential" data-price="3900">Suite Présidentielle — 3 900 €</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="guests">Voyageurs</label>
+            <select id="guests" name="guests">
+              <option value="1">1 adulte</option>
+              <option value="2" selected>2 adultes</option>
+              <option value="3">3 adultes</option>
+              <option value="4">4 adultes</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Demandes particulières</label>
+          <textarea id="message" name="message" rows="3" placeholder="Anniversaire, allergies, horaire d'arrivée…"></textarea>
+        </div>
+
+        <div class="booking__summary" id="bookingSummary">
+          <div><span>Durée</span><strong id="sumNights">—</strong></div>
+          <div><span>Total estimé</span><strong id="sumTotal">—</strong></div>
+        </div>
+
+        <button type="submit" class="btn btn--gold btn--block">Envoyer ma demande</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Contact / Footer -->
+  <footer class="footer" id="contact">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a href="#accueil" class="nav__logo">
+          <span class="nav__logo-mark">E</span>
+          <span class="nav__logo-text">Maison <em>Élysia</em></span>
+        </a>
+        <p>Palace &amp; Spa sur la Côte d'Azur. Membre des Hôtels d'Exception.</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Facebook">FB</a>
+          <a href="#" aria-label="LinkedIn">IN</a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>12 Promenade des Pins<br>06230 Saint-Jean-Cap-Ferrat</li>
+          <li><a href="tel:+33400000000">+33 4 00 00 00 00</a></li>
+          <li><a href="mailto:contact@maison-elysia.fr">contact@maison-elysia.fr</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Explorer</h4>
+        <ul>
+          <li><a href="#suites">Suites</a></li>
+          <li><a href="#experiences">Spa &amp; Bien-être</a></li>
+          <li><a href="#gastronomie">Restaurants</a></li>
+          <li><a href="#galerie">Galerie</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Newsletter</h4>
+        <p>Recevez nos offres privilèges en avant-première.</p>
+        <form class="newsletter" id="newsletter">
+          <input type="email" placeholder="Votre e-mail" aria-label="Votre e-mail" required>
+          <button type="submit" aria-label="S'inscrire">→</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer__bottom container">
+      <p>© <span id="year"></span> Maison Élysia. Tous droits réservés.</p>
+      <p><a href="#">Mentions légales</a> · <a href="#">Confidentialité</a></p>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox__close" id="lightboxClose" aria-label="Fermer">×</button>
+    <button class="lightbox__arrow lightbox__arrow--prev" id="lightboxPrev" aria-label="Image précédente">‹</button>
+    <img src="" alt="" id="lightboxImg">
+    <button class="lightbox__arrow lightbox__arrow--next" id="lightboxNext" aria-label="Image suivante">›</button>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- Retour en haut -->
+  <button class="back-top" id="backTop" aria-label="Retour en haut">↑</button>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

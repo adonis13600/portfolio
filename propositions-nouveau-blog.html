@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3 propositions — nouveau blog Les Chemins de la Pensée</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Source+Sans+3:wght@400;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Public+Sans:wght@400;600&family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Inter,system-ui,sans-serif;background:#e9e7e2;color:#222;line-height:1.5}
+  img{display:block;width:100%;height:100%;object-fit:cover}
+  a{color:inherit;text-decoration:none}
+  .intro{max-width:980px;margin:0 auto;padding:40px 20px 10px}
+  .intro h1{font-size:28px;margin-bottom:8px}
+  .intro p{color:#555;max-width:680px}
+  .prop{max-width:980px;margin:36px auto 60px;padding:0 20px}
+  .label{display:flex;flex-wrap:wrap;align-items:baseline;gap:12px;margin-bottom:10px}
+  .label .num{font-size:42px;font-weight:600;line-height:1}
+  .label h2{font-size:24px}
+  .label .mood{color:#555;flex-basis:100%}
+  .facts{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0 16px;font-size:14px}
+  .facts div{background:#fff;border-radius:6px;padding:12px 14px}
+  .facts b{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:#777;margin-bottom:4px}
+  .chips{display:flex;gap:6px;margin-top:6px}
+  .chips span{width:26px;height:26px;border-radius:50%;border:1px solid rgba(0,0,0,.15)}
+  .frame{border-radius:10px;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,.18)}
+  @media(max-width:640px){.facts{grid-template-columns:1fr}}
+
+  /* ============ A — Nuit studieuse ============ */
+  .A{background:#0F1720;color:#EDE6D6;font-family:"Source Sans 3",sans-serif}
+  .A header{display:flex;justify-content:space-between;align-items:center;padding:20px 28px;border-bottom:1px solid #26313d;flex-wrap:wrap;gap:10px}
+  .A .logo{font-family:Fraunces,serif;font-size:22px}
+  .A .logo i{color:#E0A44A}
+  .A nav{display:flex;gap:18px;font-size:14px;flex-wrap:wrap}
+  .A nav a.on{color:#E0A44A}
+  .A nav .new{color:#E0A44A}
+  .A .une{display:grid;grid-template-columns:1.2fr 1fr;min-height:340px}
+  .A .une .txt{padding:40px 32px;display:flex;flex-direction:column;justify-content:center;gap:14px}
+  .A .kick{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#E0A44A}
+  .A .une h3{font-family:Fraunces,serif;font-weight:400;font-size:34px;line-height:1.12}
+  .A .une h3 i{color:#E0A44A}
+  .A .une p{color:#b7b0a2}
+  .A .btn{align-self:flex-start;border:1px solid #E0A44A;color:#E0A44A;padding:9px 18px;font-size:14px}
+  .A .list{padding:10px 28px 30px}
+  .A .list h4{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8478;padding:18px 0 6px}
+  .A .row{display:grid;grid-template-columns:46px 1fr auto;gap:14px;padding:16px 0;border-top:1px solid #26313d;align-items:baseline}
+  .A .row .n{font-family:Fraunces,serif;font-size:26px;color:#E0A44A}
+  .A .row .t{font-family:Fraunces,serif;font-size:20px}
+  .A .row .r{font-size:12px;color:#8a8478;text-transform:uppercase;letter-spacing:.12em}
+  @media(max-width:640px){.A .une{grid-template-columns:1fr}.A .une .img{height:200px}.A .row{grid-template-columns:36px 1fr}.A .row .r{grid-column:2}}
+
+  /* ============ B — Carnet de lecture ============ */
+  .B{background:#F2EDE3;color:#1E3B34;font-family:"Public Sans",sans-serif}
+  .B header{text-align:center;padding:30px 20px 16px;border-bottom:3px double #1E3B34;margin:0 28px}
+  .B .date{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#8a7a52}
+  .B .logo{font-family:Newsreader,serif;font-size:44px;font-weight:600;line-height:1.1;margin:6px 0}
+  .B .logo i{font-weight:400;color:#B8862B}
+  .B nav{display:flex;justify-content:center;gap:22px;font-size:14px;padding:12px 0 0;flex-wrap:wrap}
+  .B nav .new{color:#B8862B;font-weight:600}
+  .B .question{margin:24px 28px;background:#1E3B34;color:#F2EDE3;padding:22px 26px;display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+  .B .question .q{font-family:Newsreader,serif;font-size:24px;font-style:italic;flex:1;min-width:240px}
+  .B .question small{display:block;font-family:"Public Sans";font-style:normal;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#d9b56a;margin-bottom:4px}
+  .B .question a{border:1px solid #F2EDE3;padding:8px 16px;font-size:14px}
+  .B .sommaire{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:0 28px 30px;border-top:1px solid #1E3B34}
+  .B .col{padding:18px 16px;border-right:1px solid #cfc6b4}
+  .B .col:last-child{border-right:0}
+  .B .col h4{font-family:Newsreader,serif;font-size:22px;font-weight:600;margin-bottom:4px}
+  .B .col .cnt{font-size:12px;color:#8a7a52;margin-bottom:14px}
+  .B .art{margin-bottom:16px}
+  .B .art .ph{height:110px;margin-bottom:8px;filter:sepia(.25)}
+  .B .art p{font-family:Newsreader,serif;font-size:17px;line-height:1.25}
+  .B .soon{font-family:Newsreader,serif;font-style:italic;color:#8a7a52;border:1px dashed #b9ad93;padding:14px}
+  @media(max-width:700px){.B .sommaire{grid-template-columns:1fr 1fr}.B .logo{font-size:32px}}
+  @media(max-width:420px){.B .sommaire{grid-template-columns:1fr}}
+
+  /* ============ C — Atlas coloré ============ */
+  .C{background:#F6F5F1;color:#141414;font-family:Inter,sans-serif}
+  .C header{display:flex;justify-content:space-between;align-items:center;padding:18px 28px;background:#fff;flex-wrap:wrap;gap:10px}
+  .C .logo{font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:20px}
+  .C .logo span{display:inline-block;width:10px;height:10px;border-radius:50%;background:#10A37F;margin-left:4px}
+  .C .follow{background:#141414;color:#fff;padding:8px 16px;border-radius:30px;font-size:14px}
+  .C .hero{padding:34px 28px 18px}
+  .C .hero h3{font-family:"Space Grotesk",sans-serif;font-size:40px;line-height:1.05;max-width:640px}
+  .C .tiles{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;padding:10px 28px 24px}
+  .C .tile{border-radius:14px;padding:16px;color:#fff;min-height:110px;display:flex;flex-direction:column;justify-content:space-between;font-family:"Space Grotesk";font-weight:700;font-size:18px}
+  .C .tile small{font-family:Inter;font-weight:500;font-size:12px;opacity:.9}
+  .C .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:0 28px 32px}
+  .C .card{background:#fff;border-radius:14px;overflow:hidden}
+  .C .card .ph{height:150px}
+  .C .card .b{padding:14px 16px 18px}
+  .C .tag{display:inline-block;font-size:11px;font-weight:600;padding:3px 10px;border-radius:20px;color:#fff;margin-bottom:8px}
+  .C .card p{font-family:"Space Grotesk";font-weight:500;font-size:17px;line-height:1.25}
+  .C .card .meta{font-size:12px;color:#777;margin-top:8px}
+  @media(max-width:760px){.C .tiles{grid-template-columns:repeat(2,1fr)}.C .cards{grid-template-columns:1fr}.C .hero h3{font-size:30px}}
+  .ph1{background:#6B4EE6}.ph2{background:#1F7AE0}.ph3{background:#D9572B}.ph4{background:#10A37F}.ph5{background:#141414}
+</style>
+</head>
+<body>
+
+<div class="intro">
+  <h1>Ton nouveau blog : 3 propositions</h1>
+  <p>Chaque proposition change <strong>l'apparence</strong> (couleurs, typo) <strong>et l'organisation</strong> de l'accueil. La rubrique <strong>Technologie</strong> est déjà dans le menu. Ce sont des esquisses : on peut mélanger (par exemple les couleurs de l'une avec l'organisation d'une autre).</p>
+</div>
+
+<!-- ============ A ============ -->
+<section class="prop">
+  <div class="label"><span class="num">A</span><h2>« Nuit studieuse »</h2>
+    <span class="mood">Sombre, calme, élégant : comme lire à la lampe de bureau. Fait sérieux et réfléchi.</span></div>
+  <div class="facts">
+    <div><b>Couleurs et typo</b>Bleu nuit, ivoire, ambre. Titres en Fraunces (serif chaleureux).
+      <div class="chips"><span style="background:#0F1720"></span><span style="background:#EDE6D6"></span><span style="background:#E0A44A"></span></div></div>
+    <div><b>Organisation</b>Un seul grand article « À la une », puis tous les autres en <strong>liste numérotée</strong>. Très simple à lire sur téléphone.</div>
+  </div>
+  <div class="frame A">
+    <header><div class="logo">Les Chemins de la <i>Pensée</i></div>
+      <nav><a class="on">Accueil</a><a>Philosophie</a><a>Géopolitique</a><a>Histoire</a><a class="new">Technologie</a><a>Débattre</a></nav></header>
+    <div class="une">
+      <div class="txt"><span class="kick">À la une · Philosophie</span>
+        <h3>Le Léviathan est-il <i>de retour</i> ?</h3>
+        <p>Ce que Hobbes nous dit de la France d'aujourd'hui.</p>
+        <a class="btn">Lire l'article →</a></div>
+      <div class="img"><img src="blog-chemins-pensee/images/leviathan.jpg" alt=""></div>
+    </div>
+    <div class="list"><h4>Derniers articles</h4>
+      <div class="row"><span class="n">02</span><span class="t">De Braunau à Berlin : la montée et la chute du Troisième Reich</span><span class="r">Histoire · 12 min</span></div>
+      <div class="row"><span class="n">03</span><span class="t">Sahara occidental : cinquante ans d'attente</span><span class="r">Géopolitique · 9 min</span></div>
+      <div class="row"><span class="n">04</span><span class="t">17 octobre 1961 : la nuit du massacre à Paris</span><span class="r">Histoire · 8 min</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ B ============ -->
+<section class="prop">
+  <div class="label"><span class="num">B</span><h2>« Carnet de lecture »</h2>
+    <span class="mood">Papier, encre verte, esprit journal littéraire. Fait cultivé et chaleureux.</span></div>
+  <div class="facts">
+    <div><b>Couleurs et typo</b>Papier beige, vert sapin, ocre. Titres en Newsreader (serif de journal).
+      <div class="chips"><span style="background:#F2EDE3"></span><span style="background:#1E3B34"></span><span style="background:#B8862B"></span></div></div>
+    <div><b>Organisation</b>En haut, <strong>la question du moment</strong> (lien vers Débattre). Ensuite, un <strong>sommaire par rubrique</strong>, comme une table des matières.</div>
+  </div>
+  <div class="frame B">
+    <header><div class="date">Samedi 21 novembre 2026</div>
+      <div class="logo">Les Chemins de la <i>Pensée</i></div>
+      <nav><a>Philosophie</a><a>Géopolitique</a><a>Histoire</a><a class="new">Technologie</a><a>Débattre</a></nav></header>
+    <div class="question"><div class="q"><small>La question du moment</small>L'État doit-il nous protéger, quitte à nous surveiller ?</div><a>Je donne mon avis</a></div>
+    <div class="sommaire">
+      <div class="col"><h4>Philosophie</h4><div class="cnt">1 article</div>
+        <div class="art"><div class="ph"><img src="blog-chemins-pensee/images/leviathan.jpg" alt=""></div><p>Le Léviathan est-il de retour ?</p></div></div>
+      <div class="col"><h4>Géopolitique</h4><div class="cnt">1 article</div>
+        <div class="art"><div class="ph"><img src="blog-chemins-pensee/images/sahara-camp.jpg" alt=""></div><p>Sahara occidental : cinquante ans d'attente</p></div></div>
+      <div class="col"><h4>Histoire</h4><div class="cnt">2 articles</div>
+        <div class="art"><div class="ph"><img src="blog-chemins-pensee/images/plaque-17-octobre.jpg" alt=""></div><p>17 octobre 1961 : la nuit du massacre</p></div>
+        <div class="art"><p>De Braunau à Berlin</p></div></div>
+      <div class="col"><h4>Technologie</h4><div class="cnt">Nouvelle rubrique</div>
+        <div class="soon">Premier article bientôt…</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ C ============ -->
+<section class="prop">
+  <div class="label"><span class="num">C</span><h2>« Atlas coloré »</h2>
+    <span class="mood">Clair, moderne, une couleur par rubrique. Fait vivant et accessible, attire un public plus jeune.</span></div>
+  <div class="facts">
+    <div><b>Couleurs et typo</b>Blanc cassé + une couleur par rubrique. Titres en Space Grotesk (moderne, sans serif).
+      <div class="chips"><span style="background:#6B4EE6"></span><span style="background:#1F7AE0"></span><span style="background:#D9572B"></span><span style="background:#10A37F"></span></div></div>
+    <div><b>Organisation</b>De grosses <strong>tuiles de rubriques</strong> en haut (on choisit son sujet), puis les articles en <strong>cartes</strong> avec une étiquette de couleur.</div>
+  </div>
+  <div class="frame C">
+    <header><div class="logo">Les Chemins de la Pensée<span></span></div><a class="follow">Me suivre</a></header>
+    <div class="hero"><h3>Penser, comprendre, débattre.</h3></div>
+    <div class="tiles">
+      <div class="tile ph1">Philosophie<small>1 article</small></div>
+      <div class="tile ph2">Géopolitique<small>1 article</small></div>
+      <div class="tile ph3">Histoire<small>2 articles</small></div>
+      <div class="tile ph4">Technologie<small>Nouveau</small></div>
+      <div class="tile ph5">Débattre<small>4 questions</small></div>
+    </div>
+    <div class="cards">
+      <div class="card"><div class="ph"><img src="blog-chemins-pensee/images/leviathan.jpg" alt=""></div><div class="b"><span class="tag ph1">Philosophie</span><p>Le Léviathan est-il de retour ?</p><div class="meta">10 min de lecture</div></div></div>
+      <div class="card"><div class="ph"><img src="blog-chemins-pensee/images/sahara-camp.jpg" alt=""></div><div class="b"><span class="tag ph2">Géopolitique</span><p>Sahara occidental : cinquante ans d'attente</p><div class="meta">9 min de lecture</div></div></div>
+      <div class="card"><div class="ph"><img src="blog-chemins-pensee/images/plaque-17-octobre.jpg" alt=""></div><div class="b"><span class="tag ph3">Histoire</span><p>17 octobre 1961 : la nuit du massacre à Paris</p><div class="meta">8 min de lecture</div></div></div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

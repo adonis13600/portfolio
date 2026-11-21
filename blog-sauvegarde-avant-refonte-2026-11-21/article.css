@@ -1,0 +1,61 @@
+:root {
+  --fond: #FAFAF7;
+  --fond-une: #EFEBE3;
+  --encre: #111111;
+  --gris: #555555;
+  --ligne: #DDD8CE;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--fond); color: var(--encre); font-family: 'Inter', sans-serif; font-size: 19px; line-height: 1.75; }
+a { color: inherit; }
+img { display: block; width: 100%; }
+
+/* Barre de lecture en haut */
+.progression { position: fixed; top: 0; left: 0; height: 4px; width: 0; background: var(--encre); z-index: 10; }
+
+header { display: flex; justify-content: space-between; align-items: center; padding: 20px 5vw; gap: 16px; border-bottom: 1px solid var(--ligne); }
+.logo { font-family: 'Anton', sans-serif; font-size: 24px; text-decoration: none; }
+.retour { font-size: 16px; text-decoration: none; color: var(--gris); }
+.retour:hover { color: var(--encre); }
+
+.entete { max-width: 980px; margin: 0 auto; padding: 70px 5vw 40px; }
+.rubrique { font-family: 'Anton', sans-serif; text-transform: uppercase; font-size: 22px; letter-spacing: 1px; }
+.entete h1 { font-size: clamp(34px, 5.5vw, 64px); line-height: 1.08; font-weight: 600; margin: 14px 0 22px; letter-spacing: -0.5px; }
+.infos { font-size: 15px; color: var(--gris); }
+
+.image-une { max-width: 1200px; margin: 0 auto 60px; padding: 0 5vw; }
+.image-une img { max-height: 620px; object-fit: cover; }
+.legende { font-size: 14px; color: var(--gris); margin-top: 10px; }
+
+.texte { max-width: 680px; margin: 0 auto; padding: 0 5vw 40px; }
+.texte p { margin-bottom: 1.4em; }
+.texte .chapeau { font-size: 23px; line-height: 1.6; margin-bottom: 2em; }
+.texte h2 { font-size: 28px; line-height: 1.25; font-weight: 600; margin: 2.2em 0 0.8em; }
+.texte ol, .texte ul { margin: 0 0 1.4em 1.4em; }
+.texte li { margin-bottom: 0.5em; }
+.texte blockquote { font-family: 'Anton', sans-serif; text-transform: uppercase; font-size: clamp(30px, 4vw, 44px); line-height: 1.1; margin: 1.6em 0; padding-left: 24px; border-left: 6px solid var(--encre); }
+.texte .question { background: var(--fond-une); padding: 28px 30px; font-size: 21px; font-weight: 500; margin-top: 2em; }
+
+/* La question du débat */
+.debat { max-width: 680px; margin: 20px auto 0; padding: 36px 30px; background: var(--fond-une); border-left: 6px solid var(--encre); }
+@media (max-width: 760px) { .debat { margin-left: 5vw; margin-right: 5vw; padding: 28px 22px; } }
+.debat .etiquette { font-family: 'Anton', sans-serif; text-transform: uppercase; font-size: 20px; letter-spacing: 1px; }
+.question-debat { font-size: clamp(22px, 3vw, 28px); line-height: 1.3; font-weight: 600; margin: 10px 0 22px; }
+.boutons-debat { display: flex; flex-wrap: wrap; gap: 12px; }
+.bouton-debat { display: inline-block; border: 1.5px solid var(--encre); border-radius: 40px; padding: 10px 22px; font-size: 16px; font-weight: 500; text-decoration: none; }
+.bouton-debat.plein, .bouton-debat:hover { background: var(--encre); color: var(--fond); }
+.bouton-debat.plein:hover { background: #333; }
+.debat .petit { font-size: 14px; color: var(--gris); margin-top: 16px; }
+
+.suite { border-top: 1px solid var(--ligne); max-width: 980px; margin: 40px auto 0; padding: 50px 5vw 80px; display: flex; justify-content: space-between; gap: 30px; flex-wrap: wrap; }
+.suite a { text-decoration: none; }
+.suite span { display: block; font-size: 14px; color: var(--gris); }
+.suite strong { font-size: 22px; font-weight: 600; border-bottom: 1.5px solid var(--encre); }
+
+footer { border-top: 1px solid var(--ligne); padding: 40px 5vw; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; font-size: 15px; color: var(--gris); }
+
+@media (max-width: 760px) {
+  body { font-size: 18px; }
+  .entete { padding-top: 44px; }
+  .texte .chapeau { font-size: 20px; }
+}
