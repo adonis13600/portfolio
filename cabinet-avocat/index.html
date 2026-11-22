@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maître M'hamed Bengendouz — Avocat</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;1,500&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+<style>
+/* Variante 4 — Cabinet d'avocats (design system de James) */
+:root{
+  --clair:#F6F3EC; --sombre:#14213D; --metal:#B89B5E; --metal-texte:#806C41;
+  --encre:#2A3142; --titre:"EB Garamond",Georgia,serif; --texte:"Lato","Segoe UI",Arial,sans-serif;
+  --ombre:0 20px 50px -20px color-mix(in srgb,var(--sombre) 30%,transparent);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--clair);color:var(--encre);font:300 16px/1.75 var(--texte)}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--metal);outline-offset:3px}
+h1,h2,h3{font-family:var(--titre);font-weight:500;line-height:1.12;color:var(--sombre);text-wrap:balance}
+h1 em,h2 em,h3 em{font-style:italic;color:var(--metal-texte)}
+.surtitre{display:inline-flex;align-items:center;gap:14px;font:500 .76rem var(--texte);letter-spacing:.26em;text-transform:uppercase;color:var(--metal-texte)}
+.surtitre.traits::before,.surtitre.traits::after{content:"";width:32px;height:1px;background:currentColor}
+.btn{display:inline-block;padding:15px 32px;border:1px solid var(--metal);border-radius:2px;font:400 .76rem var(--texte);letter-spacing:.22em;text-transform:uppercase;text-decoration:none;color:inherit;transition:background .3s,color .3s}
+.btn:hover{background:var(--metal);color:var(--sombre)}
+.btn.plein{background:var(--metal);color:var(--sombre)}
+.btn.plein:hover{background:transparent;color:var(--metal)}
+.wrap{width:min(1180px,90%);margin-inline:auto}
+section{padding:120px 0}
+.sombre{background:var(--sombre);color:#D9DCE4}
+.sombre h1,.sombre h2,.sombre h3{color:var(--clair)}
+.sombre h1 em,.sombre h2 em,.sombre h3 em,.sombre .surtitre{color:var(--metal)}
+
+/* En-tête */
+header{position:fixed;inset:0 0 auto;z-index:10;transition:background .4s,padding .4s;padding:26px 0;color:var(--clair)}
+header.plein{background:var(--sombre);padding:14px 0;box-shadow:var(--ombre)}
+.barre{display:flex;align-items:center;justify-content:space-between;gap:30px}
+.logo{font-family:var(--titre);font-size:1.35rem;text-decoration:none;letter-spacing:.02em}
+.logo small{display:block;font:400 .62rem var(--texte);letter-spacing:.3em;text-transform:uppercase;color:var(--metal)}
+nav ul{display:flex;gap:34px;list-style:none}
+nav a{font:400 .74rem var(--texte);letter-spacing:.2em;text-transform:uppercase;text-decoration:none;opacity:.85}
+nav a:hover{color:var(--metal);opacity:1}
+.burger{display:none;background:none;border:1px solid var(--metal);color:inherit;width:44px;height:44px;font-size:1.2rem;cursor:pointer}
+
+/* Ouverture commune */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;color:var(--clair);overflow:hidden}
+.hero .fond{position:absolute;inset:0;background:var(--photo) center/cover no-repeat}
+.hero .fond::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,color-mix(in srgb,var(--sombre) 95%,transparent),color-mix(in srgb,var(--sombre) 30%,transparent))}
+.hero .contenu{position:relative;z-index:1}
+.hero h1{color:var(--clair);font-size:clamp(2.8rem,7vw,5.8rem)}
+.hero h1 em{color:var(--metal)}
+.hero .surtitre{color:var(--metal)}
+.hero p{max-width:52ch;font-size:1.08rem;color:#D9DCE4}
+
+/* Compétences */
+.grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2px;margin-top:60px}
+.carte{background:#fff;padding:44px 34px;box-shadow:var(--ombre);transition:transform .3s}
+.carte:hover{transform:translateY(-4px)}
+.carte .num{font:italic 500 2.2rem var(--titre);color:var(--metal-texte)}
+.carte h3{font-size:1.55rem;margin:10px 0 12px}
+.carte p{font-size:.95rem}
+.entete-section{max-width:640px}
+.entete-section h2{font-size:clamp(2.1rem,4vw,3.2rem);margin:14px 0 18px}
+
+/* Bandeau rendez-vous */
+.rdv{text-align:center}
+.rdv h2{font-size:clamp(2rem,4vw,3rem);margin:16px auto 22px;max-width:18ch}
+.rdv p{max-width:56ch;margin:0 auto 36px}
+.rdv .actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+
+footer{background:#0D1629;color:#9AA2B4;padding:50px 0;font-size:.85rem}
+footer .barre{flex-wrap:wrap}
+
+/* ============ STYLE ÉDITORIAL (écran partagé) — croquis 2 choisi le 22/11/2026 ============ */
+.v2 .hero{padding:0}
+.v2 header{color:var(--sombre);background:var(--clair)}
+.v2 header.plein{color:var(--clair);background:var(--sombre)}
+.v2 .hero{display:grid;grid-template-columns:1.05fr 1fr;color:var(--encre);background:var(--clair)}
+.v2 .hero .fond{position:relative;inset:auto;order:2;min-height:100svh}
+.v2 .hero .contenu{padding:140px 7vw 80px 8vw;display:flex;flex-direction:column;gap:28px}
+.v2 .hero h1{color:var(--sombre);font-size:clamp(2.8rem,6vw,5.4rem)}
+.v2 .hero h1 em{color:var(--metal-texte);display:block}
+.v2 .hero .surtitre{color:var(--metal-texte)}
+.v2 .hero p{color:var(--encre)}
+.v2 .hero .chiffres{display:flex;gap:44px;border-top:1px solid color-mix(in srgb,var(--metal) 50%,transparent);padding-top:26px;margin-top:10px}
+.v2 .chiffres strong{display:block;font:500 2.4rem var(--titre);color:var(--sombre);line-height:1}
+.v2 .chiffres span{font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--metal-texte)}
+.v2 .hero .actions{display:flex;gap:14px;flex-wrap:wrap}
+.v2 .hero .btn:not(.plein){color:var(--sombre)}
+.v2 .liste{margin-top:50px;border-top:1px solid #D9D2C2}
+.v2 .ligne{display:grid;grid-template-columns:90px 1fr 1.4fr;gap:30px;align-items:baseline;padding:34px 0;border-bottom:1px solid #D9D2C2}
+.v2 .ligne .num{font:italic 500 1.8rem var(--titre);color:var(--metal-texte)}
+.v2 .ligne h3{font-size:1.8rem}
+.v2 .grille{display:none}
+
+@media (max-width:860px){
+  section{padding:72px 0}
+  nav ul{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--sombre);padding:10px 5%}
+  nav ul.ouvert{display:flex}
+  nav li a{display:block;padding:14px 0;color:var(--clair)}
+  .burger{display:block}
+  .v2 .hero{grid-template-columns:1fr}
+  .v2 .hero .fond{order:0;min-height:42svh}
+  .v2 .hero .contenu{padding:50px 6% 60px}
+  .v2 header{color:var(--clair);background:transparent}
+  .v2 header.plein{background:var(--sombre)}
+  .v2 .ligne{grid-template-columns:1fr;gap:6px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body class="v2">
+<header id="entete">
+  <div class="wrap barre">
+    <a class="logo" href="#">M'hamed Bengendouz<small>Avocat</small></a>
+    <nav aria-label="Menu principal">
+      <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+      <ul>
+        <li><a href="#cabinet">Le cabinet</a></li>
+        <li><a href="#competences">Compétences</a></li>
+        <li><a href="#rdv">Honoraires</a></li>
+        <li><a href="#rdv">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- OUVERTURE -->
+  <section class="hero" id="cabinet" style="--photo:url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1800&q=70')">
+    <div class="fond" aria-hidden="true"></div>
+
+    <!-- Ouverture éditoriale -->
+    <div class="contenu">
+      <span class="surtitre">Maître M'hamed Bengendouz · Avocat</span>
+      <h1>Défendre vos droits, <em>avec rigueur.</em></h1>
+      <p>Un avocat disponible, qui vous écoute, vous explique chaque étape et vous accompagne jusqu'au bout de votre dossier.</p>
+      <div class="actions">
+        <a class="btn plein" href="#rdv">Prendre rendez-vous</a>
+        <a class="btn" href="#competences">Mes compétences</a>
+      </div>
+      <div class="chiffres">
+        <div><strong>15</strong><span>ans d'exercice</span></div>
+        <div><strong>48 h</strong><span>pour vous répondre</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPÉTENCES -->
+  <section class="competences" id="competences">
+    <div class="wrap">
+      <div class="entete-section">
+        <span class="surtitre">Domaines d'intervention</span>
+        <h2>Des compétences <em>au service</em> de votre dossier</h2>
+        <p>Conseil, négociation ou défense devant les tribunaux : chaque situation reçoit une stratégie claire.</p>
+      </div>
+
+      <div class="liste">
+        <div class="ligne"><span class="num">01</span><h3>Droit de la famille</h3><p>Divorce, garde des enfants, pension alimentaire, succession.</p></div>
+        <div class="ligne"><span class="num">02</span><h3>Droit pénal</h3><p>Assistance en garde à vue, défense des victimes et des prévenus.</p></div>
+        <div class="ligne"><span class="num">03</span><h3>Droit du travail</h3><p>Licenciement, rupture conventionnelle, prud'hommes.</p></div>
+        <div class="ligne"><span class="num">04</span><h3>Droit des étrangers</h3><p>Titres de séjour, naturalisation, recours administratifs.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RENDEZ-VOUS -->
+  <section class="rdv sombre" id="rdv">
+    <div class="wrap">
+      <span class="surtitre traits">Premier échange</span>
+      <h2>Parlons de votre situation, <em>en toute confidentialité</em></h2>
+      <p>Honoraires annoncés clairement avant toute démarche. Rendez-vous au cabinet, par téléphone ou en visio.</p>
+      <div class="actions">
+        <a class="btn plein" href="#">Prendre rendez-vous</a>
+        <a class="btn" href="#">Appeler le cabinet</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap barre">
+    <span>© 2026 Maître M'hamed Bengendouz — Avocat</span>
+    <span>Mentions légales · Honoraires · Contact</span>
+  </div>
+</footer>
+
+<script>
+  const entete = document.getElementById('entete');
+  const majEntete = () => entete.classList.toggle('plein', scrollY > 60);
+  addEventListener('scroll', majEntete); majEntete();
+
+  const burger = document.querySelector('.burger'), menu = document.querySelector('nav ul');
+  burger.addEventListener('click', () => {
+    const ouvert = menu.classList.toggle('ouvert');
+    burger.setAttribute('aria-expanded', ouvert);
+  });
+</script>
+</body>
+</html>
