@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3 croquis — Cabinet Bengendouz</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;1,500&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  body{margin:0;background:#F6F3EC;font:300 15px/1.6 Lato,sans-serif;color:#2A3142;padding:30px 2%}
+  h1{font:500 2.2rem "EB Garamond",serif;color:#14213D;margin:0 0 6px}
+  h1 em{color:#806C41}
+  .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:24px}
+  figure{margin:0}
+  figcaption{font:500 1.4rem "EB Garamond",serif;color:#14213D;margin-bottom:8px}
+  figcaption span{display:block;font:300 .9rem Lato,sans-serif;color:#555}
+  iframe{width:100%;height:720px;border:1px solid #B89B5E;background:#fff}
+  a{color:#806C41}
+  @media(max-width:900px){.cols{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+  <h1>Trois croquis pour <em>Maître Bengendouz</em></h1>
+  <p>Mêmes textes, trois ambiances. Fais défiler dans chaque fenêtre. Clique sur « ouvrir en grand » pour voir une version en plein écran.</p>
+  <div class="cols">
+    <figure><figcaption>1 · Classique<span>Comme le site de référence : grande photo, nom centré.</span></figcaption>
+      <iframe src="index.html?v=1" title="Croquis 1"></iframe><a href="index.html?v=1" target="_blank">ouvrir en grand</a></figure>
+    <figure><figcaption>2 · Éditorial<span>Écran coupé en deux : texte clair à gauche, photo à droite.</span></figcaption>
+      <iframe src="index.html?v=2" title="Croquis 2"></iframe><a href="index.html?v=2" target="_blank">ouvrir en grand</a></figure>
+    <figure><figcaption>3 · Prestige<span>Tout en marine, monogramme « MB » doré.</span></figcaption>
+      <iframe src="index.html?v=3" title="Croquis 3"></iframe><a href="index.html?v=3" target="_blank">ouvrir en grand</a></figure>
+  </div>
+</body>
+</html>

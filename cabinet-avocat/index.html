@@ -74,7 +74,15 @@ nav a:hover{color:var(--metal);opacity:1}
 footer{background:#0D1629;color:#9AA2B4;padding:50px 0;font-size:.85rem}
 footer .barre{flex-wrap:wrap}
 
-/* ============ STYLE ÉDITORIAL (écran partagé) — croquis 2 choisi le 22/11/2026 ============ */
+/* ============ CROQUIS 1 — CLASSIQUE (fidèle au site de référence) ============ */
+.v1 .hero{text-align:center;justify-content:center}
+.v1 .hero .contenu{display:flex;flex-direction:column;align-items:center;gap:26px}
+.v1 .hero h1{letter-spacing:.01em}
+.v1 .hero .metier{font:300 clamp(1.1rem,2.4vw,1.6rem) var(--texte);letter-spacing:.6em;text-transform:uppercase;color:var(--clair);margin-right:-.6em}
+.v1 .hero .filet{width:1px;height:70px;background:var(--metal)}
+.v1 .defiler{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);font:400 .68rem var(--texte);letter-spacing:.3em;text-transform:uppercase;color:var(--metal);z-index:1}
+
+/* ============ CROQUIS 2 — ÉDITORIAL (écran partagé) ============ */
 .v2 .hero{padding:0}
 .v2 header{color:var(--sombre);background:var(--clair)}
 .v2 header.plein{color:var(--clair);background:var(--sombre)}
@@ -96,6 +104,29 @@ footer .barre{flex-wrap:wrap}
 .v2 .ligne h3{font-size:1.8rem}
 .v2 .grille{display:none}
 
+/* ============ CROQUIS 3 — PRESTIGE (monogramme, tout en marine) ============ */
+.v3{background:var(--sombre)}
+.v3 .hero{justify-content:center;text-align:center}
+.v3 .hero .fond{opacity:.55;filter:grayscale(1)}
+.v3 .hero .contenu{display:flex;flex-direction:column;align-items:center;gap:24px}
+.v3 .monogramme{width:150px;height:150px;border:1px solid var(--metal);display:grid;place-items:center;position:relative;transform:rotate(45deg)}
+.v3 .monogramme::before{content:"";position:absolute;inset:8px;border:1px solid color-mix(in srgb,var(--metal) 45%,transparent)}
+.v3 .monogramme span{transform:rotate(-45deg);font:italic 500 3.4rem var(--titre);color:var(--metal);letter-spacing:-.02em}
+.v3 .hero h1{font-size:clamp(2.4rem,5.4vw,4.4rem);margin-top:24px}
+.v3 .hero .metier{font:400 .8rem var(--texte);letter-spacing:.4em;text-transform:uppercase;color:var(--metal)}
+.v3 .hero blockquote{font:italic 500 1.35rem var(--titre);color:var(--clair);max-width:36ch;opacity:.9}
+.v3 .competences{background:var(--sombre);color:#D9DCE4}
+.v3 .competences h2,.v3 .competences h3{color:var(--clair)}
+.v3 .competences h2 em,.v3 .competences .surtitre,.v3 .carte .num{color:var(--metal)}
+.v3 .carte{background:transparent;border:1px solid color-mix(in srgb,var(--metal) 35%,transparent);box-shadow:none}
+.v3 .carte:hover{border-color:var(--metal)}
+.v3 .entete-section{margin-inline:auto;text-align:center}
+.v3 .rdv{background:var(--clair);color:var(--encre)}
+.v3 .rdv h2{color:var(--sombre)}.v3 .rdv h2 em,.v3 .rdv .surtitre{color:var(--metal-texte)}
+.v3 .rdv .btn:not(.plein){color:var(--sombre)}
+
+.v1 .seulement-2,.v1 .seulement-3,.v2 .seulement-1,.v2 .seulement-3,.v3 .seulement-1,.v3 .seulement-2{display:none!important}
+
 @media (max-width:860px){
   section{padding:72px 0}
   nav ul{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--sombre);padding:10px 5%}
@@ -112,7 +143,7 @@ footer .barre{flex-wrap:wrap}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
-<body class="v2">
+<body>
 <header id="entete">
   <div class="wrap barre">
     <a class="logo" href="#">M'hamed Bengendouz<small>Avocat</small></a>
@@ -133,8 +164,18 @@ footer .barre{flex-wrap:wrap}
   <section class="hero" id="cabinet" style="--photo:url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1800&q=70')">
     <div class="fond" aria-hidden="true"></div>
 
-    <!-- Ouverture éditoriale -->
-    <div class="contenu">
+    <!-- Croquis 1 -->
+    <div class="wrap contenu seulement-1">
+      <span class="surtitre traits">Cabinet d'avocat</span>
+      <h1>M'hamed <em>Bengendouz</em></h1>
+      <span class="filet" aria-hidden="true"></span>
+      <p class="metier">Avocat</p>
+      <a class="btn plein" href="#rdv">Prendre rendez-vous</a>
+    </div>
+    <span class="defiler seulement-1">Découvrir ↓</span>
+
+    <!-- Croquis 2 -->
+    <div class="contenu seulement-2">
       <span class="surtitre">Maître M'hamed Bengendouz · Avocat</span>
       <h1>Défendre vos droits, <em>avec rigueur.</em></h1>
       <p>Un avocat disponible, qui vous écoute, vous explique chaque étape et vous accompagne jusqu'au bout de votre dossier.</p>
@@ -147,6 +188,15 @@ footer .barre{flex-wrap:wrap}
         <div><strong>48 h</strong><span>pour vous répondre</span></div>
       </div>
     </div>
+
+    <!-- Croquis 3 -->
+    <div class="wrap contenu seulement-3">
+      <div class="monogramme" aria-hidden="true"><span>MB</span></div>
+      <h1>Maître M'hamed <em>Bengendouz</em></h1>
+      <p class="metier">Avocat au Barreau</p>
+      <blockquote>« La justice est une affaire d'écoute avant d'être une affaire de droit. »</blockquote>
+      <a class="btn plein" href="#rdv">Être conseillé</a>
+    </div>
   </section>
 
   <!-- COMPÉTENCES -->
@@ -158,7 +208,14 @@ footer .barre{flex-wrap:wrap}
         <p>Conseil, négociation ou défense devant les tribunaux : chaque situation reçoit une stratégie claire.</p>
       </div>
 
-      <div class="liste">
+      <div class="grille">
+        <article class="carte"><span class="num">I</span><h3>Droit de la famille</h3><p>Divorce, garde des enfants, pension alimentaire, succession.</p></article>
+        <article class="carte"><span class="num">II</span><h3>Droit pénal</h3><p>Assistance en garde à vue, défense des victimes et des prévenus.</p></article>
+        <article class="carte"><span class="num">III</span><h3>Droit du travail</h3><p>Licenciement, rupture conventionnelle, prud'hommes.</p></article>
+        <article class="carte"><span class="num">IV</span><h3>Droit des étrangers</h3><p>Titres de séjour, naturalisation, recours administratifs.</p></article>
+      </div>
+
+      <div class="liste seulement-2">
         <div class="ligne"><span class="num">01</span><h3>Droit de la famille</h3><p>Divorce, garde des enfants, pension alimentaire, succession.</p></div>
         <div class="ligne"><span class="num">02</span><h3>Droit pénal</h3><p>Assistance en garde à vue, défense des victimes et des prévenus.</p></div>
         <div class="ligne"><span class="num">03</span><h3>Droit du travail</h3><p>Licenciement, rupture conventionnelle, prud'hommes.</p></div>
@@ -189,6 +246,10 @@ footer .barre{flex-wrap:wrap}
 </footer>
 
 <script>
+  // Version choisie par l'adresse : index.html?v=1, ?v=2 ou ?v=3
+  const v = new URLSearchParams(location.search).get('v') || '1';
+  document.body.className = 'v' + (['1','2','3'].includes(v) ? v : '1');
+
   const entete = document.getElementById('entete');
   const majEntete = () => entete.classList.toggle('plein', scrollY > 60);
   addEventListener('scroll', majEntete); majEntete();
