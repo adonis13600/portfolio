@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Azur Thermie — Artisan du confort à La Ciotat depuis 2008</title>
+<meta name="description" content="Azur Thermie, artisan chauffagiste, climaticien et plombier à La Ciotat. Installation, entretien, dépannage 7j/7. RGE, devis gratuit.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sable:#F6F0E6; --sable-2:#EDE3D3; --calanque:#0B4F6C; --calanque-2:#083A50; --mer:#2E86AB;
+  --terre:#C8553D; --terre-2:#A8432E; --encre:#1F2A30; --doux:#5E6B72; --trait:#DDD2C0;
+  --serif:"Fraunces",Georgia,serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font:400 17px/1.7 "Inter",system-ui,sans-serif;background:var(--sable);color:var(--encre);overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.05;color:var(--calanque-2);letter-spacing:-.02em;text-wrap:balance}
+h1 em,h2 em{font-style:italic;color:var(--terre)}
+h2{font-size:clamp(2.2rem,4.4vw,3.6rem)}
+.c{width:min(1240px,100% - 48px);margin-inline:auto}
+section{padding:120px 0}
+.sur{font-size:.78rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--terre);display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.sur::before{content:"";width:34px;height:1.5px;background:currentColor}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 28px;border-radius:99px;font-weight:600;border:0;cursor:pointer;transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-terre{background:var(--terre);color:#fff}.btn-terre:hover{background:var(--terre-2)}
+.btn-ligne{border:1.5px solid var(--calanque);color:var(--calanque)}
+.ico{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+:focus-visible{outline:2px solid var(--terre);outline-offset:3px}
+
+/* haut */
+.annonce{background:var(--calanque-2);color:#D8E6EC;font-size:.88rem}
+.annonce .c{display:flex;justify-content:space-between;align-items:center;padding:10px 0;gap:16px;flex-wrap:wrap}
+.annonce b{color:#fff}
+.annonce .cd{background:var(--terre);color:#fff;padding:3px 10px;border-radius:99px;font-weight:600;font-size:.8rem;cursor:pointer;border:0}
+header{background:var(--sable);border-bottom:1px solid var(--trait);position:sticky;top:0;z-index:40}
+header .c{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:90px}
+nav ul{display:flex;gap:28px;list-style:none;font-weight:500;font-size:.95rem}
+nav a{position:relative}
+nav a::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:1.5px;background:var(--terre);transition:width .3s}
+nav a:hover::after{width:100%}
+.logo{text-align:center;line-height:1}
+.logo b{font-family:var(--serif);font-size:1.9rem;font-weight:600;color:var(--calanque-2);letter-spacing:-.02em}
+.logo b i{color:var(--terre)}
+.logo small{display:block;font-size:.66rem;letter-spacing:.32em;text-transform:uppercase;color:var(--doux);margin-top:5px}
+.droite{display:flex;justify-content:flex-end;gap:16px;align-items:center}
+.droite .tel{font-weight:600;color:var(--calanque)}
+
+/* hero */
+.hero{padding:70px 0 0}
+.hero .c{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.hero h1{font-size:clamp(3rem,6vw,5.4rem)}
+.hero p{font-size:1.15rem;color:var(--doux);max-width:520px;margin-top:26px}
+.ctas{display:flex;gap:12px;margin-top:34px;flex-wrap:wrap}
+.signature{display:flex;align-items:center;gap:16px;margin-top:46px;padding-top:30px;border-top:1px solid var(--trait)}
+.signature img{width:58px;height:58px;border-radius:50%;object-fit:cover}
+.signature em{font-family:var(--serif);font-size:1.4rem;color:var(--calanque-2)}
+.signature small{display:block;color:var(--doux);font-size:.85rem}
+.arche{position:relative}
+.arche .img{border-radius:300px 300px 24px 24px;overflow:hidden;aspect-ratio:4/5}
+.arche .img img{width:100%;height:100%;object-fit:cover}
+.sceau{position:absolute;left:-46px;bottom:60px;width:132px;height:132px;border-radius:50%;background:var(--terre);color:#fff;display:grid;place-items:center;text-align:center;font-family:var(--serif);line-height:1.1;box-shadow:0 20px 40px -20px rgba(0,0,0,.4)}
+.sceau b{font-size:2.2rem;display:block}
+.sceau span{font-size:.8rem;font-family:"Inter";letter-spacing:.1em;text-transform:uppercase}
+.tourne{position:absolute;inset:6px;animation:rot 22s linear infinite}
+@keyframes rot{to{transform:rotate(360deg)}}
+.vague{display:block;width:100%;height:80px;margin-top:80px;color:var(--calanque-2)}
+
+/* bandeau confiance */
+.confiance{background:var(--calanque-2);color:#D8E6EC;padding:40px 0 70px}
+.confiance .c{display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
+.confiance b{display:block;font-family:var(--serif);font-size:2.6rem;color:#fff;font-weight:400}
+
+/* métiers éditorial */
+.metiers{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px;align-items:start}
+.metiers .colle{position:sticky;top:130px}
+.metiers .colle .img{border-radius:20px;overflow:hidden;aspect-ratio:4/5;margin-top:34px}
+.metiers .colle img{width:100%;height:100%;object-fit:cover;transition:opacity .4s}
+.liste-m{list-style:none;border-top:1px solid var(--trait)}
+.liste-m li{border-bottom:1px solid var(--trait);padding:34px 0;display:grid;grid-template-columns:60px 1fr auto;gap:20px;cursor:default;transition:padding .3s}
+.liste-m li:hover{padding-left:12px}
+.liste-m .n{font-family:var(--serif);font-style:italic;color:var(--terre);font-size:1.3rem}
+.liste-m h3{font-size:2rem}
+.liste-m p{color:var(--doux);margin-top:8px;max-width:520px}
+.liste-m .prix{font-size:.85rem;color:var(--doux);text-align:right;white-space:nowrap}
+.liste-m .prix b{display:block;font-family:var(--serif);font-size:1.4rem;color:var(--calanque);font-weight:400}
+
+/* calendrier */
+.cal-s{background:var(--sable-2)}
+.mois{display:grid;grid-template-columns:repeat(12,1fr);gap:6px;margin-top:50px}
+.mois button{border:0;background:#fff;border-radius:12px;padding:16px 0;font-weight:600;font-size:.85rem;cursor:pointer;position:relative;transition:background .2s,color .2s}
+.mois button::after{content:"";position:absolute;bottom:7px;left:50%;width:6px;height:6px;border-radius:50%;transform:translateX(-50%);background:var(--d)}
+.mois button.on{background:var(--calanque-2);color:#fff}
+.conseil{margin-top:20px;background:#fff;border-radius:22px;padding:36px;display:grid;grid-template-columns:auto 1fr auto;gap:30px;align-items:center}
+.conseil .emo{font-size:3rem}
+.conseil h3{font-size:1.7rem}
+.conseil p{color:var(--doux);margin-top:6px}
+.legende{display:flex;gap:22px;margin-top:18px;font-size:.85rem;color:var(--doux)}
+.legende i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:7px}
+
+/* histoire */
+.histoire{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.duo-img{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.duo-img img{border-radius:18px;aspect-ratio:3/4;object-fit:cover;width:100%}
+.duo-img img:last-child{margin-top:60px}
+.histoire blockquote{font-family:var(--serif);font-size:1.6rem;line-height:1.35;color:var(--calanque-2);border-left:3px solid var(--terre);padding-left:24px;margin:28px 0}
+.engag{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}
+.engag div{display:flex;gap:12px;font-size:.95rem}
+.engag svg{color:var(--terre);margin-top:3px}
+
+/* avis carrousel */
+.avis-s{background:var(--calanque-2);color:#D8E6EC;overflow:hidden}
+.avis-s h2{color:#fff}
+.piste{display:flex;gap:22px;margin-top:50px;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.avi{flex:0 0 calc((100% - 44px)/3);background:var(--calanque);border-radius:22px;padding:34px}
+.avi p{font-family:var(--serif);font-size:1.25rem;line-height:1.45;color:#fff;margin:16px 0 22px}
+.avi small{color:#A9C3CF}
+.et{color:#F4B740;letter-spacing:2px}
+.ctrl{display:flex;gap:10px}
+.ctrl button{width:52px;height:52px;border-radius:50%;border:1.5px solid #3C6C84;background:none;color:#fff;cursor:pointer;font-size:1.2rem}
+.ctrl button:hover{background:var(--terre);border-color:var(--terre)}
+
+/* devis multi-étapes */
+.devis{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px}
+.carte-d{background:#fff;border-radius:28px;padding:40px;box-shadow:0 40px 80px -50px rgba(8,58,80,.45)}
+.pas{display:flex;justify-content:space-between;margin-bottom:30px;font-size:.82rem;font-weight:600;color:var(--doux)}
+.pas span.on{color:var(--terre)}
+.et-d{display:none}.et-d.on{display:block;animation:ap .4s}
+@keyframes ap{from{opacity:0;transform:translateX(14px)}}
+.et-d h3{font-size:1.6rem;margin-bottom:20px}
+.tuiles{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tuiles label{border:1.5px solid var(--trait);border-radius:16px;padding:18px;cursor:pointer;display:flex;gap:12px;align-items:center;font-weight:500;transition:border-color .2s,background .2s}
+.tuiles input{accent-color:var(--terre)}
+.tuiles label:has(input:checked){border-color:var(--terre);background:#FBF3EF}
+.champ{display:grid;gap:12px}
+.champ input,.champ textarea,.champ select{border:1.5px solid var(--trait);border-radius:14px;padding:14px 16px;width:100%;background:var(--sable)}
+.nav-d{display:flex;justify-content:space-between;margin-top:26px}
+.merci{text-align:center;padding:30px 0}
+.merci b{font-family:var(--serif);font-size:2rem;color:var(--calanque-2);font-weight:400}
+
+/* faq + footer */
+details{border-bottom:1px solid var(--trait);padding:24px 0}
+summary{cursor:pointer;list-style:none;font-family:var(--serif);font-size:1.4rem;color:var(--calanque-2);display:flex;justify-content:space-between;gap:20px}
+summary::after{content:"+";color:var(--terre);transition:transform .3s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--doux);margin-top:12px;max-width:760px}
+footer{background:var(--calanque-2);color:#A9C3CF;padding:90px 0 30px;font-size:.94rem}
+footer .g{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:50px}
+footer .gros{font-family:var(--serif);font-size:clamp(2rem,4vw,3.2rem);color:#fff;line-height:1.1}
+footer .gros em{color:var(--terre)}
+footer h4{color:#fff;font-weight:600;margin-bottom:14px}
+footer ul{list-style:none;display:grid;gap:8px}
+.bas{border-top:1px solid #1D5068;margin-top:60px;padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.84rem}
+.mobile-bar{display:none}
+.toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,120px);background:var(--calanque-2);color:#fff;padding:14px 22px;border-radius:99px;font-weight:600;transition:transform .35s;z-index:99}
+.toast.on{transform:translate(-50%,0)}
+.rev{opacity:0;transform:translateY(26px);transition:opacity .8s,transform .8s}
+.rev.vu{opacity:1;transform:none}
+
+@media(max-width:1000px){
+  header .c{grid-template-columns:1fr auto}nav{display:none}.logo{text-align:left}.droite .tel{display:none}
+  .hero .c,.metiers,.histoire,.devis{grid-template-columns:1fr}.metiers .colle{position:static}.metiers .colle .img{display:none}
+  .confiance .c{grid-template-columns:1fr 1fr}.mois{grid-template-columns:repeat(6,1fr)}.conseil{grid-template-columns:1fr}
+  .avi{flex-basis:calc((100% - 22px)/2)}footer .g{grid-template-columns:1fr}.sceau{left:10px}
+}
+@media(max-width:640px){
+  section{padding:80px 0}.avi{flex-basis:100%}.tuiles,.engag{grid-template-columns:1fr}.liste-m li{grid-template-columns:40px 1fr}.liste-m .prix{grid-column:2;text-align:left}
+  .carte-d{padding:26px}.droite .btn{display:none}
+  .mobile-bar{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;bottom:0;left:0;right:0;padding:10px;background:var(--sable);border-top:1px solid var(--trait);z-index:60}
+  body{padding-bottom:76px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rev{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<div class="annonce"><div class="c">
+  <span>Black Friday · <b>−15 %</b> sur votre contrat d'entretien avec le code <button class="cd" data-copie="BLACKFRIDAY">BLACKFRIDAY</button> jusqu'au 30 novembre</span>
+  <span>Urgence 7j/7 · <b>04 42 00 00 00</b></span>
+</div></div>
+
+<header><div class="c">
+  <nav aria-label="Navigation principale"><ul><li><a href="#metiers">Nos métiers</a></li><li><a href="#saisons">Calendrier</a></li><li><a href="#histoire">L'atelier</a></li></ul></nav>
+  <a href="#" class="logo"><b>Azur<i>·</i>Thermie</b><small>La Ciotat · depuis 2008</small></a>
+  <div class="droite"><a href="tel:+33442000000" class="tel">04 42 00 00 00</a><a href="#devis" class="btn btn-terre" style="padding:12px 22px">Devis gratuit</a></div>
+</div></header>
+
+<main>
+<section class="hero">
+  <div class="c">
+    <div class="rev">
+      <p class="sur">Chauffagiste · Climaticien · Plombier</p>
+      <h1>Le confort de votre maison, <em>entre de bonnes mains.</em></h1>
+      <p>De la clim qui vous sauve en août au chauffage qui ne vous lâche pas en janvier : une équipe d'artisans de La Ciotat, qui pose, entretient et dépanne. Et qui décroche quand vous appelez.</p>
+      <div class="ctas"><a href="#devis" class="btn btn-terre">Demander un devis <svg class="ico" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a href="tel:+33442000000" class="btn btn-ligne">Urgence 7j/7</a></div>
+      <div class="signature"><img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=200&h=200&q=80" alt=""><div><em>Yanis Morel</em><small>Fondateur · artisan RGE · 18 ans de métier</small></div></div>
+    </div>
+    <div class="arche rev">
+      <div class="img"><img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1000&q=80" alt="Maison contemporaine lumineuse sous le soleil du Sud"></div>
+      <div class="sceau">
+        <svg class="tourne" viewBox="0 0 120 120" aria-hidden="true"><defs><path id="cercle" d="M60 60m-48 0a48 48 0 1 1 96 0a48 48 0 1 1-96 0"/></defs><text font-size="9.5" letter-spacing="3" fill="#fff" font-family="Inter"><textPath href="#cercle">GARANTIE DÉCENNALE · ARTISAN RGE · </textPath></text></svg>
+        <div><b>4,9</b><span>187 avis</span></div>
+      </div>
+    </div>
+  </div>
+  <svg class="vague" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40c120-30 240-30 360 0s240 30 360 0 240-30 360 0 240 30 360 0v40H0z" fill="currentColor"/></svg>
+</section>
+
+<div class="confiance"><div class="c">
+  <div><b>2 400+</b>installations depuis 2008</div>
+  <div><b>&lt; 4 h</b>en urgence, 7 jours sur 7</div>
+  <div><b>100 km</b>de Marseille à Toulon</div>
+  <div><b>0</b>sous-traitant, jamais</div>
+</div></div>
+
+<section id="metiers"><div class="c metiers">
+  <div class="colle rev">
+    <p class="sur">Nos métiers</p>
+    <h2>Quatre savoir-faire, <em>un seul artisan.</em></h2>
+    <div class="img"><img id="img-m" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" alt=""></div>
+  </div>
+  <ul class="liste-m">
+    <li class="rev" data-img="1600607687939-ce8a6c25118c"><span class="n">i.</span><div><h3>Climatisation</h3><p>Réversible, multisplit ou gainable invisible. Étude pièce par pièce, unité extérieure discrète, pose en une journée.</p></div><span class="prix">dès<b>1 790 €</b></span></li>
+    <li class="rev" data-img="1600585154340-be6161a56a0c"><span class="n">ii.</span><div><h3>Pompe à chaleur</h3><p>Air/eau ou air/air, jusqu'à 70 % d'économies. Nous montons votre dossier d'aides et les déduisons du devis.</p></div><span class="prix">aides déduites<b>RGE</b></span></li>
+    <li class="rev" data-img="1504328345606-18bbc8c9d7d1"><span class="n">iii.</span><div><h3>Chaudière</h3><p>Condensation gaz, remplacement, entretien annuel obligatoire avec attestation remise sur place.</p></div><span class="prix">entretien<b>119 €</b></span></li>
+    <li class="rev" data-img="1585704032915-c3400ca199e7"><span class="n">iv.</span><div><h3>Plomberie</h3><p>Fuite, recherche de fuite non destructive, chauffe-eau, salle de bain clé en main. Devis avant toute intervention.</p></div><span class="prix">déplacement<b>49 €</b></span></li>
+  </ul>
+</div></section>
+
+<section class="cal-s" id="saisons"><div class="c">
+  <div class="rev" style="max-width:720px"><p class="sur">Le calendrier du confort</p><h2>Le bon geste, <em>au bon moment.</em></h2><p style="color:var(--doux);margin-top:18px">Cliquez sur un mois : on vous dit quoi faire pour ne jamais tomber en panne au pire moment.</p></div>
+  <div class="mois rev" id="mois" role="group" aria-label="Choisir un mois"></div>
+  <div class="conseil rev" aria-live="polite"><span class="emo" id="c-emo"></span><div><h3 id="c-t"></h3><p id="c-p"></p></div><a href="#devis" class="btn btn-terre" id="c-b">Prendre rendez-vous</a></div>
+  <div class="legende"><span><i style="background:var(--mer)"></i>Climatisation</span><span><i style="background:var(--terre)"></i>Chauffage</span><span><i style="background:#8AA399"></i>Plomberie</span></div>
+</div></section>
+
+<section id="histoire"><div class="c histoire">
+  <div class="duo-img rev">
+    <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=600&q=80" alt="Technicien au travail">
+    <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?auto=format&fit=crop&w=600&q=80" alt="Installation de tuyauterie dans une chaufferie">
+  </div>
+  <div class="rev">
+    <p class="sur">L'atelier</p>
+    <h2>Une entreprise de La Ciotat, <em>pas une plateforme.</em></h2>
+    <blockquote>« Je veux qu'on nous rappelle pour la qualité du travail, pas pour un problème. »</blockquote>
+    <p style="color:var(--doux)">Yanis Morel a ouvert l'atelier en 2008 avec un camion et une conviction. Aujourd'hui, six techniciens salariés, tous formés en interne, interviennent de Marseille à Toulon.</p>
+    <div class="engag">
+      <div><svg class="ico" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Prix ferme annoncé avant travaux</div>
+      <div><svg class="ico" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Chantier propre, sols protégés</div>
+      <div><svg class="ico" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Pièces d'origine constructeur</div>
+      <div><svg class="ico" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Rapport photo après chaque passage</div>
+    </div>
+  </div>
+</div></section>
+
+<section class="avis-s"><div class="c">
+  <div style="display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap">
+    <div><p class="sur" style="color:#F0A28F">Avis Google vérifiés</p><h2>Ce que disent <em style="color:#F0A28F">nos voisins.</em></h2></div>
+    <div class="ctrl"><button id="g" aria-label="Avis précédents">←</button><button id="d" aria-label="Avis suivants">→</button></div>
+  </div>
+  <div class="piste" id="piste">
+    <div class="avi"><span class="et">★★★★★</span><p>« Clim en panne un 14 juillet, technicien chez nous à 16 h. Prix annoncé au téléphone respecté. »</p><small>Sandrine L. · La Ciotat</small></div>
+    <div class="avi"><span class="et">★★★★★</span><p>« Ils ont monté tout le dossier MaPrimeRénov' à notre place. On n'a eu qu'à signer. »</p><small>Marc et Hélène B. · Ceyreste</small></div>
+    <div class="avi"><span class="et">★★★★★</span><p>« Chantier rendu plus propre qu'à l'arrivée. Facture identique au devis. Rare. »</p><small>Karim D. · Aubagne</small></div>
+    <div class="avi"><span class="et">★★★★★</span><p>« Fuite un dimanche soir, rappel en 8 minutes, réparé dans l'heure. »</p><small>Julie R. · Cassis</small></div>
+    <div class="avi"><span class="et">★★★★★</span><p>« Seuls à venir mesurer chaque pièce avant de chiffrer. Ça a fait la différence. »</p><small>Thierry M. · Saint-Cyr</small></div>
+  </div>
+</div></section>
+
+<section id="devis"><div class="c devis">
+  <div class="rev">
+    <p class="sur">Devis gratuit</p>
+    <h2>Racontez-nous <em>votre projet.</em></h2>
+    <p style="color:var(--doux);margin-top:18px">Trois petites étapes, une réponse sous 24 h. Pour une urgence, appelez plutôt : c'est plus rapide.</p>
+    <div style="margin-top:40px">
+      <details open><summary>La visite est-elle vraiment gratuite ?</summary><p>Oui, et sans engagement. Nous mesurons, conseillons et vous remettons un prix ferme.</p></details>
+      <details><summary>Quelles aides en 2026 ?</summary><p>MaPrimeRénov', primes CEE, TVA réduite. Certifiés RGE, nous les déduisons directement du devis.</p></details>
+      <details><summary>Faut-il entretenir sa clim ?</summary><p>C'est obligatoire au-delà de 2 kg de fluide, et conseillé dans tous les cas : jusqu'à 25 % de consommation en moins.</p></details>
+    </div>
+  </div>
+  <form class="carte-d rev" id="fd">
+    <div class="pas"><span class="on">1 · Projet</span><span>2 · Logement</span><span>3 · Contact</span></div>
+    <div class="et-d on">
+      <h3>De quoi avez-vous besoin ?</h3>
+      <div class="tuiles">
+        <label><input type="radio" name="p" checked> Climatisation</label>
+        <label><input type="radio" name="p"> Pompe à chaleur</label>
+        <label><input type="radio" name="p"> Chaudière</label>
+        <label><input type="radio" name="p"> Plomberie</label>
+        <label><input type="radio" name="p"> Contrat d'entretien</label>
+        <label><input type="radio" name="p"> Dépannage</label>
+      </div>
+    </div>
+    <div class="et-d">
+      <h3>Votre logement</h3>
+      <div class="champ">
+        <select aria-label="Type de logement"><option>Maison</option><option>Appartement</option><option>Local professionnel</option></select>
+        <input placeholder="Surface approximative (m²)" inputmode="numeric" aria-label="Surface">
+        <input placeholder="Ville" aria-label="Ville">
+      </div>
+    </div>
+    <div class="et-d">
+      <h3>Comment vous joindre ?</h3>
+      <div class="champ">
+        <input required placeholder="Nom et prénom" aria-label="Nom et prénom">
+        <input required type="tel" placeholder="Téléphone" aria-label="Téléphone">
+        <textarea rows="3" placeholder="Un détail à ajouter ?" aria-label="Message"></textarea>
+      </div>
+    </div>
+    <div class="et-d merci"><b>Merci, c'est bien reçu.</b><p style="color:var(--doux);margin-top:10px">Yanis ou un technicien vous rappelle sous 24 h ouvrées.</p></div>
+    <div class="nav-d"><button type="button" class="btn btn-ligne" id="ret">Retour</button><button type="button" class="btn btn-terre" id="av">Continuer</button></div>
+  </form>
+</div></section>
+</main>
+
+<footer><div class="c">
+  <div class="g">
+    <div><p class="gros">Été comme hiver,<br><em>on s'occupe de tout.</em></p><a href="tel:+33442000000" class="btn btn-terre" style="margin-top:30px">04 42 00 00 00</a></div>
+    <div><h4>L'atelier</h4><ul><li>Zone Athélia IV</li><li>13600 La Ciotat</li><li>Lun–Ven 7h30–19h · Sam 8h–13h</li><li>contact@azur-thermie.fr</li></ul></div>
+    <div><h4>Nos garanties</h4><ul><li>Artisan RGE QualiPAC</li><li>Attestation de capacité fluides</li><li>Garantie décennale</li><li>Assurance RC pro</li></ul></div>
+  </div>
+  <div class="bas"><span>© 2026 Azur Thermie · Projet fictif réalisé pour mon portfolio</span><span>Mentions légales · Confidentialité</span></div>
+</div></footer>
+
+<div class="mobile-bar"><a href="tel:+33442000000" class="btn btn-ligne" style="justify-content:center">Appeler</a><a href="#devis" class="btn btn-terre" style="justify-content:center">Devis</a></div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const toast=t=>{const e=$('#toast');e.textContent=t;e.classList.add('on');setTimeout(()=>e.classList.remove('on'),2400)};
+$$('[data-copie]').forEach(b=>b.onclick=()=>{navigator.clipboard?.writeText(b.dataset.copie);toast('Code BLACKFRIDAY copié ✓')});
+
+// Image des métiers au survol
+$$('.liste-m li').forEach(li=>li.onmouseenter=()=>{const i=$('#img-m');i.style.opacity=0;setTimeout(()=>{i.src=`https://images.unsplash.com/photo-${li.dataset.img}?auto=format&fit=crop&w=800&q=80`;i.style.opacity=1},200)});
+
+// Calendrier
+const M=[['Jan','Chauffage','🔥','Purgez vos radiateurs','Un radiateur froid en haut, c\'est de l\'air dans le circuit. On passe en 30 minutes, ou on vous montre comment faire.'],
+['Fév','Chauffage','🔥','Surveillez la pression de la chaudière','Entre 1 et 2 bars à froid. En dessous, appelez-nous avant la mise en sécurité.'],
+['Mar','Plomberie','💧','Vérifiez votre chauffe-eau','Un détartrage tous les 2 ans prolonge sa vie de moitié dans notre eau calcaire.'],
+['Avr','Climatisation','❄️','Entretenez la clim avant l\'été','Les créneaux d\'avril sont les plus rapides à obtenir. En juillet, tout le monde appelle en même temps.'],
+['Mai','Climatisation','❄️','Installez avant la chaleur','Délai de pose : une semaine en mai, trois en juillet. C\'est le meilleur moment pour équiper la maison.'],
+['Juin','Climatisation','❄️','Nettoyez les filtres','Tous les mois en été. Des filtres encrassés, c\'est 15 % de consommation en plus et un air moins sain.'],
+['Juil','Climatisation','❄️','Réglez à 26 °C, pas à 18 °C','Pas plus de 7 °C d\'écart avec l\'extérieur : moins de facture, moins de rhumes.'],
+['Août','Plomberie','💧','Partez en vacances serein','Coupez l\'arrivée d\'eau et mettez le chauffe-eau en mode absence. Une fuite de 15 jours, ça se paie cher.'],
+['Sep','Chauffage','🔥','Entretien chaudière obligatoire','Faites-le avant les premiers froids : attestation remise sur place, chaudière prête pour l\'hiver.'],
+['Oct','Chauffage','🔥','Basculez la PAC en mode chaud','Profitez-en pour vérifier l\'unité extérieure : feuilles mortes et obstacles réduisent son rendement.'],
+['Nov','Chauffage','🔥','Black Friday : −15 % sur l\'entretien','Code BLACKFRIDAY jusqu\'au 30/11 sur tous nos contrats. Le moment de souscrire pour toute l\'année.'],
+['Déc','Plomberie','💧','Protégez vos canalisations du gel','Calorifugez les tuyaux extérieurs et du garage : un soir de mistral glacé suffit à les fendre.']];
+const coul={Climatisation:'var(--mer)',Chauffage:'var(--terre)',Plomberie:'#8AA399'};
+const zone=$('#mois');M.forEach((m,i)=>{const b=document.createElement('button');b.type='button';b.textContent=m[0];b.style.setProperty('--d',coul[m[1]]);b.onclick=()=>choisir(i);zone.append(b)});
+function choisir(i){$$('#mois button').forEach((b,j)=>{b.classList.toggle('on',i===j);b.setAttribute('aria-pressed',i===j)});const m=M[i];$('#c-emo').textContent=m[2];$('#c-t').textContent=m[3];$('#c-p').textContent=m[4]}
+choisir(new Date().getMonth());
+
+// Carrousel avis
+let pos=0;const piste=$('#piste');const pas=()=>{const a=piste.children[0];return a.offsetWidth+22};
+const vis=()=>innerWidth<640?1:innerWidth<1000?2:3;
+const bouge=d=>{pos=Math.max(0,Math.min(piste.children.length-vis(),pos+d));piste.style.transform=`translateX(${-pos*pas()}px)`};
+$('#g').onclick=()=>bouge(-1);$('#d').onclick=()=>bouge(1);addEventListener('resize',()=>bouge(0));
+
+// Devis multi-étapes
+let e=0;const et=$$('.et-d'),ps=$$('.pas span');
+function maj(){et.forEach((x,i)=>x.classList.toggle('on',i===e));ps.forEach((x,i)=>x.classList.toggle('on',i<=e));$('#ret').style.visibility=e&&e<3?'visible':'hidden';$('#av').style.display=e===3?'none':'';$('#av').textContent=e===2?'Envoyer ma demande':'Continuer'}
+$('#av').onclick=()=>{if(e===2){const req=[...et[2].querySelectorAll('[required]')];const vide=req.find(x=>!x.value.trim());if(vide){vide.focus();toast('Il manque votre nom ou votre téléphone');return}}e++;maj()};
+$('#ret').onclick=()=>{e=Math.max(0,e-1);maj()};maj();
+
+const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('vu');io.unobserve(en.target)}}),{threshold:.12});$$('.rev').forEach(x=>io.observe(x));
+</script>
+</body>
+</html>
