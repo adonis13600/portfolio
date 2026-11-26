@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Azur Thermie — Le chaud, le froid, l'eau. À La Ciotat.</title>
+<meta name="description" content="Azur Thermie, climatisation, pompe à chaleur, chaudière et plomberie à La Ciotat. Artisan RGE, urgence 7j/7, devis en 24 h.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --nuit:#070B14; --nuit-2:#0D1424; --carte:#111A2E; --trait:#1E2A44; --texte:#E7ECF5; --doux:#8D9AB5;
+  --froid:#38BDF8; --froid-2:#6366F1; --chaud:#FB923C; --chaud-2:#EF4444;
+  --a1:var(--froid); --a2:var(--froid-2);
+}
+body.chaud{--a1:var(--chaud);--a2:var(--chaud-2)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font:300 16.5px/1.65 "Sora",system-ui,sans-serif;background:var(--nuit);color:var(--texte);overflow-x:hidden;transition:background .6s}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+h1,h2,h3{font-weight:700;letter-spacing:-.035em;line-height:1.02;text-wrap:balance}
+h2{font-size:clamp(2.2rem,4.4vw,3.8rem)}
+.mono{font-family:"JetBrains Mono",monospace;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--doux)}
+.c{width:min(1280px,100% - 48px);margin-inline:auto}
+section{padding:120px 0}
+.acc{background:linear-gradient(100deg,var(--a1),var(--a2));-webkit-background-clip:text;background-clip:text;color:transparent;transition:all .6s}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 26px;border-radius:99px;font-weight:600;border:0;cursor:pointer;transition:transform .2s,box-shadow .3s}
+.btn:hover{transform:translateY(-2px)}
+.btn-acc{background:linear-gradient(100deg,var(--a1),var(--a2));color:#fff;box-shadow:0 18px 40px -18px var(--a1)}
+.btn-ghost{border:1px solid var(--trait);background:rgba(255,255,255,.03)}
+.ico{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+:focus-visible{outline:2px solid var(--a1);outline-offset:3px}
+
+/* promo défilante */
+.ruban{background:linear-gradient(100deg,var(--a1),var(--a2));color:#fff;overflow:hidden;white-space:nowrap;font-weight:600;font-size:.9rem;transition:background .6s}
+.ruban div{display:inline-block;padding:10px 0;animation:defile 30s linear infinite}
+.ruban span{margin:0 34px}
+@keyframes defile{to{transform:translateX(-50%)}}
+
+/* header */
+header{position:sticky;top:14px;z-index:40;margin-top:14px}
+header .c{display:flex;align-items:center;justify-content:space-between;gap:20px;background:rgba(13,20,36,.75);backdrop-filter:blur(16px);border:1px solid var(--trait);border-radius:99px;padding:10px 12px 10px 22px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.15rem;letter-spacing:-.03em}
+.logo i{width:30px;height:30px;border-radius:9px;background:conic-gradient(from 200deg,var(--froid),var(--froid-2),var(--chaud-2),var(--chaud),var(--froid))}
+nav ul{display:flex;gap:4px;list-style:none}
+nav a{padding:9px 15px;border-radius:99px;font-size:.92rem;color:var(--doux);transition:color .2s,background .2s}
+nav a:hover{color:var(--texte);background:rgba(255,255,255,.06)}
+.dispo{display:flex;align-items:center;gap:8px;font-size:.82rem;color:var(--doux)}
+.dispo i{width:8px;height:8px;border-radius:50%;background:#22C55E;box-shadow:0 0 12px #22C55E}
+
+/* hero */
+.hero{padding:90px 0 60px;position:relative;overflow:hidden}
+.halo{position:absolute;width:900px;height:900px;border-radius:50%;filter:blur(120px);opacity:.33;background:radial-gradient(circle,var(--a1),transparent 60%);top:-380px;right:-280px;transition:background .6s;pointer-events:none}
+.hero h1{font-size:clamp(2.7rem,7vw,6.4rem);font-weight:800;max-width:1100px}
+.hero-haut{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.hero-bas{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:46px;align-items:end}
+.hero p{font-size:1.15rem;color:var(--doux);max-width:520px}
+.ctas{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}
+.interrupteur{display:flex;align-items:center;gap:16px;justify-self:end;background:var(--carte);border:1px solid var(--trait);border-radius:24px;padding:18px 22px}
+.interrupteur button{width:78px;height:42px;border-radius:99px;border:0;background:var(--trait);position:relative;cursor:pointer}
+.interrupteur button::after{content:"❄";position:absolute;top:4px;left:4px;width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--a1),var(--a2));display:grid;place-items:center;color:#fff;font-size:.95rem;transition:left .35s}
+body.chaud .interrupteur button::after{content:"☀";left:40px}
+.interrupteur b{font-size:1.4rem;font-weight:700;display:block}
+.photo-hero{margin-top:60px;border-radius:32px;overflow:hidden;position:relative;aspect-ratio:21/8;border:1px solid var(--trait)}
+.photo-hero img{width:100%;height:100%;object-fit:cover;filter:saturate(.85) brightness(.75)}
+.photo-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--nuit) 0,transparent 55%),linear-gradient(0deg,rgba(7,11,20,.6),transparent 40%);mix-blend-mode:normal}
+.hud{position:absolute;z-index:2;left:34px;bottom:30px;display:flex;gap:14px;flex-wrap:wrap}
+.hud div{background:rgba(13,20,36,.7);backdrop-filter:blur(10px);border:1px solid var(--trait);border-radius:16px;padding:14px 18px}
+.hud b{display:block;font-size:1.5rem;font-weight:700}
+
+/* bento */
+.tete{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:50px;flex-wrap:wrap}
+.tete p{color:var(--doux);max-width:420px}
+.bento{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:minmax(230px,auto);gap:16px}
+.case{background:var(--carte);border:1px solid var(--trait);border-radius:26px;padding:30px;position:relative;overflow:hidden;transition:border-color .3s,transform .3s}
+.case:hover{border-color:color-mix(in srgb,var(--a1) 50%,var(--trait));transform:translateY(-4px)}
+.case h3{font-size:1.6rem;margin:14px 0 8px}
+.case p{color:var(--doux);font-size:.95rem;max-width:380px}
+.case .num{position:absolute;right:24px;top:22px}
+.l3{grid-column:span 3}.l2{grid-column:span 2}.l4{grid-column:span 4}.h2{grid-row:span 2}
+.case.img{padding:0}
+.case.img img{width:100%;height:100%;object-fit:cover;opacity:.7}
+.case.img .txt{position:absolute;inset:auto 0 0 0;padding:30px;background:linear-gradient(0deg,var(--carte) 20%,transparent)}
+.puce{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:rgba(255,255,255,.05);border:1px solid var(--trait);color:var(--a1);transition:color .6s}
+.graphe{display:flex;gap:6px;align-items:end;height:90px;margin-top:22px}
+.graphe i{flex:1;border-radius:6px 6px 2px 2px;background:linear-gradient(0deg,var(--a2),var(--a1));opacity:.85;transition:background .6s,height .6s}
+.case .gros{font-size:4rem;font-weight:800;letter-spacing:-.05em;line-height:1}
+
+/* configurateur */
+.conf{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.panneau{background:var(--carte);border:1px solid var(--trait);border-radius:26px;padding:34px}
+.ligne{margin-bottom:26px}
+.ligne label{display:flex;justify-content:space-between;margin-bottom:12px;font-weight:600}
+.ligne label output{font-family:"JetBrains Mono",monospace;color:var(--a1)}
+.ligne input[type=range]{width:100%;accent-color:var(--a1)}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pills button{border:1px solid var(--trait);background:none;padding:10px 16px;border-radius:99px;cursor:pointer;font-size:.9rem;transition:all .2s}
+.pills button.on{background:var(--texte);color:var(--nuit);border-color:var(--texte);font-weight:600}
+.ecran{background:linear-gradient(160deg,#0F1A33,#0A1020);border:1px solid var(--trait);border-radius:26px;padding:34px;display:flex;flex-direction:column}
+.ecran .total{font-size:clamp(3rem,6vw,4.6rem);font-weight:800;letter-spacing:-.05em;margin:10px 0}
+.ecran dl{display:grid;grid-template-columns:1fr auto;gap:12px 20px;margin:20px 0 30px;font-size:.95rem}
+.ecran dt{color:var(--doux)}.ecran dd{font-weight:600;text-align:right}
+.jauge{height:10px;border-radius:99px;background:var(--trait);overflow:hidden;margin-top:8px}
+.jauge i{display:block;height:100%;background:linear-gradient(90deg,var(--a1),var(--a2));transition:width .5s}
+
+/* ligne de temps urgence */
+.urgence{border:1px solid var(--trait);border-radius:32px;padding:56px;background:radial-gradient(600px 300px at 0 0,color-mix(in srgb,var(--a1) 18%,transparent),transparent),var(--nuit-2);display:grid;grid-template-columns:.9fr 1.1fr;gap:56px}
+.chrono{list-style:none;position:relative}
+.chrono::before{content:"";position:absolute;left:11px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--a1),var(--a2))}
+.chrono li{position:relative;padding:0 0 28px 44px}
+.chrono li::before{content:"";position:absolute;left:4px;top:5px;width:16px;height:16px;border-radius:50%;background:var(--nuit);border:2px solid var(--a1)}
+.chrono b{display:block;font-size:1.1rem}
+.chrono span{color:var(--doux);font-size:.93rem}
+
+/* tarifs */
+.tarifs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tarif{background:var(--carte);border:1px solid var(--trait);border-radius:26px;padding:34px;display:flex;flex-direction:column}
+.tarif.star{background:linear-gradient(var(--carte),var(--carte)) padding-box,linear-gradient(140deg,var(--a1),var(--a2)) border-box;border:1.5px solid transparent}
+.tarif .p{font-size:3rem;font-weight:800;letter-spacing:-.04em;margin:12px 0 0}
+.tarif .p small{font-size:1rem;color:var(--doux);font-weight:400}
+.tarif ul{list-style:none;margin:22px 0 30px;display:grid;gap:10px;color:var(--doux);font-size:.95rem;flex:1}
+.tarif li::before{content:"→ ";color:var(--a1)}
+
+/* avis */
+.mur{columns:3;column-gap:16px}
+.mur blockquote{break-inside:avoid;background:var(--carte);border:1px solid var(--trait);border-radius:22px;padding:26px;margin-bottom:16px}
+.mur blockquote p{font-size:1.02rem}
+.mur cite{display:block;margin-top:16px;font-style:normal;color:var(--doux);font-size:.88rem}
+.etoiles{color:#FBBF24;letter-spacing:2px;font-size:.85rem}
+
+/* faq */
+.faq{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px}
+details{border-top:1px solid var(--trait);padding:24px 0}
+summary{cursor:pointer;font-weight:600;font-size:1.1rem;list-style:none;display:flex;justify-content:space-between;gap:20px}
+summary::after{content:"+";font-family:"JetBrains Mono";color:var(--a1)}
+details[open] summary::after{content:"−"}
+details p{color:var(--doux);margin-top:12px}
+
+/* contact */
+.contact{text-align:center;padding:140px 0;position:relative;overflow:hidden}
+.contact h2{font-size:clamp(2.8rem,7vw,6.4rem);font-weight:800}
+.numero{display:inline-block;font-size:clamp(1.8rem,4vw,3rem);font-weight:700;margin:26px 0 34px;border-bottom:2px solid var(--a1);transition:border-color .6s}
+.mini-form{display:flex;gap:10px;max-width:620px;margin:0 auto;background:var(--carte);border:1px solid var(--trait);border-radius:99px;padding:8px}
+.mini-form input{flex:1;background:none;border:0;padding:0 18px;outline:none}
+footer{border-top:1px solid var(--trait);padding:44px 0;color:var(--doux);font-size:.88rem}
+footer .c{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,120px);background:var(--texte);color:var(--nuit);padding:14px 22px;border-radius:99px;font-weight:600;transition:transform .35s;z-index:99}
+.toast.on{transform:translate(-50%,0)}
+.rev{opacity:0;transform:translateY(30px);transition:opacity .8s,transform .8s}
+.rev.vu{opacity:1;transform:none}
+.flottant{position:fixed;right:20px;bottom:20px;z-index:50;display:none}
+
+/* compte à rebours */
+.chip{display:inline-flex;align-items:center;gap:10px;background:var(--carte);border:1px solid var(--trait);border-radius:99px;padding:7px 8px 7px 16px;font-size:.85rem;color:var(--doux)}
+.chip b{font-family:"JetBrains Mono",monospace;color:var(--texte);font-weight:500}
+.chip button{border:1px dashed var(--a1);background:none;color:var(--a1);border-radius:99px;padding:4px 12px;font-family:"JetBrains Mono",monospace;font-size:.78rem;cursor:pointer;transition:color .6s,border-color .6s}
+
+/* menu mobile */
+.burger{display:none;width:44px;height:44px;border-radius:50%;border:1px solid var(--trait);background:none;cursor:pointer;place-items:center}
+.menu-m{position:fixed;inset:0;z-index:80;background:rgba(7,11,20,.97);backdrop-filter:blur(10px);display:flex;flex-direction:column;justify-content:center;gap:8px;padding:40px;opacity:0;pointer-events:none;transition:opacity .3s}
+.menu-m.on{opacity:1;pointer-events:auto}
+.menu-m a{font-size:2.2rem;font-weight:700;letter-spacing:-.03em;padding:6px 0}
+.menu-m .fermer{position:absolute;top:24px;right:24px;width:48px;height:48px;border-radius:50%;border:1px solid var(--trait);background:none;font-size:1.4rem;cursor:pointer}
+
+/* avant / après */
+.ap{display:grid;grid-template-columns:1.25fr .75fr;gap:16px}
+.comparo{position:relative;border-radius:26px;overflow:hidden;border:1px solid var(--trait);min-height:440px;user-select:none}
+.comparo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.comparo .avant{clip-path:inset(0 50% 0 0);filter:grayscale(1) contrast(.9) brightness(.6)}
+.comparo .poignee{position:absolute;top:0;bottom:0;left:50%;width:2px;background:linear-gradient(var(--a1),var(--a2));transform:translateX(-50%);pointer-events:none}
+.comparo .poignee::after{content:"⟷";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:50px;height:50px;border-radius:50%;background:var(--texte);color:var(--nuit);display:grid;place-items:center;font-weight:700}
+.comparo input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize}
+.comparo .lab{position:absolute;top:18px;background:rgba(7,11,20,.7);backdrop-filter:blur(6px);border:1px solid var(--trait);padding:6px 12px;border-radius:99px;pointer-events:none}
+.fiche{display:flex;flex-direction:column;gap:16px}
+.fiche .case{flex:1}
+.fiche .gros{font-size:3rem}
+
+/* zone */
+.zone{display:grid;grid-template-columns:.9fr 1.1fr;gap:16px}
+.villes{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.villes span{border:1px solid var(--trait);border-radius:99px;padding:6px 13px;font-size:.86rem;color:var(--doux)}
+.verif{display:flex;gap:8px;margin-top:26px;background:var(--nuit);border:1px solid var(--trait);border-radius:99px;padding:6px}
+.verif input{flex:1;min-width:0;background:none;border:0;outline:none;padding:0 16px;font-family:"JetBrains Mono",monospace}
+.verif-r{margin-top:14px;min-height:1.6em;font-weight:600}
+.carte{width:100%;height:100%;min-height:380px;border:0;border-radius:26px;filter:invert(.92) hue-rotate(180deg) saturate(.6) brightness(.95)}
+
+/* bascule tarifs */
+.bascule{display:inline-flex;background:var(--carte);border:1px solid var(--trait);border-radius:99px;padding:5px;margin-bottom:22px;flex-wrap:wrap}
+.bascule button{border:0;background:none;padding:9px 18px;border-radius:99px;cursor:pointer;color:var(--doux);font-weight:600;font-size:.9rem}
+.bascule button.on{background:var(--texte);color:var(--nuit)}
+
+/* contact enrichi */
+.mini-form select{background:var(--nuit);border:1px solid var(--trait);border-radius:99px;padding:0 14px;outline:none}
+
+@media(max-width:1000px){
+  nav,.dispo{display:none}.burger{display:grid}
+  .hero-bas,.conf,.urgence,.faq,.ap,.zone{grid-template-columns:1fr}.comparo{min-height:300px}
+  .mini-form{flex-direction:column;border-radius:24px}.mini-form input,.mini-form select{padding:14px 18px}.interrupteur{justify-self:start}
+  .bento{grid-template-columns:1fr 1fr}.l3,.l2,.l4{grid-column:span 2}.h2{grid-row:auto}
+  .tarifs{grid-template-columns:1fr}.mur{columns:1}.photo-hero{aspect-ratio:4/3}
+  .urgence{padding:34px 24px}.flottant{display:inline-flex}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rev{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<div class="ruban" aria-label="Offre Black Friday"><div>
+  <span>🔥 BLACK FRIDAY · −15 % sur tous les contrats d'entretien avec le code BLACKFRIDAY</span><span>Jusqu'au 30/11/2026</span><span>Urgence 7j/7 · intervention sous 4 h</span><span>Artisan RGE · aides déduites du devis</span>
+  <span>🔥 BLACK FRIDAY · −15 % sur tous les contrats d'entretien avec le code BLACKFRIDAY</span><span>Jusqu'au 30/11/2026</span><span>Urgence 7j/7 · intervention sous 4 h</span><span>Artisan RGE · aides déduites du devis</span>
+</div></div>
+
+<header><div class="c">
+  <a href="#" class="logo"><i></i>azur thermie</a>
+  <nav aria-label="Navigation principale"><ul><li><a href="#metiers">Métiers</a></li><li><a href="#config">Simulateur</a></li><li><a href="#urgence">Urgence</a></li><li><a href="#zone">Zone</a></li><li><a href="#tarifs">Contrats</a></li><li><a href="#avis">Avis</a></li></ul></nav>
+  <span class="dispo"><i></i>3 techniciens disponibles</span>
+  <div style="display:flex;gap:8px;align-items:center"><a href="#contact" class="btn btn-acc" style="padding:12px 20px">Devis 24 h</a>
+  <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false"><svg class="ico" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16"/></svg></button></div>
+</div></header>
+<div class="menu-m" id="menu-m" role="dialog" aria-label="Menu">
+  <button class="fermer" id="fermer" aria-label="Fermer le menu">×</button>
+  <a href="#metiers">Métiers</a><a href="#config">Simulateur</a><a href="#urgence">Urgence</a><a href="#zone">Zone</a><a href="#tarifs">Contrats</a><a href="#avis">Avis</a>
+  <a href="tel:+33442000000" class="btn btn-acc" style="font-size:1rem;margin-top:24px;justify-content:center">Appeler le 04 42 00 00 00</a>
+</div>
+
+<main>
+<section class="hero">
+  <div class="halo"></div>
+  <div class="c" style="position:relative">
+    <div class="hero-haut">
+      <p class="mono">La Ciotat · Climatisation · Chauffage · Plomberie</p>
+      <span class="chip">Black Friday −15 % · fin dans <b id="compte">--</b><button data-copie="BLACKFRIDAY" title="Copier le code">BLACKFRIDAY</button></span>
+    </div>
+    <h1 style="margin-top:18px">Le chaud. Le froid. <span class="acc">L'eau.</span><br>On maîtrise les trois.</h1>
+    <div class="hero-bas">
+      <div>
+        <p>Installation, entretien et dépannage dans un rayon de 100 km autour de La Ciotat. Un seul artisan RGE pour toute la maison, prix ferme, chantier propre.</p>
+        <div class="ctas"><a href="#config" class="btn btn-acc">Simuler mon projet</a><a href="tel:+33442000000" class="btn btn-ghost">04 42 00 00 00</a></div>
+      </div>
+      <div class="interrupteur">
+        <button id="saison" aria-label="Basculer entre mode été et mode hiver" aria-pressed="false"></button>
+        <div><span class="mono" id="saison-l">Mode été</span><b id="saison-t">On rafraîchit.</b></div>
+      </div>
+    </div>
+    <div class="photo-hero">
+      <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=2000&q=80" alt="Technicien en intervention avec lampe frontale">
+      <div class="hud">
+        <div><span class="mono">Note Google</span><b>4,9 ★</b></div>
+        <div><span class="mono">Interventions</span><b>2 400+</b></div>
+        <div><span class="mono">Délai urgence</span><b>&lt; 4 h</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="metiers"><div class="c">
+  <div class="tete rev"><h2>Toute la maison,<br><span class="acc">un seul interlocuteur.</span></h2><p>Nos techniciens sont certifiés sur les grandes marques. Pas de sous-traitance, jamais.</p></div>
+  <div class="bento">
+    <div class="case l4 rev"><span class="mono num">01</span><div class="puce"><svg class="ico" viewBox="0 0 24 24"><path d="M12 2v20M4.9 4.9l14.2 14.2M2 12h20M4.9 19.1L19.1 4.9"/></svg></div><h3>Climatisation réversible</h3><p>Monosplit, multisplit, gainable invisible. Elle rafraîchit l'été, elle chauffe l'hiver, pour 3 fois moins cher qu'un radiateur.</p>
+      <div class="graphe" aria-hidden="true"><i style="height:30%"></i><i style="height:45%"></i><i style="height:38%"></i><i style="height:60%"></i><i style="height:80%"></i><i style="height:95%"></i><i style="height:100%"></i><i style="height:92%"></i><i style="height:70%"></i><i style="height:48%"></i><i style="height:35%"></i><i style="height:28%"></i></div></div>
+    <div class="case l2 h2 img rev"><img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=800&q=80" alt="Portrait du fondateur"><div class="txt"><span class="mono">Fondateur</span><h3>Yanis Morel</h3><p>18 ans de métier, dont 10 à son compte. Il passe encore sur chaque chantier.</p></div></div>
+    <div class="case l2 rev"><span class="mono num">02</span><div class="puce"><svg class="ico" viewBox="0 0 24 24"><path d="M12 2c-3 5-6 8-6 12a6 6 0 0 0 12 0c0-4-3-7-6-12z"/></svg></div><h3>Pompe à chaleur</h3><p>Jusqu'à 70 % d'économies. Dossier d'aides monté pour vous.</p></div>
+    <div class="case l2 rev"><span class="mono num">03</span><div class="puce"><svg class="ico" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 17h6"/></svg></div><h3>Chaudière</h3><p>Condensation, remplacement, entretien annuel obligatoire.</p></div>
+    <div class="case l3 rev"><span class="mono num">04</span><div class="puce"><svg class="ico" viewBox="0 0 24 24"><path d="M7 3v6a5 5 0 0 0 10 0V3M12 14v7M8 21h8"/></svg></div><h3>Plomberie & salle de bain</h3><p>Fuite, recherche de fuite non destructive, chauffe-eau, rénovation complète de salle de bain.</p></div>
+    <div class="case l3 rev"><span class="mono">Garantie</span><div class="gros acc" style="margin-top:16px">10 ans</div><p style="margin-top:10px">Décennale sur la pose, 5 ans pièces sur les PAC, et un SAV qui décroche vraiment.</p></div>
+  </div>
+</div></section>
+
+<section id="config" style="padding-top:20px"><div class="c">
+  <div class="tete rev"><h2>Simulez. <span class="acc">En direct.</span></h2><p>Bougez les curseurs : le prix, les aides et les économies se recalculent instantanément.</p></div>
+  <div class="conf rev">
+    <div class="panneau">
+      <div class="ligne"><label>Équipement</label><div class="pills" data-k="eq"><button class="on" data-v="clim">Clim réversible</button><button data-v="pac">PAC air/eau</button><button data-v="chaud">Chaudière</button><button data-v="ballon">Chauffe-eau</button></div></div>
+      <div class="ligne"><label for="s">Surface <output id="so">90 m²</output></label><input type="range" id="s" min="20" max="250" step="5" value="90"></div>
+      <div class="ligne"><label for="p">Nombre de pièces <output id="po">4</output></label><input type="range" id="p" min="1" max="8" value="4"></div>
+      <div class="ligne" style="margin:0"><label>Revenus du foyer</label><div class="pills" data-k="rv"><button data-v=".6">Modestes</button><button class="on" data-v=".35">Intermédiaires</button><button data-v=".12">Supérieurs</button></div></div>
+    </div>
+    <div class="ecran" aria-live="polite">
+      <span class="mono">Reste à charge estimé</span>
+      <div class="total acc" id="tot">—</div>
+      <span class="mono">Part couverte par les aides</span>
+      <div class="jauge"><i id="jg" style="width:0"></i></div>
+      <dl><dt>Prix pose comprise</dt><dd id="d1">—</dd><dt>Aides déduites</dt><dd id="d2">—</dd><dt>Économies annuelles</dt><dd id="d3">—</dd><dt>Rentabilisé en</dt><dd id="d4">—</dd></dl>
+      <a href="#contact" class="btn btn-acc" style="justify-content:center;margin-top:auto">Bloquer ce prix · visite gratuite</a>
+    </div>
+  </div>
+</div></section>
+
+<section id="urgence"><div class="c">
+  <div class="urgence rev">
+    <div><p class="mono">Dépannage 7j/7 · 7h–22h</p><h2 style="margin-top:14px">Panne ? <span class="acc">On arrive.</span></h2><p style="color:var(--doux);margin:18px 0 28px">Fuite, clim muette en pleine canicule, chaudière en sécurité un soir de mistral : un technicien vous rappelle en 10 minutes.</p><a href="tel:+33442000000" class="btn btn-acc">Appeler l'urgence</a></div>
+    <ol class="chrono">
+      <li><b>0 min · Vous appelez</b><span>Un humain décroche, pas un robot. On qualifie la panne avec vous.</span></li>
+      <li><b>10 min · Rappel du technicien</b><span>Diagnostic à distance, premiers gestes de sécurité, prix du déplacement annoncé.</span></li>
+      <li><b>&lt; 4 h · Sur place</b><span>Camion-atelier équipé des pièces courantes. 8 pannes sur 10 réglées au premier passage.</span></li>
+      <li style="padding-bottom:0"><b>Le jour même · Rapport</b><span>Photos, facture et conseils envoyés par SMS.</span></li>
+    </ol>
+  </div>
+</div></section>
+
+<section style="padding-top:20px"><div class="c">
+  <div class="tete rev"><h2>Avant. <span class="acc">Après.</span></h2><p>Faites glisser la poignée. Une maison de Saint-Cyr-sur-Mer passée du fioul à la pompe à chaleur.</p></div>
+  <div class="ap">
+    <div class="comparo rev" id="comparo">
+      <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=80" alt="Séjour lumineux après la rénovation du chauffage">
+      <img class="avant" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=80" alt="" aria-hidden="true">
+      <span class="lab mono" style="left:18px;color:var(--texte)">Avant · fioul</span><span class="lab mono" style="right:18px;color:var(--texte)">Après · PAC air/eau</span>
+      <div class="poignee"></div>
+      <input type="range" min="0" max="100" value="50" aria-label="Comparer avant et après les travaux">
+    </div>
+    <div class="fiche">
+      <div class="case rev"><span class="mono">Économies par an</span><div class="gros acc" style="margin-top:12px">−1 840 €</div><p style="margin-top:8px">Maison de 140 m² des années 80, PAC air/eau 11 kW, 8 radiateurs basse température.</p></div>
+      <div class="case rev"><span class="mono">Aides obtenues</span><div class="gros" style="margin-top:12px">7 900 €</div><p style="margin-top:8px">Reste à charge 6 200 €. Chantier bouclé en 3 jours, cuve à fioul enlevée.</p></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="zone" style="padding-top:20px"><div class="c">
+  <div class="zone">
+    <div class="case rev" style="padding:40px">
+      <p class="mono">Zone d'intervention</p>
+      <h2 style="margin-top:14px;font-size:clamp(2rem,3.6vw,3rem)">De Marseille <span class="acc">à Toulon.</span></h2>
+      <p style="margin-top:14px">Nos camions-ateliers partent de La Ciotat chaque matin, avec les pièces courantes à bord.</p>
+      <div class="villes"><span>La Ciotat</span><span>Ceyreste</span><span>Cassis</span><span>Aubagne</span><span>Saint-Cyr</span><span>Bandol</span><span>Marseille</span><span>Toulon</span><span>Le Castellet</span><span>Gémenos</span></div>
+      <form class="verif" id="verif"><input placeholder="Votre code postal" inputmode="numeric" maxlength="5" aria-label="Code postal"><button class="btn btn-acc" style="padding:12px 20px">Vérifier</button></form>
+      <div class="verif-r" id="verif-r" aria-live="polite"></div>
+    </div>
+    <iframe class="carte rev" title="Carte de la zone d'intervention autour de La Ciotat" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=5.20%2C43.02%2C6.05%2C43.40&amp;layer=mapnik&amp;marker=43.1760%2C5.6090"></iframe>
+  </div>
+</div></section>
+
+<section id="tarifs" style="padding-top:20px"><div class="c">
+  <div class="tete rev"><h2>Contrats d'entretien.<br><span class="acc">−15 % jusqu'au 30/11.</span></h2><p>Avec le code BLACKFRIDAY. Prix TTC, choisissez votre équipement.</p></div>
+  <div class="bascule rev" role="group" aria-label="Type d'équipement"><button class="on" data-e="clim">Climatisation</button><button data-e="pac">Pompe à chaleur</button><button data-e="chau">Chaudière</button></div>
+  <div class="tarifs">
+    <div class="tarif rev"><span class="mono">Essentiel</span><div class="p"><span data-pp="0">84</span> €<small> /an</small></div><small style="color:var(--doux)">au lieu de <s><span data-p="0">99</span> €</s></small><ul><li>1 visite annuelle</li><li>Filtres et unité extérieure</li><li>Contrôle d'étanchéité</li></ul><a href="#contact" class="btn btn-ghost">Choisir</a></div>
+    <div class="tarif star rev"><span class="mono" style="color:var(--a1)">Sérénité · le plus choisi</span><div class="p"><span data-pp="1">144</span> €<small> /an</small></div><small style="color:var(--doux)">au lieu de <s><span data-p="1">169</span> €</s></small><ul><li>Tout l'Essentiel</li><li>Dépannage prioritaire &lt; 4 h</li><li>Déplacement et main-d'œuvre inclus</li><li>−10 % sur les pièces</li></ul><a href="#contact" class="btn btn-acc">Choisir Sérénité</a></div>
+    <div class="tarif rev"><span class="mono">Premium</span><div class="p"><span data-pp="2">212</span> €<small> /an</small></div><small style="color:var(--doux)">au lieu de <s><span data-p="2">249</span> €</s></small><ul><li>Tout Sérénité</li><li>2 visites (été + hiver)</li><li>Pièces d'usure incluses</li><li>Suivi connecté</li></ul><a href="#contact" class="btn btn-ghost">Choisir</a></div>
+  </div>
+</div></section>
+
+<section id="avis" style="padding-top:20px"><div class="c">
+  <div class="tete rev"><h2>4,9 ★ sur <span class="acc">187 avis.</span></h2><p>Avis Google vérifiés. On répond à chacun, même aux rares moins bons.</p></div>
+  <div class="mur">
+    <blockquote class="rev"><span class="etoiles">★★★★★</span><p>« Clim en panne un 14 juillet, technicien chez nous à 16 h. Prix annoncé au téléphone respecté. »</p><cite>Sandrine L. · La Ciotat</cite></blockquote>
+    <blockquote class="rev"><span class="etoiles">★★★★★</span><p>« Ils ont monté tout le dossier MaPrimeRénov'. On n'a eu qu'à signer. La PAC tourne depuis un an sans un souci et la facture d'électricité a fondu. »</p><cite>Marc et Hélène B. · Ceyreste</cite></blockquote>
+    <blockquote class="rev"><span class="etoiles">★★★★★</span><p>« Chantier rendu plus propre qu'à l'arrivée. »</p><cite>Karim D. · Aubagne</cite></blockquote>
+    <blockquote class="rev"><span class="etoiles">★★★★★</span><p>« Fuite sous l'évier un dimanche soir. Rappel en 8 minutes, réparé dans l'heure. Je garde le numéro. »</p><cite>Julie R. · Cassis</cite></blockquote>
+    <blockquote class="rev"><span class="etoiles">★★★★★</span><p>« Trois devis demandés, ils étaient les seuls à venir mesurer chaque pièce avant de chiffrer. Ça a fait la différence. »</p><cite>Thierry M. · Saint-Cyr-sur-Mer</cite></blockquote>
+    <blockquote class="rev"><span class="etoiles">★★★★★</span><p>« Contrat Sérénité pour notre restaurant : on ne pense plus à la clim, elle marche. »</p><cite>Le Bistrot du Port · La Ciotat</cite></blockquote>
+  </div>
+</div></section>
+
+<section style="padding-top:20px"><div class="c faq">
+  <div class="rev"><p class="mono">FAQ</p><h2 style="margin-top:14px">Les vraies questions.</h2></div>
+  <div class="rev">
+    <details open><summary>Combien coûte une clim réversible posée ?</summary><p>Entre 1 800 et 3 500 € pour un monosplit, de 4 500 à 9 000 € pour un multisplit selon le nombre de pièces. Le simulateur ci-dessus vous donne une première idée.</p></details>
+    <details><summary>Quelles aides pour une pompe à chaleur ?</summary><p>MaPrimeRénov', primes CEE et TVA à 5,5 %. Certifiés RGE, nous déduisons les aides directement du devis.</p></details>
+    <details><summary>L'entretien de la clim est-il obligatoire ?</summary><p>Oui au-delà de 2 kg de fluide frigorigène. En dessous, il reste fortement conseillé : jusqu'à 25 % de consommation en moins.</p></details>
+    <details><summary>Jusqu'où intervenez-vous ?</summary><p>100 km autour de La Ciotat : de Marseille à Toulon, l'arrière-pays d'Aubagne et le Castellet compris.</p></details>
+  </div>
+</div></section>
+
+<section class="contact" id="contact">
+  <div class="halo" style="top:auto;bottom:-500px;right:auto;left:50%;transform:translateX(-50%)"></div>
+  <div class="c" style="position:relative">
+    <p class="mono">Devis gratuit · réponse sous 24 h</p>
+    <h2 style="margin-top:18px">On en parle <span class="acc">?</span></h2>
+    <a href="tel:+33442000000" class="numero">04 42 00 00 00</a>
+    <form class="mini-form" id="f"><select aria-label="Votre besoin"><option>Installation</option><option>Dépannage</option><option>Entretien</option><option>Plomberie</option></select><input required type="tel" placeholder="Votre numéro, on vous rappelle" aria-label="Votre numéro de téléphone"><button class="btn btn-acc">Rappelez-moi</button></form>
+  </div>
+</section>
+</main>
+
+<footer><div class="c"><span>© 2026 Azur Thermie · Zone Athélia IV, 13600 La Ciotat · Projet fictif réalisé pour mon portfolio</span><span>RGE QualiPAC · Attestation de capacité fluides · Décennale</span></div></footer>
+<a href="tel:+33442000000" class="btn btn-acc flottant" aria-label="Appeler">📞 Appeler</a>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const toast=t=>{const e=$('#toast');e.textContent=t;e.classList.add('on');setTimeout(()=>e.classList.remove('on'),2400)};
+// Été / hiver
+$('#saison').onclick=e=>{const c=document.body.classList.toggle('chaud');e.currentTarget.setAttribute('aria-pressed',c);$('#saison-l').textContent=c?'Mode hiver':'Mode été';$('#saison-t').textContent=c?'On réchauffe.':'On rafraîchit.';
+  $$('.graphe i').forEach((b,i,a)=>b.style.height=(c?[100,92,75,50,30,20,15,18,35,60,85,98]:[30,45,38,60,80,95,100,92,70,48,35,28])[i]+'%')};
+// Simulateur
+const st={eq:'clim',rv:.35};
+$$('.pills').forEach(g=>g.querySelectorAll('button').forEach(b=>b.onclick=()=>{g.querySelectorAll('button').forEach(x=>x.classList.remove('on'));b.classList.add('on');st[g.dataset.k]=isNaN(b.dataset.v)?b.dataset.v:+b.dataset.v;calc()}));
+const eu=n=>Math.round(n/10)*10;const f=n=>eu(n).toLocaleString('fr-FR')+' €';
+function calc(){const s=+$('#s').value,p=+$('#p').value;$('#so').textContent=s+' m²';$('#po').textContent=p;
+  const m={clim:{prix:1400+p*900+s*6,el:0,eco:s*4.5},pac:{prix:9000+s*45,el:1,eco:s*13},chaud:{prix:3200+s*12,el:.3,eco:s*5},ballon:{prix:2800,el:1,eco:320}}[st.eq];
+  const aide=eu(m.prix*st.rv*m.el),net=m.prix-aide;
+  $('#tot').textContent=f(net);$('#d1').textContent=f(m.prix);$('#d2').textContent=aide?'−'+f(aide):'Non éligible';$('#d3').textContent='≈ '+f(m.eco);
+  $('#d4').textContent=Math.max(1,Math.round(net/m.eco))+' ans';$('#jg').style.width=Math.round(aide/m.prix*100)+'%'}
+$('#s').oninput=$('#p').oninput=calc;calc();
+// Compte à rebours + code promo
+$$('[data-copie]').forEach(b=>b.onclick=()=>{navigator.clipboard?.writeText(b.dataset.copie);toast('Code BLACKFRIDAY copié ✓')});
+const fin=new Date('2026-11-30T23:59:59');const tic=()=>{const d=Math.max(0,fin-new Date()),p=n=>String(n).padStart(2,'0');$('#compte').textContent=`${Math.floor(d/864e5)}j ${p(Math.floor(d/36e5)%24)}h ${p(Math.floor(d/6e4)%60)}m ${p(Math.floor(d/1e3)%60)}s`};tic();setInterval(tic,1000);
+// Menu mobile
+const menu=$('#menu-m'),ouvre=o=>{menu.classList.toggle('on',o);$('#burger').setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':''};
+$('#burger').onclick=()=>ouvre(true);$('#fermer').onclick=()=>ouvre(false);menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>ouvre(false)));addEventListener('keydown',e=>e.key==='Escape'&&ouvre(false));
+// Avant / après
+const cmp=$('#comparo');cmp.querySelector('input').oninput=e=>{const v=e.target.value;cmp.querySelector('.avant').style.clipPath=`inset(0 ${100-v}% 0 0)`;cmp.querySelector('.poignee').style.left=v+'%'};
+// Zone
+$('#verif').onsubmit=e=>{e.preventDefault();const v=e.target[0].value.trim();$('#verif-r').innerHTML=/^(13|83)\d{3}$/.test(v)?'<span style="color:#4ADE80">✓ On intervient chez vous.</span>':v.length===5?'<span style="color:#FCA5A5">Hors zone habituelle : appelez-nous, on trouve souvent une solution.</span>':'Entrez un code postal à 5 chiffres.'};
+// Tarifs selon l'équipement
+const prixE={clim:[99,169,249],pac:[149,219,299],chau:[119,179,259]};
+$$('.bascule button').forEach(b=>b.onclick=()=>{$$('.bascule button').forEach(x=>x.classList.remove('on'));b.classList.add('on');prixE[b.dataset.e].forEach((p,i)=>{$(`[data-p="${i}"]`).textContent=p;$(`[data-pp="${i}"]`).textContent=Math.round(p*.85)})});
+$('#f').onsubmit=e=>{e.preventDefault();toast('C\'est noté, on vous rappelle très vite.');e.target.reset()};
+const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('vu');io.unobserve(en.target)}}),{threshold:.12});$$('.rev').forEach(e=>io.observe(e));
+</script>
+</body>
+</html>
